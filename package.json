@@ -1,0 +1,38 @@
+{
+  "name": "amazon-beyond-template",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "On this site, products are exhibited and sold with real payment method.",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --watch backend --exec node --experimental-modules backend/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/melihdizdar/amazon-beyond-template"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/melihdizdar/amazon-beyond-template/issues"
+  },
+  "homepage": "https://github.com/melihdizdar/amazon-beyond-template#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-async-handler": "^1.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^6.0.7",
+    "multer": "^1.4.3",
+    "socket.io": "^4.3.1",
+    "socket.io-client": "^4.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.9.0",
+    "eslint-plugin-react": "^7.21.2",
+    "nodemon": "^2.0.4"
+  }
+}
