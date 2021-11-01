@@ -5,7 +5,6 @@ import { BrowserRouter,Link,Route} from 'react-router-dom';
 import CartScreen from "./screens/CartScreen";
 import { useDispatch, useSelector } from "react-redux";
 import SigninScreen from "./screens/SigninScreen";
-import { signout } from "./actions/userActions";
 import RegisterScreen from "./screens/RegisterScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
@@ -22,7 +21,6 @@ import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import SellerRoute from './components/SellerRoute';
 import SellerScreen from './screens/SellerScreen';
-import SearchBox from "./components/SearchBox";
 import SearchScreen from "./screens/SearchScreen";
 import { useEffect, useState } from "react";
 import { listProductCategories } from "./actions/productActions";
@@ -32,19 +30,15 @@ import MapScreen from "./screens/MapScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
+import Navbar from "./components/NavBar/Navbar";
 
 
 function App() {
-  //Değişkenleri tanımladığımız kod satırı.
-  const cart = useSelector(state => state.cart);
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false); //54.Add Category Sidebar and Filter
-  const { cartItems } = cart;
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
+  //Değişkenleri tanımladığımız kod satırı.
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false); //54.Add Category Sidebar and Filter
   const dispatch = useDispatch();
-  const signoutHandler = () =>{
-    dispatch(signout());
-  }
   const productCategoryList = useSelector((state) => state.productCategoryList); //54.Add Category Sidebar and Filter
   const { loading:loadingCategories, error:errorCategories, categories } = productCategoryList; //54.Add Category Sidebar and Filter
   useEffect(() => { //54.Add Category Sidebar and Filter
@@ -52,86 +46,8 @@ function App() {
   },[dispatch]) //54.Add Category Sidebar and Filter
   return (
     <BrowserRouter>
+    <Navbar/>
         <div className="grid-container">
-          <header className="row">
-              <div>
-                  <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)}>
-                    <i className="fa fa-bars"></i>
-                  </button>
-                  <Link className="brand" to="/">beyond</Link>
-              </div>
-              <div>
-                <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
-              </div>
-              <div>
-                {/*Sepetin içindeki ürünlerin sayısı 0'dan büyük ise badge oluştur.*/}
-                  <Link to="/cart">Cart {cartItems.length > 0 && (
-                    <span className="badge">{cartItems.length}</span>
-                  )}</Link>
-                  <Link>
-                    {userInfo ? (
-                      <div className="dropdown">
-                        {/*navbar'daki üye isminin silinip cart'ın gelme olayı*/}
-                        <Link to="#">
-                          {userInfo.name} <i className="fa fa-caret-down"></i>{' '}
-                        </Link>
-                        <ul className="dropdown-content">
-                          <li>
-                            <Link to="/profile">User Profile</Link> {/*33.display user profile*/}
-                          </li>
-                          <li>
-                            <Link to="/orderhistory">Order History</Link> {/*32.Display Orders History*/}
-                          </li>
-                          <li>
-                            <Link to="#signout" onClick={signoutHandler}>
-                              Sign Out
-                            </Link>
-                          </li>
-                        </ul>
-                      </div>
-                    ) : (
-                      <Link to="/signin">Sign In</Link>
-                    )}
-                  </Link>
-                  {userInfo && userInfo.isSeller && (
-                    <div className="dropdown">
-                      <Link to="#admin">
-                        Seller <i className="fa fa-caret-down"></i>
-                      </Link>
-                      <ul className="dropdown-content">
-                        <li>
-                          <Link to="/productlist/seller">Products</Link>
-                        </li>
-                        <li>
-                          <Link to="/orderlist/seller">Orders</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-                  {userInfo && userInfo.isAdmin && (
-                    <div className="dropdown">
-                      <Link to="#admin">Admin <i className="fa fa-caret-down"></i></Link>
-                      <ul className="dropdown-content">
-                        <li>
-                          <Link to="/dashboard">Dashboard</Link>
-                        </li>
-                        <li>
-                          <Link to="/productlist">Products</Link>
-                        </li>
-                        <li>
-                          <Link to="/orderlist">Orders</Link>
-                        </li>
-                        <li>
-                          <Link to="/userlist">Users</Link>
-                        </li>
-                        <li>
-                          <Link to="/support">Support</Link>
-                        </li>
-                      </ul>
-                    </div>
-                  )}
-              </div>
-          </header>
           <aside className={sidebarIsOpen? 'open': ''}>
             <ul className="categories">
               <li>
@@ -176,7 +92,7 @@ function App() {
             <AdminRoute path="/user/:id/edit" component={UserEditScreen}/>
             <AdminRoute path="/dashboard" component={DashboardScreen}/>
             <AdminRoute path="/support" component={SupportScreen}/>
-            <SellerRoute path="/productlist/seller" component={DashboardScreen}/>
+            <SellerRoute path="/productlist/seller" component={ProductListScreen}/>
             <SellerRoute path="/orderlist/seller" component={OrderListScreen}/>
             <Route path="/" component={HomeScreen} exact/>
           </main>
