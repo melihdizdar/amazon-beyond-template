@@ -1,5 +1,5 @@
 .navbar {
-    background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+    background: #d6d6d6;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -10,7 +10,7 @@
   }
   
   .navbar-logo {
-    color: #fff;
+    color: black;
     justify-self: start;
     margin-left: 20px;
     cursor: pointer;
@@ -41,13 +41,13 @@
   }
   
   .nav-links {
-    color: white;
+    color: black;
     text-decoration: none;
     padding: 0.5rem 1rem;
   }
   
   .nav-links:hover {
-    background-color: #1888ff;
+    background-color: #d6d6d6;
     border-radius: 4px;
     transition: all 0.2s ease-out;
   }
@@ -65,8 +65,11 @@
   }
   
   @media screen and (max-width: 960px) {
+    .fa-bars{
+      color: black;
+    }
     .navbar {
-        background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
+        background: #d6d6d6;
         width: 100%;
         height: 50px;
         display: flex;
@@ -94,7 +97,7 @@
     }
   
     .nav-menu.active {
-      background: #242222;
+      background: #d6d6d6;
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
@@ -109,8 +112,9 @@
     }
   
     .nav-links:hover {
-      background-color: #1888ff;
+      background-color: #999999;
       border-radius: 0;
+      color: black;
     }
   
     .navbar-logo {
@@ -131,7 +135,7 @@
     }
   
     .fa-times {
-      color: #fff;
+      color: black;
       font-size: 2rem;
     }
   

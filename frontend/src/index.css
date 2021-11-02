@@ -56,7 +56,10 @@ a{
   text-decoration: none;
 }
 a:hover{
-  color:#ff8000;
+  color:#999999;
+}
+.fa-angle-right{
+  color: black;
 }
 ul{
   padding: 0;
