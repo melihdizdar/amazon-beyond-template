@@ -228,7 +228,54 @@ function App() {
           </main>
           <footer className="row center">
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-            <div>All right reserved</div>{' '}
+            <div class="footer">
+              <div class="inner-footer">
+                <div class="footer-items">
+                  <h1 className="footerh1">Beyond</h1>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua.
+                  </p>
+                </div>
+                <div class="footer-items">
+                  <h2 className="footerh2">Quick Links</h2>
+                  <div class="border"></div>
+                  <ul className="footerul">
+                    <Link to="/"><li className="footerli">Home</li></Link>
+                    <Link to="/"><li className="footerli">About</li></Link>
+                    <Link to="/"><li className="footerli">Sign In</li></Link>
+                    <Link to="/"><li className="footerli">Contact Us</li></Link>
+                  </ul>
+                </div>
+                <div class="footer-items">
+                  <h2 className="footerh2">OTHER LINKS</h2>
+                  <div class="border"></div>
+                  <ul className="footerul">
+                    <Link to="/"><li className="footerli">Privacy & Policy</li></Link>
+                    <Link to="/"><li className="footerli">Terms & Conditions</li></Link>
+                    <Link to="/"><li className="footerli">FAQ</li></Link>
+                  </ul>
+                </div>
+                <div class="footer-items">
+                  <h2 className="footerh2">Contact Us</h2>
+                  <div class="border"></div>
+                  <ul className="footerul">
+                    <li className="footerli"><i class="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
+                    <li className="footerli"><i class="fa fa-phone" aria-hidden="true"></i>1234567890</li>
+                    <li className="footerli"><i class="fa fa-envelope" aria-hidden="true"></i>support@computers&codes.com</li>
+                  </ul>
+                  <div class="social-media">
+                    <Link to="/"><i class="fa fa-facebook" aria-hidden="true"></i></Link>
+                    <Link to="/"><i class="fa fa-twitter" aria-hidden="true"></i></Link>
+                    <Link to="/"><i class="fa fa-instagram" aria-hidden="true"></i></Link>
+                    <Link to="/"><i class="fa fa-google-plus" aria-hidden="true"></i></Link>
+                  </div>
+                </div>
+              </div>
+              <div class="footer-bottom">
+                Copyright &copy; Beyond 2021. All rights reserved.
+              </div>
+            </div>
           </footer>
       </div>
     </BrowserRouter>
