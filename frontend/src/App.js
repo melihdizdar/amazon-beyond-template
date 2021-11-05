@@ -35,9 +35,11 @@ import Dropdown from './components/NavBar/Dropdown';
 import DropdownUser from './components/NavBar/DropdownUser';
 import DropdownSeller from './components/NavBar/DropdownSeller';
 import { signout } from "./actions/userActions";
+import FooterProducts from "./components/FooterProducts";
+import ButtonMailto from "./components/ButtonMailto";
 
 
-function App() {
+function App(props) {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
   const signoutHandler = () =>{
@@ -244,6 +246,7 @@ function App() {
                     <Link to="/"><li className="footerli">Home</li></Link>
                     <Link to="/"><li className="footerli">About</li></Link>
                     <Link to="/"><li className="footerli">Sign In</li></Link>
+                    <Route render={({history}) => <FooterProducts history={history}></FooterProducts>}></Route>
                     <Link to="/"><li className="footerli">Contact Us</li></Link>
                   </ul>
                 </div>
@@ -262,7 +265,7 @@ function App() {
                   <ul className="footerul">
                     <li className="footerli"><i class="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
                     <li className="footerli"><i class="fa fa-phone" aria-hidden="true"></i>1234567890</li>
-                    <li className="footerli"><i class="fa fa-envelope" aria-hidden="true"></i>support@computers&codes.com</li>
+                    <li className="footerli"><i class="fa fa-envelope" aria-hidden="true"></i><ButtonMailto label="support@beyond.com" mailto="mailto:support@beyond.com"/></li>
                   </ul>
                   <div class="social-media">
                     <Link to="/"><i class="fa fa-facebook" aria-hidden="true"></i></Link>

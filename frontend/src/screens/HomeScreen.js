@@ -7,7 +7,8 @@ import LoadingBox from '../components/LoadingBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
-import { Link } from 'react-router-dom';
+import { Link,Route } from 'react-router-dom';
+import PListButton from '../components/PListButton';
 
 export default function HomeScreen() {
   /*kullanılan fonksiyonların tanımları yapılır.*/
@@ -49,6 +50,9 @@ export default function HomeScreen() {
               {products.map((product) => (
                 <Product key={product._id} product={product}></Product>
               ))}
+            </div>
+            <div className="row right">
+              <Route render={({history}) => <PListButton history={history}></PListButton>}></Route>
             </div>
           </>
         )}

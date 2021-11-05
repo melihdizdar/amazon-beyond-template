@@ -10,7 +10,7 @@ const productRouter = express.Router();
 productRouter.get('/', expressAsyncHandler(async (req,res) =>{
     //Products listelenmesi için kullanılan kod satırı
     //const products = await Product.find({});
-    const pageSize = 3; //59.Implement Pagination
+    const pageSize = 8; //59.Implement Pagination
     const page = Number(req.query.pageNumber) || 1; //59.Implement Pagination
     const name = req.query.name || ''; //53.Create Search Box and Search Screen
     const category = req.query.category || ''; //54.Add Category Sidebar and Filter

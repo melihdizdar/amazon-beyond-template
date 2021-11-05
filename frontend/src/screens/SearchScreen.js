@@ -1,12 +1,13 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, Route } from 'react-router-dom';
 import { listProducts } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Product from '../components/Product';
 import Rating from '../components/Rating';
 import { prices, ratings } from '../utils';
+import SearchBox from '../components/SearchBox';
 
 export default function SearchScreen(props) {
   //const { name = 'all' } = useParams(); //53.Create Search Box and Search Screen,
@@ -56,6 +57,10 @@ export default function SearchScreen(props) {
               <option value="highest">Price: High to Low</option>
               <option value="toprated">Avg. Customer Reviews</option>
             </select>
+            <div>
+              <br/>
+              <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
+            </div>
           </div>
       </div>
       <div className="row top">
