@@ -9,6 +9,8 @@ import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link,Route } from 'react-router-dom';
 import PListButton from '../components/PListButton';
+import HomeCard from '../components/HomeCard';
+import { listHomeCards } from '../actions/homeActions';
 
 export default function HomeScreen() {
   /*kullanılan fonksiyonların tanımları yapılır.*/
@@ -19,8 +21,12 @@ export default function HomeScreen() {
   const userTopSellersList = useSelector((state) => state.userTopSellersList); //51.Add Top Seller Carousel
   const {loading:loadingSellers,error:errorSellers,users:sellers} = userTopSellersList; //51.Add Top Seller Carousel
 
+  const HomeCardList = useSelector((state) => state.HomeCardList);
+  const {loading:loadingHomeCard,error:errorHomeCard,homeCards} = HomeCardList;
+
   useEffect(() =>{
     //dispatch(listProducts());
+    dispatch(listHomeCards());
     dispatch(listProducts({})); //49.Implement Seller View
     dispatch(listTopSellers()); //51.Add Top Seller Carousel
   }, [dispatch]);
@@ -56,6 +62,17 @@ export default function HomeScreen() {
             </div>
           </>
         )}
+          <h2>Our Responsibility</h2>
+          {loadingHomeCard ? ( <LoadingBox></LoadingBox>) : errorHomeCard ? (<MessageBox variant="danger">{errorHomeCard}</MessageBox>) : (
+          <>
+              {homeCards.length === 0 && <MessageBox>No Home Card Found</MessageBox>}
+              <div className="row">
+                {homeCards.map((homeCard) => (
+                  <HomeCard key={homeCard._id} homeCard={homeCard}></HomeCard>
+                ))}
+              </div>
+          </>
+      )}
         </div>
     )
 }

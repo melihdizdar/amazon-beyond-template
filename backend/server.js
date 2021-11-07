@@ -8,6 +8,7 @@ import productRouter from './routers/productRouter.js';
 import userRouter from './routers/userRouter.js';
 import orderRouter from './routers/orderRouter.js';
 import uploadRouter from './routers/uploadRouter.js';
+import homeRouter from './routers/homeRouter.js';
 
 dotenv.config(); //token
 
@@ -21,6 +22,7 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon-beyond',
     useUnifiedTopology: true,
     useNewUrlParser: true
 });
+app.use('/api/home',homeRouter);
 app.use('/api/uploads', uploadRouter); //40.upload product image
 app.use('/api/users', userRouter);
 // api/users linkini userRouter'a bağladık

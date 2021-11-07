@@ -90,6 +90,23 @@ const data = {
         numReviews:15,
         description:'high quality product',
     },
+    ],
+    homeCards:[
+        {
+            homeImage:'/images/p1.jpg',
+            homeHeader:'Ethically Made',
+            homeText:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend risus eget felis fermentum, id ultricies velit suscipit. Nam pellentesque libero hendrerit elementum viverra. Cras feugiat metus eu purus dignissim eleifend. Mauris rutrum volutpat felis sit amet tempor. In hac habitasse platea dictumst. Pellentesque rhoncus lacus id turpis condimentum placerat. Mauris efficitur tortor viverra lectus finibus ornare.',
+        },
+        {
+            homeImage:'/images/p2.jpg',
+            homeHeader:'Organic Cotton',
+            homeText:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend risus eget felis fermentum, id ultricies velit suscipit. Nam pellentesque libero hendrerit elementum viverra. Cras feugiat metus eu purus dignissim eleifend. Mauris rutrum volutpat felis sit amet tempor. In hac habitasse platea dictumst. Pellentesque rhoncus lacus id turpis condimentum placerat. Mauris efficitur tortor viverra lectus finibus ornare.',
+        },
+        {
+            homeImage:'/images/p3.jpg',
+            homeHeader:'Hand Screem Printed',
+            homeText:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eleifend risus eget felis fermentum, id ultricies velit suscipit. Nam pellentesque libero hendrerit elementum viverra. Cras feugiat metus eu purus dignissim eleifend. Mauris rutrum volutpat felis sit amet tempor. In hac habitasse platea dictumst. Pellentesque rhoncus lacus id turpis condimentum placerat. Mauris efficitur tortor viverra lectus finibus ornare.',
+        }
     ]
 }
 
