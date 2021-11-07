@@ -66,7 +66,7 @@ export default function HomeScreen() {
           {loadingHomeCard ? ( <LoadingBox></LoadingBox>) : errorHomeCard ? (<MessageBox variant="danger">{errorHomeCard}</MessageBox>) : (
           <>
               {homeCards.length === 0 && <MessageBox>No Home Card Found</MessageBox>}
-              <div className="row">
+              <div className="HomeCardStage">
                 {homeCards.map((homeCard) => (
                   <HomeCard key={homeCard._id} homeCard={homeCard}></HomeCard>
                 ))}
