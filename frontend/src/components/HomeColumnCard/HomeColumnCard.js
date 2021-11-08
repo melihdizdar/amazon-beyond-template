@@ -25,7 +25,7 @@ export default function HomeColumnCard() {
                     <h2>ABOUT US</h2>
                     <h1>For balanced living.</h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-                    <p className="read-more"><Link to="/about-us">READ MORE</Link></p>
+                    <p className="read-more"><Link to="/about">READ MORE</Link></p>
                 </div>
             </div>
         </>

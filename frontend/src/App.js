@@ -244,7 +244,7 @@ function App(props) {
                   <div class="border"></div>
                   <ul className="footerul">
                     <Link to="/"><li className="footerli">Home</li></Link>
-                    <Link to="/"><li className="footerli">About</li></Link>
+                    <Link to="/about"><li className="footerli">About</li></Link>
                     <Link to="/"><li className="footerli">Sign In</li></Link>
                     <Route render={({history}) => <FooterProducts history={history}></FooterProducts>}></Route>
                     <Link to="/"><li className="footerli">Contact Us</li></Link>
