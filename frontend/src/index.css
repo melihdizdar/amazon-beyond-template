@@ -30,17 +30,14 @@ body{
 header{
   grid-area: header;
   background-color: #203040;
-  /*griddeki areasını header olarak belirler*/
 }
 main{
   grid-area: main;
   padding: 1rem;
-  /*griddeki areasını main olarak belirler*/
 }
-/*footer*/
+/*Footer Styles*/
 footer{
   grid-area: footer;
-  /*griddeki areasını footer olarak belirler*/
 }
 .footer {
 	width: 100%;
@@ -707,3 +704,4 @@ img.large{
     width: 85%;
   }
 }
+/*Home Image Card*/

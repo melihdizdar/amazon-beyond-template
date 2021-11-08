@@ -11,6 +11,7 @@ import { Link,Route } from 'react-router-dom';
 import PListButton from '../components/PListButton';
 import HomeCard from '../components/HomeCard';
 import { listHomeCards } from '../actions/homeActions';
+import HomeColumnCard from '../components/HomeColumnCard/HomeColumnCard';
 
 export default function HomeScreen() {
   /*kullanılan fonksiyonların tanımları yapılır.*/
@@ -73,6 +74,7 @@ export default function HomeScreen() {
               </div>
           </>
       )}
-        </div>
+      <HomeColumnCard/>
+    </div>
     )
 }
