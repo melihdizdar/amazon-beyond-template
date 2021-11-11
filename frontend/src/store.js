@@ -1,5 +1,7 @@
 import {applyMiddleware, combineReducers, compose, createStore} from 'redux';
 import thunk from 'redux-thunk';
+import { PersonalContentListReducer } from './reducers/aboutPersonalReducers';
+import { TextContentListReducer } from './reducers/aboutTextReducers';
 import { cartReducer } from './reducers/cartReducers';
 import { HomeCardsListReducer } from './reducers/homeReducers';
 import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetailsReducer, orderListReducer, orderMineListReducer, orderPayReducer, orderSummaryReducer } from './reducers/orderReducers';
@@ -47,6 +49,8 @@ const reducer = combineReducers({
     userAddressMap: userAddressMapReducer,
     orderSummary: orderSummaryReducer,
     HomeCardList:HomeCardsListReducer,
+    AboutTextContentList:TextContentListReducer,
+    AboutPersonalContentList:PersonalContentListReducer,
 })
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer,initialState,composeEnhancer(applyMiddleware(thunk)));

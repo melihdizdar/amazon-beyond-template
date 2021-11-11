@@ -41,7 +41,7 @@ footer{
 }
 .footer {
 	width: 100%;
-	background: #00121b;
+  background: #1F2934;
 	display: block;
 }
 
@@ -85,8 +85,8 @@ footer{
 
 .border {
 	height: 2px;
-	width: 80px;
-	background: #ff9800;
+	width: 110px;
+	background: #E5E5E5;
 }
 
 .footerul {
@@ -104,7 +104,7 @@ footer{
 }
 
 .footerul a:hover {
-	color: #ff9800;
+	color: #999999;
 }
 
 .footerul .footerli {
@@ -143,8 +143,8 @@ footer{
 
 .footer-bottom {
 	padding: 10px;
-	background: #3d545f;
-	color: #fff;
+	background: #e5e5e5;
+	color: black;
 	font-size: 12px;
   text-align: center;
 }

@@ -9,6 +9,8 @@ import userRouter from './routers/userRouter.js';
 import orderRouter from './routers/orderRouter.js';
 import uploadRouter from './routers/uploadRouter.js';
 import homeRouter from './routers/homeRouter.js';
+import aboutPersonalRouter from './routers/aboutPersonalRouter.js';
+import aboutTextRouter from './routers/aboutTextRouter.js';
 
 dotenv.config(); //token
 
@@ -23,6 +25,8 @@ mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon-beyond',
     useNewUrlParser: true
 });
 app.use('/api/home',homeRouter);
+app.use('/api/aboutpersonal', aboutPersonalRouter);
+app.use('/api/abouttext',aboutTextRouter);
 app.use('/api/uploads', uploadRouter); //40.upload product image
 app.use('/api/users', userRouter);
 // api/users linkini userRouter'a bağladık

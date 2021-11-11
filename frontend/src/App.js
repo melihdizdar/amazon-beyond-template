@@ -37,6 +37,7 @@ import DropdownSeller from './components/NavBar/DropdownSeller';
 import { signout } from "./actions/userActions";
 import FooterProducts from "./components/FooterProducts";
 import ButtonMailto from "./components/ButtonMailto";
+import AboutScreen from "./screens/AboutScreen.jsx";
 
 
 function App(props) {
@@ -163,7 +164,7 @@ function App(props) {
             </li>
             {userInfo && userInfo.isSeller && (
               <li className='nav-item' onMouseEnter={onSellerMouseEnter} onMouseLeave={onSellerMouseLeave}>
-                  <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                  <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                   Seller<i className='fas fa-caret-down' />
                   </Link>
                   {sellerdropdown && <DropdownSeller />}
@@ -171,7 +172,7 @@ function App(props) {
             )}
             {userInfo && userInfo.isAdmin && (
               <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                  <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                  <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                   Admin Profile <i className='fas fa-caret-down' />
                   </Link>
                   {dropdown && <Dropdown />}
@@ -180,7 +181,7 @@ function App(props) {
             <Link>
               {userInfo ? (
                           <li className='nav-item' onMouseEnter={onUserMouseEnter} onMouseLeave={onUserMouseLeave} >
-                              <Link to='/services' className='nav-links' onClick={closeMobileMenu}>
+                              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                               User Profile <i className='fas fa-caret-down' />
                               </Link>
                               {userdropdown && <DropdownUser/>}
@@ -198,7 +199,6 @@ function App(props) {
             </Link>
           </ul>
         </nav>
-        <div className="grid-container">
           <main>
             <Route path="/seller/:id" component={SellerScreen}/>
             <Route path="/cart/:id?" component={CartScreen}/>
@@ -226,22 +226,23 @@ function App(props) {
             <AdminRoute path="/support" component={SupportScreen}/>
             <SellerRoute path="/productlist/seller" component={ProductListScreen}/>
             <SellerRoute path="/orderlist/seller" component={OrderListScreen}/>
+            <Route path="/about" component={AboutScreen}/>
             <Route path="/" component={HomeScreen} exact/>
           </main>
           <footer className="row center">
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
-            <div class="footer">
-              <div class="inner-footer">
-                <div class="footer-items">
+            <div className="footer">
+              <div className="inner-footer">
+                <div className="footer-items">
                   <h1 className="footerh1">Beyond</h1>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua.
                   </p>
                 </div>
-                <div class="footer-items">
+                <div className="footer-items">
                   <h2 className="footerh2">Quick Links</h2>
-                  <div class="border"></div>
+                  <div className="border"></div>
                   <ul className="footerul">
                     <Link to="/"><li className="footerli">Home</li></Link>
                     <Link to="/about"><li className="footerli">About</li></Link>
@@ -250,37 +251,36 @@ function App(props) {
                     <Link to="/"><li className="footerli">Contact Us</li></Link>
                   </ul>
                 </div>
-                <div class="footer-items">
+                <div className="footer-items">
                   <h2 className="footerh2">OTHER LINKS</h2>
-                  <div class="border"></div>
+                  <div className="border"></div>
                   <ul className="footerul">
                     <Link to="/"><li className="footerli">Privacy & Policy</li></Link>
                     <Link to="/"><li className="footerli">Terms & Conditions</li></Link>
                     <Link to="/"><li className="footerli">FAQ</li></Link>
                   </ul>
                 </div>
-                <div class="footer-items">
+                <div className="footer-items">
                   <h2 className="footerh2">Contact Us</h2>
-                  <div class="border"></div>
+                  <div className="border"></div>
                   <ul className="footerul">
                     <li className="footerli"><i class="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
                     <li className="footerli"><i class="fa fa-phone" aria-hidden="true"></i>1234567890</li>
                     <li className="footerli"><i class="fa fa-envelope" aria-hidden="true"></i><ButtonMailto label="support@beyond.com" mailto="mailto:support@beyond.com"/></li>
                   </ul>
                   <div class="social-media">
-                    <Link to="/"><i class="fa fa-facebook" aria-hidden="true"></i></Link>
-                    <Link to="/"><i class="fa fa-twitter" aria-hidden="true"></i></Link>
-                    <Link to="/"><i class="fa fa-instagram" aria-hidden="true"></i></Link>
-                    <Link to="/"><i class="fa fa-google-plus" aria-hidden="true"></i></Link>
+                    <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
+                    <Link to="/"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
+                    <Link to="/"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
+                    <Link to="/"><i className="fa fa-google-plus" aria-hidden="true"></i></Link>
                   </div>
                 </div>
               </div>
-              <div class="footer-bottom">
+              <div className="footer-bottom">
                 Copyright &copy; Beyond 2021. All rights reserved.
               </div>
             </div>
           </footer>
-      </div>
     </BrowserRouter>
   );
 }
