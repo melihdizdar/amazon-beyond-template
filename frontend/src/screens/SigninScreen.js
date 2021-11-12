@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { signin } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import '../screens/Styles/Signin/signin.css'
 
 export default function SigninScreen(props) {
 
@@ -27,33 +28,39 @@ export default function SigninScreen(props) {
         }
     } ,[props.history,redirect,userInfo]);
     return (
-        <div>
-            <form className="form" onSubmit={submitHandler}>
-                <div>
-                    <h1>Sign In</h1>
-                </div>
+        <div className="signin">
+            <div className="headerStage">
+                <h4>Sign In</h4>
+                <h1>How can I join you?</h1>
+            </div>
+            <form className="formStage" onSubmit={submitHandler}>
                 {loading && <LoadingBox/>}
                 {error && <MessageBox variant="danger">{error}</MessageBox>}
-                <div>
+                <div className="email">
                     <label htmlFor="email">Email Adress</label>
+                    <br/>
                     <input type="email" id="email" placeholder="Enter email" required
                     onChange={e => setEmail(e.target.value)}></input>
                 </div>
-                <div>
+                <br/>
+                <div className="password">
                     <label htmlFor="password">Password</label>
+                    <br/>
                     <input type="password" id="password" placeholder="Enter password" required
                     onChange={e => setPassword(e.target.value)}></input>
                 </div>
-                <div>
-                    <label/>
-                    <button className="primary" type="submit">Sign In</button>
+                <br/>
+                <div className="button">
+                    <button type="submit">Sign In</button>
                 </div>
+                <br/>
                 <div>
                     <label/>
                     <div>
                         New customer? {' '} <Link to={`/register?redirect=${redirect}`}>Create your account</Link>
                     </div>
                 </div>
+                <br/>
             </form>
         </div>
     )
