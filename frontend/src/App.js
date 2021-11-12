@@ -38,6 +38,7 @@ import { signout } from "./actions/userActions";
 import FooterProducts from "./components/FooterProducts";
 import ButtonMailto from "./components/ButtonMailto";
 import AboutScreen from "./screens/AboutScreen.jsx";
+import ContactScreen from "./screens/ContactScreen";
 
 
 function App(props) {
@@ -228,6 +229,7 @@ function App(props) {
             <SellerRoute path="/orderlist/seller" component={OrderListScreen}/>
             <Route path="/about" component={AboutScreen}/>
             <Route path="/" component={HomeScreen} exact/>
+            <Route path="/contact-us" component={ContactScreen}/>
           </main>
           <footer className="row center">
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
@@ -248,7 +250,7 @@ function App(props) {
                     <Link to="/about"><li className="footerli">About</li></Link>
                     <Link to="/"><li className="footerli">Sign In</li></Link>
                     <Route render={({history}) => <FooterProducts history={history}></FooterProducts>}></Route>
-                    <Link to="/"><li className="footerli">Contact Us</li></Link>
+                    <Link to="/contact-us"><li className="footerli">Contact Us</li></Link>
                   </ul>
                 </div>
                 <div className="footer-items">
