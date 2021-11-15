@@ -1,0 +1,122 @@
+.privacy{
+    margin: -1rem;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    flex: 100%;
+    align-self: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    .headerStage{
+        width: 100%;
+        background-color: #1F2934;
+        height: 200px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        border-top-left-radius: 20px 0px 0px 20px;
+        h4{
+            font-size: 2rem;
+            margin-bottom: -10px;
+            font-weight: 600;
+        }
+        h1{
+            font-size:3rem;
+            padding: 0;
+            font-weight: 800;
+        }
+    }
+    .contentStage{
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 100%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        .linkedHeadersStage{
+            flex: 30%;
+            display: flex;
+            justify-content: flex-start;
+            align-self: flex-start;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .linkedHeaders{
+                margin-left: 20%;
+                ul:first-child{
+                    margin-top: 10%;
+                }
+                ul{
+                    list-style-type:decimal;
+                }
+                li{
+                    background: none;
+                }
+            }
+        }
+        .text{
+            flex: 70%;
+            justify-content: center;
+            align-self: center;
+            display: flex;
+            flex-direction: column;
+            .scroll-bg{
+                background: none;
+                width: 100%;
+                .scroll-div{
+                    width: 100%;
+                    background: none;
+                    overflow: hidden;
+                    overflow-y: scroll;
+                    height: 500px;
+                    .scroll-object{
+                        color: black;
+                        font-size: 15px;
+                        p{
+                            margin-right: 15%;
+                            text-align: justify;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .privacy{
+        .contentStage{
+            .linkedHeadersStage{
+                flex-direction: row;
+                flex: 100%;
+                margin-bottom: 5%;
+                justify-content: center;
+                .linkedHeaders{
+                    margin-left: 10%;
+                }
+            }
+            .text{
+                margin-right: 5%;
+                margin-left: 5%;
+                flex: 100%;
+                flex-direction: row;
+                .scroll-bg{
+                    .scroll-div{
+                        .scroll-object{
+                            p{
+                                margin-right: 0%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

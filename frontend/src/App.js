@@ -39,6 +39,7 @@ import FooterProducts from "./components/FooterProducts";
 import ButtonMailto from "./components/ButtonMailto";
 import AboutScreen from "./screens/AboutScreen.jsx";
 import ContactScreen from "./screens/ContactScreen";
+import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen";
 
 
 function App(props) {
@@ -230,6 +231,7 @@ function App(props) {
             <Route path="/about" component={AboutScreen}/>
             <Route path="/" component={HomeScreen} exact/>
             <Route path="/contact-us" component={ContactScreen}/>
+            <Route path="/privacy" component={PrivacyPolicyScreen}/>
           </main>
           <footer className="row center">
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
@@ -257,7 +259,7 @@ function App(props) {
                   <h2 className="footerh2">OTHER LINKS</h2>
                   <div className="border"></div>
                   <ul className="footerul">
-                    <Link to="/"><li className="footerli">Privacy & Policy</li></Link>
+                    <Link to="/privacy"><li className="footerli">Privacy & Policy</li></Link>
                     <Link to="/"><li className="footerli">Terms & Conditions</li></Link>
                     <Link to="/"><li className="footerli">FAQ</li></Link>
                   </ul>

@@ -31,7 +31,7 @@ export default function SigninScreen(props) {
         <div className="signin">
             <div className="headerStage">
                 <h4>Sign In</h4>
-                <h1>How can I join you?</h1>
+                <h1>How can I login?</h1>
             </div>
             <form className="formStage" onSubmit={submitHandler}>
                 {loading && <LoadingBox/>}

@@ -1,0 +1,191 @@
+.privacy {
+  margin: -1rem;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+}
+
+.privacy .headerStage {
+  width: 100%;
+  background-color: #1F2934;
+  height: 200px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-top-left-radius: 20px 0px 0px 20px;
+}
+
+.privacy .headerStage h4 {
+  font-size: 2rem;
+  margin-bottom: -10px;
+  font-weight: 600;
+}
+
+.privacy .headerStage h1 {
+  font-size: 3rem;
+  padding: 0;
+  font-weight: 800;
+}
+
+.privacy .contentStage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.privacy .contentStage .linkedHeadersStage {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.privacy .contentStage .linkedHeadersStage .linkedHeaders {
+  margin-left: 20%;
+}
+
+.privacy .contentStage .linkedHeadersStage .linkedHeaders ul:first-child {
+  margin-top: 10%;
+}
+
+.privacy .contentStage .linkedHeadersStage .linkedHeaders ul {
+  list-style-type: decimal;
+}
+
+.privacy .contentStage .linkedHeadersStage .linkedHeaders li {
+  background: none;
+}
+
+.privacy .contentStage .text {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.privacy .contentStage .text .scroll-bg {
+  background: none;
+  width: 100%;
+}
+
+.privacy .contentStage .text .scroll-bg .scroll-div {
+  width: 100%;
+  background: none;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.privacy .contentStage .text .scroll-bg .scroll-div .scroll-object {
+  color: black;
+  font-size: 15px;
+}
+
+.privacy .contentStage .text .scroll-bg .scroll-div .scroll-object p {
+  margin-right: 15%;
+  text-align: justify;
+}
+
+@media screen and (max-width: 600px) {
+  .privacy .contentStage .linkedHeadersStage {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    margin-bottom: 5%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .privacy .contentStage .linkedHeadersStage .linkedHeaders {
+    margin-left: 10%;
+  }
+  .privacy .contentStage .text {
+    margin-right: 5%;
+    margin-left: 5%;
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .privacy .contentStage .text .scroll-bg .scroll-div .scroll-object p {
+    margin-right: 0%;
+  }
+}
+/*# sourceMappingURL=privacy.css.map */
