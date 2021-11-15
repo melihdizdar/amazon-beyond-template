@@ -11,20 +11,26 @@ export default function PrivacyPolicyScreen() {
             <div className="contentStage">
                 <div className="linkedHeadersStage">
                     <div className="linkedHeaders">
-                        <ul>
-                            <li><a href="#Consent">Consent</a></li>
-                            <li><a href="#Information we collect">Information we collect</a></li>
-                            <li><a href="#How we use your information">How we use your information</a></li>
-                            <li><a href="#Log Files">Log Files</a></li>
-                            <li><a href="#Cookies and Web Beacons">Cookies and Web Beacons</a></li>
-                            <li><a href="#Google DoubleClick DART Cookie">Google DoubleClick DART Cookie</a></li>
-                            <li><a href="#Our Advertising Partners">Our Advertising Partners</a></li>
-                            <li><a href="#Advertising Partners Privacy Policies">Advertising Partners Privacy Policies</a></li>
-                            <li><a href="#Third Party Privacy Policies">Third Party Privacy Policies</a></li>
-                            <li><a href="#CCPA Privacy Rights (Do Not Sell My Personal Information)">CCPA Privacy Rights (Do Not Sell My Personal Information)</a></li>
-                            <li><a href="#GDPR Data Protection Rights">GDPR Data Protection Rights</a></li>
-                            <li><a href="#Children's Information">Children's Information</a></li>
-                        </ul>
+                        <div className="link-scroll-bg">
+                            <div className="link-scroll-div">
+                                <div className="link-scroll-object">
+                                    <ul>
+                                        <li><a href="#Consent">Consent</a></li>
+                                        <li><a href="#Information we collect">Information we collect</a></li>
+                                        <li><a href="#How we use your information">How we use your information</a></li>
+                                        <li><a href="#Log Files">Log Files</a></li>
+                                        <li><a href="#Cookies and Web Beacons">Cookies and Web Beacons</a></li>
+                                        <li><a href="#Google DoubleClick DART Cookie">Google DoubleClick DART Cookie</a></li>
+                                        <li><a href="#Our Advertising Partners">Our Advertising Partners</a></li>
+                                        <li><a href="#Advertising Partners Privacy Policies">Advertising Partners Privacy Policies</a></li>
+                                        <li><a href="#Third Party Privacy Policies">Third Party Privacy Policies</a></li>
+                                        <li><a href="#CCPA Privacy Rights (Do Not Sell My Personal Information)">CCPA Privacy Rights (Do Not Sell My Personal Information)</a></li>
+                                        <li><a href="#GDPR Data Protection Rights">GDPR Data Protection Rights</a></li>
+                                        <li><a href="#Children's Information">Children's Information</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div className="text">

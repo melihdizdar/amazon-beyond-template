@@ -50,14 +50,20 @@
             flex-wrap: wrap;
             .linkedHeaders{
                 margin-left: 20%;
-                ul:first-child{
-                    margin-top: 10%;
-                }
-                ul{
-                    list-style-type:decimal;
-                }
-                li{
+                .link-scroll-bg{
                     background: none;
+                    width: 100%;
+                    .link-scroll-div{
+                        width: 100%;
+                        background: none;
+                        overflow: hidden;
+                        overflow-y: scroll;
+                        height: 500px;
+                        .link-scroll-object{
+                            color: black;
+                            font-size: 15px;
+                        }
+                    }
                 }
             }
         }
@@ -79,6 +85,7 @@
                     .scroll-object{
                         color: black;
                         font-size: 15px;
+                        margin-left: 5%;
                         p{
                             margin-right: 15%;
                             text-align: justify;
@@ -96,15 +103,21 @@
             .linkedHeadersStage{
                 flex-direction: row;
                 flex: 100%;
-                margin-bottom: 5%;
+                margin-bottom: 0%;
                 justify-content: center;
                 .linkedHeaders{
-                    margin-left: 10%;
+                    margin-left: 5%;
+                    .link-scroll-bg{
+                        .link-scroll-div{
+                            height: 200px;
+                        }
+                    }
                 }
             }
             .text{
+                margin-top: 5%;
                 margin-right: 5%;
-                margin-left: 5%;
+                margin-left: 0%;
                 flex: 100%;
                 flex-direction: row;
                 .scroll-bg{

@@ -250,7 +250,7 @@ function App(props) {
                   <ul className="footerul">
                     <Link to="/"><li className="footerli">Home</li></Link>
                     <Link to="/about"><li className="footerli">About</li></Link>
-                    <Link to="/"><li className="footerli">Sign In</li></Link>
+                    <Link to="/signin"><li className="footerli">Sign In</li></Link>
                     <Route render={({history}) => <FooterProducts history={history}></FooterProducts>}></Route>
                     <Link to="/contact-us"><li className="footerli">Contact Us</li></Link>
                   </ul>

@@ -103,16 +103,22 @@
   margin-left: 20%;
 }
 
-.privacy .contentStage .linkedHeadersStage .linkedHeaders ul:first-child {
-  margin-top: 10%;
-}
-
-.privacy .contentStage .linkedHeadersStage .linkedHeaders ul {
-  list-style-type: decimal;
-}
-
-.privacy .contentStage .linkedHeadersStage .linkedHeaders li {
+.privacy .contentStage .linkedHeadersStage .linkedHeaders .link-scroll-bg {
   background: none;
+  width: 100%;
+}
+
+.privacy .contentStage .linkedHeadersStage .linkedHeaders .link-scroll-bg .link-scroll-div {
+  width: 100%;
+  background: none;
+  overflow: hidden;
+  overflow-y: scroll;
+  height: 500px;
+}
+
+.privacy .contentStage .linkedHeadersStage .linkedHeaders .link-scroll-bg .link-scroll-div .link-scroll-object {
+  color: black;
+  font-size: 15px;
 }
 
 .privacy .contentStage .text {
@@ -149,6 +155,7 @@
 .privacy .contentStage .text .scroll-bg .scroll-div .scroll-object {
   color: black;
   font-size: 15px;
+  margin-left: 5%;
 }
 
 .privacy .contentStage .text .scroll-bg .scroll-div .scroll-object p {
@@ -165,17 +172,21 @@
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
             flex: 100%;
-    margin-bottom: 5%;
+    margin-bottom: 0%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
   }
   .privacy .contentStage .linkedHeadersStage .linkedHeaders {
-    margin-left: 10%;
+    margin-left: 5%;
+  }
+  .privacy .contentStage .linkedHeadersStage .linkedHeaders .link-scroll-bg .link-scroll-div {
+    height: 200px;
   }
   .privacy .contentStage .text {
+    margin-top: 5%;
     margin-right: 5%;
-    margin-left: 5%;
+    margin-left: 0%;
     -webkit-box-flex: 100%;
         -ms-flex: 100%;
             flex: 100%;
