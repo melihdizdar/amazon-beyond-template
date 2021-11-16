@@ -40,6 +40,7 @@ import ButtonMailto from "./components/ButtonMailto";
 import AboutScreen from "./screens/AboutScreen.jsx";
 import ContactScreen from "./screens/ContactScreen";
 import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen";
+import TermsConditionsScreen from "./screens/TermsConditionsScreen";
 
 
 function App(props) {
@@ -232,6 +233,7 @@ function App(props) {
             <Route path="/" component={HomeScreen} exact/>
             <Route path="/contact-us" component={ContactScreen}/>
             <Route path="/privacy" component={PrivacyPolicyScreen}/>
+            <Route path="/terms" component={TermsConditionsScreen}/>
           </main>
           <footer className="row center">
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
@@ -260,7 +262,7 @@ function App(props) {
                   <div className="border"></div>
                   <ul className="footerul">
                     <Link to="/privacy"><li className="footerli">Privacy & Policy</li></Link>
-                    <Link to="/"><li className="footerli">Terms & Conditions</li></Link>
+                    <Link to="/terms"><li className="footerli">Terms & Conditions</li></Link>
                     <Link to="/"><li className="footerli">FAQ</li></Link>
                   </ul>
                 </div>
