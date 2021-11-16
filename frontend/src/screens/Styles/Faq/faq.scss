@@ -1,0 +1,46 @@
+.faq{
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 100%;
+    margin: -1rem;
+    padding: 0;
+    .headerStage{
+        width: 100%;
+        background-color: #1F2934;
+        height: 200px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        border-top-left-radius: 20px 0px 0px 20px;
+        h4{
+            font-size: 2rem;
+            margin-bottom: -20px;
+            font-weight: 600;
+        }
+        h1{
+            font-size:3rem;
+            padding: 0;
+            font-weight: 800;
+        }
+    }
+    .content{
+        min-height: calc(100vh - 150px);
+        max-width: 500px;
+        margin: 5rem auto 0 auto;
+        padding: 0 1rem;
+        font-family: 'Roboto', sans-serif;
+        .faq-description{
+            text-align: left;
+            p{
+                line-height: 1.75rem;
+            }
+        }
+    }
+}

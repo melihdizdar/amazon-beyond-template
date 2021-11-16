@@ -41,6 +41,7 @@ import AboutScreen from "./screens/AboutScreen.jsx";
 import ContactScreen from "./screens/ContactScreen";
 import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen";
 import TermsConditionsScreen from "./screens/TermsConditionsScreen";
+import FaqScreen from "./screens/FaqScreen";
 
 
 function App(props) {
@@ -234,6 +235,7 @@ function App(props) {
             <Route path="/contact-us" component={ContactScreen}/>
             <Route path="/privacy" component={PrivacyPolicyScreen}/>
             <Route path="/terms" component={TermsConditionsScreen}/>
+            <Route path="/faq" component={FaqScreen}/>
           </main>
           <footer className="row center">
             {userInfo && !userInfo.isAdmin && <ChatBox userInfo={userInfo} />}
@@ -263,7 +265,7 @@ function App(props) {
                   <ul className="footerul">
                     <Link to="/privacy"><li className="footerli">Privacy & Policy</li></Link>
                     <Link to="/terms"><li className="footerli">Terms & Conditions</li></Link>
-                    <Link to="/"><li className="footerli">FAQ</li></Link>
+                    <Link to="/faq"><li className="footerli">FAQ</li></Link>
                   </ul>
                 </div>
                 <div className="footer-items">
