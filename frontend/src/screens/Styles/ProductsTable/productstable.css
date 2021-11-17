@@ -1,0 +1,118 @@
+.productstable {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -1rem;
+  padding: 0;
+  margin-bottom: 1%;
+}
+
+.productstable .headerStage {
+  width: 100%;
+  background-color: #1F2934;
+  height: 150px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-top-left-radius: 20px 0px 0px 20px;
+}
+
+.productstable .headerStage h1 {
+  font-size: 3rem;
+  padding: 0;
+  font-weight: 800;
+}
+
+.productstable .tablediv {
+  overflow-x: auto;
+  margin-bottom: 1%;
+  margin-top: 5%;
+}
+
+.productstable table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 1250px;
+  border: 1px solid #ddd;
+}
+
+.productstable th, .productstable td {
+  text-align: left;
+  padding: 8px;
+}
+
+.productstable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.productstable button {
+  background-color: black;
+  color: white;
+  border-radius: 0;
+}
+
+.productstable button:hover {
+  opacity: 0.95;
+}
+
+.productstable .buttonstage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin-top: 2%;
+  margin-right: 1%;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 2%;
+  }
+  .buttonstage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin-top: 3%;
+    margin-right: 1%;
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+}
+/*# sourceMappingURL=productstable.css.map */
