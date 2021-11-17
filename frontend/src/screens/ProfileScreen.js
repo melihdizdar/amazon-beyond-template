@@ -4,6 +4,7 @@ import { detailsUser, updateUserProfile } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
+import "../screens/Styles/Profile/profile.css";
 
 export default function ProfileScreen() {
   const [name, setName] = useState(''); //34.uptade user profile
@@ -49,11 +50,11 @@ export default function ProfileScreen() {
     }
   };
   return (
-    <div>
+    <div className="profile">
+      <div className="headerStage">
+        <h1>User Profile</h1>
+      </div>
       <form className="form" onSubmit={submitHandler}>
-        <div>
-          <h1>User Profile</h1>
-        </div>
         {loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : 
         (
           <>

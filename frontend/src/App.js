@@ -176,7 +176,7 @@ function App(props) {
             )}
             {userInfo && userInfo.isAdmin && (
               <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                  <Link to='/' className='nav-links' onClick={closeMobileMenu}>
+                  <Link to="/dashboard" className='nav-links' onClick={closeMobileMenu}>
                   Admin Profile <i className='fas fa-caret-down' />
                   </Link>
                   {dropdown && <Dropdown />}
