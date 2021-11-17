@@ -1,0 +1,87 @@
+.orderlist {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: -1rem;
+  padding: 0;
+  margin-bottom: 1%;
+}
+
+.orderlist .headerStage {
+  width: 100%;
+  background-color: #1F2934;
+  height: 150px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-top-left-radius: 20px 0px 0px 20px;
+}
+
+.orderlist .headerStage h1 {
+  font-size: 3rem;
+  padding: 0;
+  font-weight: 800;
+}
+
+.orderlist .tablediv {
+  overflow-x: auto;
+  margin-bottom: 1%;
+  margin-top: 5%;
+}
+
+.orderlist table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 1250px;
+  border: 1px solid #ddd;
+}
+
+.orderlist th, .orderlist td {
+  text-align: left;
+  padding: 8px;
+}
+
+.orderlist tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.orderlist button {
+  background-color: black;
+  color: white;
+  border-radius: 0;
+}
+
+.orderlist button:hover {
+  opacity: 0.95;
+}
+
+@media screen and (max-width: 600px) {
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 2%;
+  }
+}
+/*# sourceMappingURL=orderlist.css.map */

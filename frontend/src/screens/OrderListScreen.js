@@ -4,6 +4,7 @@ import { deleteOrder, listOrders } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { ORDER_DELETE_RESET } from '../constants/orderConstants';
+import "../screens/Styles/OrderList/orderlist.css";
 
 export default function OrderListScreen(props) {
     const sellerMode = props.match.path.indexOf('/seller') >= 0; //49.Implement Seller View
@@ -27,14 +28,16 @@ export default function OrderListScreen(props) {
         }
     };
     return (
-        <div>
-            <div>
-            <h1>Orders</h1>
+        <div className="orderlist">
+            <div className="headerStage">
+                <h1>Order List</h1>
+            </div>
+            <div className="tablediv">
             {loadingDelete && <LoadingBox/>}
             {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>} 
             {loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : 
             (
-                <table className="table">
+                <table>
                 <thead>
                     <tr>
                     <th>ID</th>
