@@ -47,7 +47,7 @@ export default function ProductListScreen(props) {
   return (
     <div className="productstable">
       <div className="headerStage">
-        <h1>Products</h1>
+        <h1>Product List</h1>
       </div>
       {loadingDelete && <LoadingBox></LoadingBox>}
       {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
