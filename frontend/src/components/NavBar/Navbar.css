@@ -157,8 +157,7 @@
       color: #1888ff;
       transition: 250ms;
     }
-  
-    button {
+    .navbar button {
       display: none;
     }
   }
