@@ -55,6 +55,7 @@
 .profile button {
   background-color: black;
   color: white;
+  border-radius: 0;
 }
 
 .profile button:hover {
