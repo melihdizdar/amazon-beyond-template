@@ -109,21 +109,20 @@ export default function OrderScreen(props) {
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
-                      <div className="row">
-                        <div>
+                      <div className="orderitemsrow">
+                        <div className="left">
                           <img
                             src={item.image}
                             alt={item.name}
                             className="small"
                           ></img>
                         </div>
-                        <div className="min-30">
+                        <div className="center">
                           <Link to={`/product/${item.product}`}>
                             {item.name}
                           </Link>
                         </div>
-
-                        <div>
+                        <div className="right">
                           {item.qty} x ${item.price} = ${item.qty * item.price}
                         </div>
                       </div>

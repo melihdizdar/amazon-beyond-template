@@ -100,6 +100,39 @@
   margin-bottom: 5%;
 }
 
+.order .mainContent .mainLeft .shippingCard .orderitemsrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+
+.order .mainContent .mainLeft .shippingCard .orderitemsrow .left {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.order .mainContent .mainLeft .shippingCard .orderitemsrow .center {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.order .mainContent .mainLeft .shippingCard .orderitemsrow .right {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
 .order .mainContent .mainRight {
   -webkit-box-flex: 30%;
       -ms-flex: 30%;
@@ -123,7 +156,19 @@
   color: #4f546c;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 1000px) {
+  .order .mainContent .mainLeft .shippingCard .orderitemsrow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
   .order .headerStage {
     height: 150px;
   }
@@ -145,6 +190,26 @@
   }
   .order .mainContent .mainLeft .shippingCard {
     width: 100%;
+  }
+  .order .mainContent .mainLeft .shippingCard .orderitemsrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .order .mainContent .mainLeft .shippingCard .orderitemsrow .name {
+    margin-left: 0%;
   }
   .order .mainContent .mainRight {
     -webkit-box-flex: 100%;
