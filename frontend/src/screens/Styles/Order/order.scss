@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.order{
+    margin: -1rem;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex: 100%;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    .headerStage{
+        width: 100%;
+        background-color: #1F2934;
+        height: 200px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        border-top-left-radius: 20px 0px 0px 20px;
+        h4{
+            font-size: 2rem;
+            font-weight: 600;
+        }
+        h1{
+            font-size:3rem;
+            padding: 0;
+            font-weight: 800;
+            margin-bottom: -20px;
+        }
+    }
+    .mainContent{
+        display: flex;
+        flex: 100%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        .mainLeft{
+            flex: 70%;
+            align-self: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-right: 5%;
+            margin-left: 5%;
+            .shippingCard{
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 10px 5px #e1e5ee;
+                border-radius: 0.2rem;
+                color: #4f546c;
+                margin-bottom: 5%;
+            }
+        }
+        .mainRight{
+            flex: 30%;
+            align-self: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-right: 5%;
+            .orderSummaryCard{
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 10px 5px #e1e5ee;
+                border-radius: 0.2rem;
+                color: #4f546c;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:650px){
+    .order{
+        .headerStage{
+            height: 150px;
+        }
+        button{
+            display: block;
+        }
+        .mainContent{
+            flex-direction: column;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            .mainLeft{
+                flex: 100%;
+                .shippingCard{
+                    width: 100%;
+                }
+            }
+            .mainRight{
+                flex: 100%;
+                align-self: center;
+                margin-right: 0%;
+                .orderSummaryCard{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}

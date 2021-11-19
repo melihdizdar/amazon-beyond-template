@@ -7,6 +7,7 @@ import { deliverOrder, detailsOrder, payOrder } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../constants/orderConstants';
+import "../screens/Styles/Order/order.css";
 
 export default function OrderScreen(props) {
   // 30.PayPal Button ekleme dersi ve 31.Pay Order
@@ -60,13 +61,16 @@ export default function OrderScreen(props) {
     dispatch(deliverOrder(order._id)); //44.Deliver order
   };
   return loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : (
-    <div>
-      <h1>Order {order._id}</h1>
-      <div className="row top">
-        <div className="col-2">
+    <div className="order">
+      <div className="headerStage">
+        <h1>Order</h1>
+        <h4>Order ID : "{order._id}"</h4>
+      </div>
+      <div className="mainContent">
+        <div className="mainLeft">
           <ul>
             <li>
-              <div className="card card-body">
+              <div className="shippingCard">
                 <h2>Shipping</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
@@ -85,7 +89,7 @@ export default function OrderScreen(props) {
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="shippingCard">
                 <h2>Payment</h2>
                 <p>
                   <strong>Method:</strong> {order.paymentMethod}
@@ -100,7 +104,7 @@ export default function OrderScreen(props) {
               </div>
             </li>
             <li>
-              <div className="card card-body">
+              <div className="shippingCard">
                 <h2>Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
@@ -137,8 +141,8 @@ export default function OrderScreen(props) {
             </li>
           </ul>
         </div>
-        <div className="col-1">
-          <div className="card card-body">
+        <div className="mainRight">
+          <div className="orderSummaryCard">
             <ul>
               <li>
                 <h2>Order Summary</h2>

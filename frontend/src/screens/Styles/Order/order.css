@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.order {
+  margin: -1rem;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+}
+
+.order .headerStage {
+  width: 100%;
+  background-color: #1F2934;
+  height: 200px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-top-left-radius: 20px 0px 0px 20px;
+}
+
+.order .headerStage h4 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.order .headerStage h1 {
+  font-size: 3rem;
+  padding: 0;
+  font-weight: 800;
+  margin-bottom: -20px;
+}
+
+.order .mainContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.order .mainContent .mainLeft {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.order .mainContent .mainLeft .shippingCard {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 5px #e1e5ee;
+          box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+  color: #4f546c;
+  margin-bottom: 5%;
+}
+
+.order .mainContent .mainRight {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 5%;
+}
+
+.order .mainContent .mainRight .orderSummaryCard {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 5px #e1e5ee;
+          box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+  color: #4f546c;
+}
+
+@media screen and (max-width: 650px) {
+  .order .headerStage {
+    height: 150px;
+  }
+  .order button {
+    display: block;
+  }
+  .order .mainContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  .order .mainContent .mainLeft {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+  .order .mainContent .mainLeft .shippingCard {
+    width: 100%;
+  }
+  .order .mainContent .mainRight {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-right: 0%;
+  }
+  .order .mainContent .mainRight .orderSummaryCard {
+    width: 100%;
+  }
+}
+/*# sourceMappingURL=order.css.map */
