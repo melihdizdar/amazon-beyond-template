@@ -1,0 +1,288 @@
+.product{
+    margin: -1rem;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex: 100%;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    .back{
+        display: flex;
+        width: 100%;
+        justify-content: flex-start;
+        align-self: flex-start;
+        text-indent: 20px;
+        margin-bottom: 1%;
+        margin-top: 1%;
+    }
+    .contentStage{
+        flex:100%;
+        display: flex;
+        justify-content: center;
+        align-self: center;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        .left{
+            flex:70%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .split{
+                flex: 100%;
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                .imageStage{
+                    flex: 70%;
+                    display: flex;
+                    justify-content: center;
+                    align-self: center;
+                    img{
+                        width: 400px;
+                        height: 400px;
+                    }
+                }
+                .productDescStage{
+                    flex: 30%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-self: flex-start;
+                    .productCard{
+                        width: 100%;
+                        box-shadow: 0 0 10px 5px #e1e5ee;
+                        border-radius: 0.2rem;
+                        color: #4f546c;
+                    }
+                }
+            }
+            .commentStage{
+                flex: 100%;
+                margin-top: 5%;
+                margin-bottom: 5%;
+                .rating{
+                    padding: 1rem;
+                    border-radius: 0;
+                    border: 0.1rem #a4a4a4 solid;
+                }
+                textarea{
+                    padding: 1rem;
+                    border-radius: 0;
+                    border: 0.1rem #a4a4a4 solid;
+                    resize: none;
+                }
+                textarea:hover{
+                    border: 0.1rem #404040 solid;
+                }
+                button{
+                    background-color: black;
+                    color: white;
+                }
+                button:hover{
+                    opacity: 0.95;
+                }
+            }
+        }
+        .right{
+            flex:30%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .RightContentStage{
+                flex: 100%;
+                display: flex;
+                justify-content: flex-start;
+                align-self: flex-start;
+                flex-direction: column;
+                flex-wrap: wrap;
+                margin-right: 15%;
+                margin-left: 15%;
+                .buyCard{
+                    width: 100%;
+                    box-shadow: 0 0 10px 5px #e1e5ee;
+                    border-radius: 0.2rem;
+                    color: #4f546c;
+                    button{
+                        background-color: black;
+                        color: white;
+                    }
+                    button:hover{
+                        opacity: 0.95;
+                    }
+                }
+                .reviewsStage{
+                    display: flex;
+                    justify-content: center;
+                    align-self: center;
+                    flex-direction: column;
+                    width: 100%;
+                    h2{
+                        text-align: center;
+                    }
+                    .scroll-bg{
+                        background: none;
+                        width: 100%;
+                        .scroll-div{
+                            width: 100%;
+                            background: none;
+                            overflow: hidden;
+                            overflow-y: scroll;
+                            height: 360px;
+                            .scroll-object{
+                                color: black;
+                                font-size: 15px;
+                                margin-right: 10%;
+                                margin-left: 10%;
+                                .reviewsCard{
+                                    width: 100%;
+                                    box-shadow: 0 0 10px 5px #e1e5ee;
+                                    border-radius: 0.2rem;
+                                    color: #4f546c;
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:900px){
+    .product{
+        .contentStage{
+            flex-wrap: wrap;
+            .left{
+                flex-wrap: wrap;
+                .split{
+                    flex: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .imageStage{
+                        flex: 100%;
+                        img{
+                            width: 400px;
+                            height: 400px;
+                        }
+                    }
+                    .productDescStage{
+                        flex: 100%;
+                        margin-top: 5%;
+                        margin-bottom: 5%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        text-align: center;
+                    }
+                }
+                .commentStage{
+                    flex: 100%;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:571px){
+    .product{
+        .contentStage{
+            flex-wrap: wrap;
+            .left{
+                flex-wrap: wrap;
+                .split{
+                    flex: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .imageStage{
+                        flex: 100%;
+                        img{
+                            width: 400px;
+                            height: 400px;
+                        }
+                    }
+                    .productDescStage{
+                        flex: 100%;
+                        margin-top: 5%;
+                        margin-bottom: 5%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        text-align: center;
+                    }
+                }
+                .commentStage{
+                    flex: 100%;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                    margin-left: 5%;
+                    margin-right: 5%;
+                }
+            }
+            .right{
+                .RightContentStage{
+                    .buyCard{
+                        h4{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:320px){
+    .product{
+        .contentStage{
+            flex-wrap: wrap;
+            .left{
+                flex-wrap: wrap;
+                .split{
+                    flex: 100%;
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    .imageStage{
+                        flex: 100%;
+                        img{
+                            width: 300px;
+                            height: 400px;
+                        }
+                    }
+                    .productDescStage{
+                        flex: 100%;
+                        margin-top: 5%;
+                        margin-bottom: 5%;
+                        margin-left: 5%;
+                        margin-right: 5%;
+                        text-align: center;
+                    }
+                }
+                .commentStage{
+                    flex: 100%;
+                    margin-top: 5%;
+                    margin-bottom: 5%;
+                    margin-left: 15%;
+                    margin-right: 15%;
+                }
+            }
+            .right{
+                .RightContentStage{
+                    .buyCard{
+                        h4{
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
