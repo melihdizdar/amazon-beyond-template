@@ -56,6 +56,13 @@
                         box-shadow: 0 0 10px 5px #e1e5ee;
                         border-radius: 0.2rem;
                         color: #4f546c;
+                        h1{
+                            font-weight: bold;
+                            color: black;
+                        }
+                        strong{
+                            color: black;
+                        }
                     }
                 }
             }
@@ -63,6 +70,9 @@
                 flex: 100%;
                 margin-top: 5%;
                 margin-bottom: 5%;
+                strong{
+                    color: black;
+                }
                 .rating{
                     padding: 1rem;
                     border-radius: 0;
@@ -112,6 +122,13 @@
                     button:hover{
                         opacity: 0.95;
                     }
+                    h2{
+                        font-weight: bold;
+                        color: black;
+                    }
+                    strong{
+                        color: black;
+                    }
                 }
                 .reviewsStage{
                     display: flex;
@@ -137,6 +154,12 @@
                                 margin-right: 10%;
                                 margin-left: 10%;
                                 .reviewsCard{
+                                    strong{
+                                        color: black;
+                                    }
+                                    .date{
+                                        color: black;
+                                    }
                                     width: 100%;
                                     box-shadow: 0 0 10px 5px #e1e5ee;
                                     border-radius: 0.2rem;

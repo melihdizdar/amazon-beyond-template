@@ -74,9 +74,9 @@ export default function ProductScreen(props) {
                                         {/*ürünün ratinginin ve review kısmının çekildiği satır.*/}
                                     </li>
                                     <li>
-                                        Price : ${product.price} {/*ürünün fiyatının çekildiği satır.*/}
+                                        <strong>Price : </strong>${product.price} {/*ürünün fiyatının çekildiği satır.*/}
                                     </li>
-                                    <li>Description:
+                                    <li><strong>Description:</strong>
                                         <p>{product.description}</p> {/*ürünün açıklamasının çekildiği satır.*/}
                                     </li>
                                 </ul>
@@ -90,7 +90,7 @@ export default function ProductScreen(props) {
                                 <h2>Write a customer review</h2>
                             </div>
                             <div>
-                                <label htmlFor="rating">Rating</label>
+                                <label htmlFor="rating"><strong>Rating</strong></label>
                                 <select className="rating" id="rating" value={rating} onChange={(e) => setRating(e.target.value)}>
                                     <option value="">Select...</option>
                                     <option value="1">1- Poor</option>
@@ -101,7 +101,7 @@ export default function ProductScreen(props) {
                                 </select>
                             </div>
                             <div>
-                                <label htmlFor="comment">Comment</label>
+                                <label htmlFor="comment"><strong>Comment</strong></label>
                                 <textarea id="comment" value={comment} onChange={(e) => setComment(e.target.value)}></textarea>
                             </div>
                             <div>
@@ -133,14 +133,14 @@ export default function ProductScreen(props) {
                                 </li>
                                 <li>
                                     <div className="row">
-                                        <div>Price</div>
+                                        <div><strong>Price</strong></div>
                                         <div className="price">${product.price}</div>
                                         {/*ürünün fiyatının çekildiği satır.*/}
                                     </div>
                                 </li>
                                 <li>
                                     <div className="row">
-                                        <div>Status</div>
+                                        <div><strong>Status</strong></div>
                                         <div>
                                             {product.coutInStock > 0?(<span className="success">In Stock</span>):
                                             (<span className="danger">Unavailable</span>)}
@@ -154,7 +154,7 @@ export default function ProductScreen(props) {
                                     <>
                                     <li>
                                         <div className="row">
-                                            <div>Qty</div>
+                                            <div><strong>Qty</strong></div>
                                             <div>
                                                 <select value={qty} onChange={e => setQty(e.target.value)}>
                                                     {/*coutinstock'da belirtildiği sayıya kadar 1 artırarak ulaş*/}
@@ -189,7 +189,7 @@ export default function ProductScreen(props) {
                                                 <li key={review._id}>
                                                 <strong>{review.name}</strong>
                                                 <Rating rating={review.rating} caption=" "></Rating>
-                                                <p>{review.createdAt.substring(0, 10)}</p>
+                                                <p className="date">{review.createdAt.substring(0, 10)}</p>
                                                 <p>{review.comment}</p>
                                                 </li>
                                             </div>

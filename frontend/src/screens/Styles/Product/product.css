@@ -133,12 +133,25 @@
   color: #4f546c;
 }
 
+.product .contentStage .left .split .productDescStage .productCard h1 {
+  font-weight: bold;
+  color: black;
+}
+
+.product .contentStage .left .split .productDescStage .productCard strong {
+  color: black;
+}
+
 .product .contentStage .left .commentStage {
   -webkit-box-flex: 100%;
       -ms-flex: 100%;
           flex: 100%;
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+.product .contentStage .left .commentStage strong {
+  color: black;
 }
 
 .product .contentStage .left .commentStage .rating {
@@ -221,6 +234,15 @@
   opacity: 0.95;
 }
 
+.product .contentStage .right .RightContentStage .buyCard h2 {
+  font-weight: bold;
+  color: black;
+}
+
+.product .contentStage .right .RightContentStage .buyCard strong {
+  color: black;
+}
+
 .product .contentStage .right .RightContentStage .reviewsStage {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -268,6 +290,14 @@
   border-radius: 0.2rem;
   color: #4f546c;
   text-align: center;
+}
+
+.product .contentStage .right .RightContentStage .reviewsStage .scroll-bg .scroll-div .scroll-object .reviewsCard strong {
+  color: black;
+}
+
+.product .contentStage .right .RightContentStage .reviewsStage .scroll-bg .scroll-div .scroll-object .reviewsCard .date {
+  color: black;
 }
 
 @media screen and (max-width: 900px) {
