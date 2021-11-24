@@ -1,0 +1,75 @@
+.dashboard {
+  margin: -1rem;
+  padding: 0;
+}
+
+.dashboard .headerStage {
+  width: 100%;
+  background-color: #1F2934;
+  height: 100px;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+  border-top-left-radius: 20px 0px 0px 20px;
+  margin-bottom: 2%;
+}
+
+.dashboard .headerStage h1 {
+  font-size: 3rem;
+  padding: 0;
+  font-weight: 800;
+}
+
+.dashboard h2 {
+  font-size: 1.6rem;
+  padding: 1rem 0;
+  margin-left: 1%;
+  color: #1F2934;
+  font-weight: bold;
+}
+
+.dashboard .summary > li {
+  border: 0.1rem #c0c0c0 solid;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 20rem;
+          flex: 1 1 20rem;
+}
+
+.dashboard .summary-title {
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+.dashboard .summary-body {
+  font-size: 4rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.dashboard .summary-title.color1 {
+  background-color: #f0e0e0;
+}
+
+.dashboard .summary-title.color2 {
+  background-color: #e0f0e0;
+}
+
+.dashboard .summary-title.color3 {
+  background-color: #e0e0f0;
+}
+/*# sourceMappingURL=dashboard.css.map */

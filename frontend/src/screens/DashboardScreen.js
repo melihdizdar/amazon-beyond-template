@@ -4,6 +4,7 @@ import Chart from 'react-google-charts';
 import { summaryOrder } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
+import "../screens/Styles/Dashboard/dashboard.css";
 
 export default function DashboardScreen() {
   const orderSummary = useSelector((state) => state.orderSummary); //61.Create dashboard screen
@@ -13,8 +14,8 @@ export default function DashboardScreen() {
     dispatch(summaryOrder()); //61.Create dashboard screen
   }, [dispatch]); //61.Create dashboard screen
   return (
-    <div>
-      <div className="row">
+    <div className="dashboard">
+      <div className="headerStage">
         <h1>Dashboard</h1>
       </div>
       {loading ? ( <LoadingBox /> ) : error ? ( <MessageBox variant="danger">{error}</MessageBox> ) : 

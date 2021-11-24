@@ -1,0 +1,55 @@
+.dashboard{
+    margin: -1rem;
+    padding: 0;
+    .headerStage{
+        width: 100%;
+        background-color: #1F2934;
+        height: 100px;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        font-family: 'Roboto', sans-serif;
+        border-top-left-radius: 20px 0px 0px 20px;
+        margin-bottom: 2%;
+        h1{
+            font-size:3rem;
+            padding: 0;
+            font-weight: 800;
+        }
+    }
+    h2{
+        font-size:1.6rem;
+        padding: 1rem 0;
+        margin-left: 1%;
+        color: #1F2934;
+        font-weight: bold;
+    }
+    .summary > li {
+        border: 0.1rem #c0c0c0 solid;
+        margin: 2rem;
+        border-radius: 0.5rem;
+        flex: 1 1 20rem;
+    }
+    .summary-title {
+        font-size: 2rem;
+        padding: 1rem;
+    }
+    .summary-body {
+        font-size: 4rem;
+        padding: 1rem;
+        text-align: center;
+    }
+    
+    .summary-title.color1 {
+        background-color: #f0e0e0;
+    }
+    .summary-title.color2 {
+        background-color: #e0f0e0;
+    }
+    .summary-title.color3 {
+        background-color: #e0e0f0;
+    }
+}
