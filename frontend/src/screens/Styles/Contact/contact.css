@@ -133,7 +133,7 @@
 .contact .mainContent .formStage button {
   margin-left: 2%;
   background-color: #1F2934;
-  color: #D6D6D6;
+  color: white;
   margin-top: 5%;
   margin-bottom: 5%;
   border-radius: 0;
@@ -289,13 +289,11 @@
   .contact .mainContent .formStage button {
     display: block;
     margin-left: 75%;
-    background-color: black;
-    color: white;
     margin-top: 5%;
     margin-bottom: 5%;
   }
   .contact .mainContent .formStage button:hover {
-    opacity: 0.95;
+    opacity: 0.9;
   }
   .contact .mainContent .splitContent {
     display: -webkit-box;
