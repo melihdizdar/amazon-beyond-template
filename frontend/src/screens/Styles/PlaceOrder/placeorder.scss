@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+.placeorder{
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex: 100%;
+    align-self: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    font-family: 'Roboto', sans-serif;
+    .mainContent{
+        display: flex;
+        flex: 100%;
+        margin-bottom: 5%;
+        margin-top: 5%;
+        .mainLeft{
+            flex: 70%;
+            align-self: center;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin-right: 5%;
+            margin-left: 5%;
+            color:#1F2934;
+            h2{
+                font-size: 1.7rem;
+            }
+            .shippingCard{
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 10px 5px #e1e5ee;
+                border-radius: 0.2rem;
+                color: #4f546c;
+                margin-bottom: 5%;
+            }
+            .paymentCard{
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 10px 5px #e1e5ee;
+                border-radius: 0.2rem;
+                color: #4f546c;
+                margin-bottom: 5%;
+            }
+            .orderItems{
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 10px 5px #e1e5ee;
+                border-radius: 0.2rem;
+                color: #4f546c;
+                margin-bottom: 5%;
+                .orderitemsrow{
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    flex: 100%;
+                    .left{
+                        flex: 3;
+                    }
+                    .center{
+                        flex: 3;
+                    }
+                    .right{
+                        flex: 3;
+                    }
+                }
+            }
+        }
+        .mainRight{
+            flex: 30%;
+            align-self: flex-start;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-right: 5%;
+            .orderSummaryCard{
+                width: 100%;
+                text-align: center;
+                box-shadow: 0 0 10px 5px #e1e5ee;
+                border-radius: 0.2rem;
+                color: #4f546c;
+                .line{
+                    border-bottom: 0.1rem #1F2934 solid;
+                    margin-top: 5%;
+                }
+                button{
+                    background-color: #1F2934;
+                    color: #D6D6D6;
+                    border-radius: 0;
+                }
+                button:hover{
+                    opacity: 0.9;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1000px){
+    .placeorder{
+        .mainContent{
+            .mainLeft{
+                .shippingCard{
+                    .orderitemsrow{
+                        flex-direction: column;
+                        justify-content:center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:600px){
+    .placeorder{
+        .headerStage{
+            height: 150px;
+        }
+        button{
+            display: block;
+        }
+        .mainContent{
+            flex-direction: column;
+            margin-bottom: 5%;
+            margin-top: 5%;
+            .mainLeft{
+                flex: 100%;
+                .shippingCard{
+                    width: 100%;
+                    .orderitemsrow{
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: column;
+                        justify-content:center;
+                        align-items: center;
+                        .name{
+                            margin-left: 0%;
+                        }
+                    }
+                }
+            }
+            .mainRight{
+                flex: 100%;
+                align-self: center;
+                margin-right: 0%;
+                .orderSummaryCard{
+                    min-width: 300px;
+                    max-width: 600px;
+                }
+            }
+        }
+    }
+}

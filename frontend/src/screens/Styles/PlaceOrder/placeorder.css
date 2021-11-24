@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.placeorder {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  -ms-flex-item-align: center;
+      align-self: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-family: 'Roboto', sans-serif;
+}
+
+.placeorder .mainContent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+
+.placeorder .mainContent .mainLeft {
+  -webkit-box-flex: 70%;
+      -ms-flex: 70%;
+          flex: 70%;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 5%;
+  margin-left: 5%;
+  color: #1F2934;
+}
+
+.placeorder .mainContent .mainLeft h2 {
+  font-size: 1.7rem;
+}
+
+.placeorder .mainContent .mainLeft .shippingCard {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 5px #e1e5ee;
+          box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+  color: #4f546c;
+  margin-bottom: 5%;
+}
+
+.placeorder .mainContent .mainLeft .paymentCard {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 5px #e1e5ee;
+          box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+  color: #4f546c;
+  margin-bottom: 5%;
+}
+
+.placeorder .mainContent .mainLeft .orderItems {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 5px #e1e5ee;
+          box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+  color: #4f546c;
+  margin-bottom: 5%;
+}
+
+.placeorder .mainContent .mainLeft .orderItems .orderitemsrow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+}
+
+.placeorder .mainContent .mainLeft .orderItems .orderitemsrow .left {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.placeorder .mainContent .mainLeft .orderItems .orderitemsrow .center {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.placeorder .mainContent .mainLeft .orderItems .orderitemsrow .right {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+}
+
+.placeorder .mainContent .mainRight {
+  -webkit-box-flex: 30%;
+      -ms-flex: 30%;
+          flex: 30%;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: 5%;
+}
+
+.placeorder .mainContent .mainRight .orderSummaryCard {
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 5px #e1e5ee;
+          box-shadow: 0 0 10px 5px #e1e5ee;
+  border-radius: 0.2rem;
+  color: #4f546c;
+}
+
+.placeorder .mainContent .mainRight .orderSummaryCard .line {
+  border-bottom: 0.1rem #1F2934 solid;
+  margin-top: 5%;
+}
+
+.placeorder .mainContent .mainRight .orderSummaryCard button {
+  background-color: #1F2934;
+  color: #D6D6D6;
+  border-radius: 0;
+}
+
+.placeorder .mainContent .mainRight .orderSummaryCard button:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 1000px) {
+  .placeorder .mainContent .mainLeft .shippingCard .orderitemsrow {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .placeorder .headerStage {
+    height: 150px;
+  }
+  .placeorder button {
+    display: block;
+  }
+  .placeorder .mainContent {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 5%;
+    margin-top: 5%;
+  }
+  .placeorder .mainContent .mainLeft {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+  .placeorder .mainContent .mainLeft .shippingCard {
+    width: 100%;
+  }
+  .placeorder .mainContent .mainLeft .shippingCard .orderitemsrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .placeorder .mainContent .mainLeft .shippingCard .orderitemsrow .name {
+    margin-left: 0%;
+  }
+  .placeorder .mainContent .mainRight {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin-right: 0%;
+  }
+  .placeorder .mainContent .mainRight .orderSummaryCard {
+    min-width: 300px;
+    max-width: 600px;
+  }
+}
+/*# sourceMappingURL=placeorder.css.map */
