@@ -66,13 +66,13 @@
 }
 
 .userlist button {
-  background-color: black;
+  background-color: #1F2934;
   color: white;
   border-radius: 0;
 }
 
 .userlist button:hover {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 @media screen and (max-width: 600px) {

@@ -66,13 +66,13 @@
 }
 
 .productstable button {
-  background-color: black;
+  background-color: #1F2934;
   color: white;
   border-radius: 0;
 }
 
 .productstable button:hover {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 .productstable .buttonstage {

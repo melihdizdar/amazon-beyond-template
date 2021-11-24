@@ -74,6 +74,10 @@
   margin-bottom: 5%;
 }
 
+.signin .formStage input {
+  border-radius: 0;
+}
+
 .signin .formStage .email {
   width: 100%;
   display: -webkit-box;
@@ -120,7 +124,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: black;
+  background-color: #1F2934;
   color: white;
   border-radius: 0;
 }

@@ -39,6 +39,9 @@
         flex-direction: column;
         margin-top: 5%;
         margin-bottom: 5%;
+        input{
+            border-radius: 0;
+        }
         .email{
             width: 100%;
             display: flex;
@@ -58,7 +61,7 @@
             button{
                 display: flex;
                 flex-direction: column;
-                background-color: black;
+                background-color: #1F2934;
                 color: white;
                 border-radius: 0;
             }

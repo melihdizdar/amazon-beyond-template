@@ -127,18 +127,20 @@
   margin: 5px;
   margin-left: 2%;
   resize: none;
+  border-radius: 0;
 }
 
 .contact .mainContent .formStage button {
   margin-left: 2%;
-  background-color: black;
-  color: white;
+  background-color: #1F2934;
+  color: #D6D6D6;
   margin-top: 5%;
   margin-bottom: 5%;
+  border-radius: 0;
 }
 
 .contact .mainContent .formStage button:hover {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 .contact .mainContent .splitContent {

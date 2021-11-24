@@ -90,6 +90,10 @@
   margin-bottom: 5%;
 }
 
+.register .mainContent .formStage input {
+  border-radius: 0;
+}
+
 .register .mainContent .formStage .name {
   width: 100%;
   display: -webkit-box;
@@ -159,7 +163,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  background-color: black;
+  background-color: #1F2934;
   color: white;
   border-radius: 0;
 }

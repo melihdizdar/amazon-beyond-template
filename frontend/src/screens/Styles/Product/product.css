@@ -172,8 +172,8 @@
 }
 
 .product .contentStage .left .commentStage button {
-  background-color: black;
-  color: white;
+  background-color: #1F2934;
+  color: #D6D6D6;
 }
 
 .product .contentStage .left .commentStage button:hover {
@@ -226,12 +226,12 @@
 }
 
 .product .contentStage .right .RightContentStage .buyCard button {
-  background-color: black;
+  background-color: #1F2934;
   color: white;
 }
 
 .product .contentStage .right .RightContentStage .buyCard button:hover {
-  opacity: 0.95;
+  opacity: 0.9;
 }
 
 .product .contentStage .right .RightContentStage .buyCard h2 {
