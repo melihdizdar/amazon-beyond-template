@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { saveShippingAddress } from '../actions/cardActions';
 import CheckoutSteps from '../components/CheckoutSteps'
+import "../screens/Styles/Shipping/shipping.css";
 
 export default function ShippingAddressScreen(props) {
     //logout olunduğunda shipping sayfasının gelmeyip signin sayfasının gelmesi için yazılan kodları
@@ -50,7 +51,7 @@ export default function ShippingAddressScreen(props) {
         //props.history.push('/payment');
     }
     return (
-        <div>
+        <div className="shipping">
             <CheckoutSteps step1 step2></CheckoutSteps>
             <form className="form" onSubmit={submitHandler}>
                 <div>
