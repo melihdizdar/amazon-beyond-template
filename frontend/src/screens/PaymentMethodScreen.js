@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { savePaymentMethod } from '../actions/cardActions';
 import CheckoutSteps from '../components/CheckoutSteps';
+import "../screens/Styles/Payment/payment.css"
 
 export default function PaymentMethodScreen(props) {
     /*payment kısmında logout olduğun zaman shipping'e gider ve 
@@ -19,17 +20,24 @@ export default function PaymentMethodScreen(props) {
         props.history.push('/placeorder');
     }
     return (
-        <div>
+        <div className="payment">
             <CheckoutSteps step1 step2 step3></CheckoutSteps>
+            <div className="headerStage">
+                <h1>Payment Method</h1>
+            </div>
             <form className="form" onSubmit={submitHandler}>
-                <div>
-                    <h1>Payment Method</h1>
-                </div>
                 <div>
                     <div>
                         <input type="radio" id="paypal" value="PayPal" name="paymentMethod"
                         required checked onChange={(e) => setPaymentMethod(e.target.value)}></input>
                         <label htmlFor="paypal">PayPal</label>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <input type="radio" id="iyzico" value="Iyzico" name="paymentMethod"
+                        required checked onChange={(e) => setPaymentMethod(e.target.value)}></input>
+                        <label htmlFor="iyzico">Iyzico</label>
                     </div>
                 </div>
                 <div>
