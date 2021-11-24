@@ -6,6 +6,7 @@ import { detailsUser, updateUser } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { USER_UPDATE_RESET } from '../constants/userConstants';
+import "../screens/Styles/EditUser/edituser.css"
 
 export default function UserEditScreen(props) {
   const userId = props.match.params.id;
@@ -42,10 +43,13 @@ export default function UserEditScreen(props) {
     dispatch(updateUser({ _id: userId, name, email, isSeller, isAdmin }));
   };
   return (
-    <div>
+    <div className="edituser">
+      <div className="headerStage">
+        <h4>Edit User</h4>
+        <h1>"{name}"</h1>
+      </div>
       <form className="form" onSubmit={submitHandler}>
         <div>
-          <h1>Edit User {name}</h1>
           {loadingUpdate && <LoadingBox/>}
           {errorUpdate && (<MessageBox variant="danger">{errorUpdate}</MessageBox>)}
         </div>
