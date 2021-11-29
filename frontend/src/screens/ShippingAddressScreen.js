@@ -36,20 +36,11 @@ export default function ShippingAddressScreen(props) {
           setLng(addressMap.lng); //57.Choose address on google map
         }
         let moveOn = true; //57.Choose address on google map
-        if (!newLat || !newLng) { //57.Choose address on google map
-            moveOn = window.confirm('You did not set your location on map. Continue?'); //57.Choose address on google map
-        }
         if (moveOn) { //57.Choose address on google map
           dispatch(saveShippingAddress({ fullName, address, city, postalCode, country, lat: newLat, lng: newLng,})); //57.Choose address on google map
           props.history.push('/payment'); //57.Choose address on google map
         }
-      };
-      const chooseOnMap = () => {
-        dispatch(saveShippingAddress({fullName,address,city,postalCode,country,lat,lng})); //57.Choose address on google map
-        props.history.push('/map'); //57.Choose address on google map
-        //dispatch(saveShippingAddress({fullName,address,city,postalCode,country}));
-        //props.history.push('/payment');
-    }
+    };
     return (
         <div className="shipping">
             <CheckoutSteps step1 step2></CheckoutSteps>
@@ -81,10 +72,6 @@ export default function ShippingAddressScreen(props) {
                     <label htmlFor="country">Country</label>
                     <input type="text" id="country" placeholder="Enter country" value={country}
                     onChange={(e) => setCountry(e.target.value)} required></input>
-                </div>
-                <div>
-                    <label htmlFor="chooseOnMap">Location</label>
-                    <button type="button" onClick={chooseOnMap}>Choose On Map</button>
                 </div>
                 <div>
                     <label/>
