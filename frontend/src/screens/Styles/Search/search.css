@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+.search button {
+  border-radius: 0;
+  margin-right: 0.5rem;
+  background-color: #1F2934;
+  color: white;
+}
+
+.search button:hover {
+  opacity: 0.9;
+}
+
+.search input {
+  border-radius: 0;
+  margin-left: 0;
+}
+
+select {
+  border-radius: 0;
+}
+
+.infoStage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-left: 5%;
+}
+
+.contentStage {
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contentStage .departmentContent {
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: left;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+.contentStage .departmentContent a {
+  color: black;
+}
+
+.contentStage .departmentContent a:hover {
+  opacity: 0.9;
+}
+
+.contentStage .departmentContent h3 {
+  color: #1F2934;
+}
+
+.contentStage .productContent {
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
+  margin-bottom: 5%;
+}
+
+.contentStage .productContent .ProductsListStage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 2%;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard {
+  width: 20%;
+  height: auto;
+  margin-bottom: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard .imageStage {
+  width: 250px;
+  height: 350px;
+  position: relative;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard .imageStage img {
+  width: 100%;
+  height: 100%;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard .imageStage img:hover {
+  opacity: 0.8;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard .imageStage .topleft {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.5rem;
+  background-color: #1F2934;
+  font-family: 'Roboto', sans-serif;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard .imageStage .topleft a {
+  color: white;
+  margin: 10px;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard .imageStage .topleft a:hover {
+  opacity: 0.8;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard h1 {
+  font-size: 1.6rem;
+  color: #1F2934;
+}
+
+.contentStage .productContent .ProductsListStage .ProductsListCard h1:hover {
+  opacity: 0.9;
+  color: #1F2934;
+}
+
+.contentStage .productContent .paginationStage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.contentStage .productContent .paginationStage .pagination a {
+  padding: 1rem;
+  margin: 0.5rem;
+  border: 0.1rem #a4a4a4 solid;
+  font-size: 1.6rem;
+  font-family: Helvetica, Arial, sans-serif;
+  color: white;
+  background: #1F2934;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.contentStage .productContent .paginationStage .pagination a.active {
+  font-weight: bold;
+}
+
+.contentStage .productContent .paginationStage .pagination a:hover {
+  opacity: 0.9;
+}
+
+@media screen and (max-width: 992px) {
+  .contentStage .productContent .ProductsListStage .ProductsListCard {
+    width: 35%;
+    margin: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .contentStage .productContent .ProductsListStage .ProductsListCard {
+    margin: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .infoStage {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .infoStage .results {
+    margin-top: 5%;
+  }
+  .contentStage {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .contentStage .departmentContent {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 5%;
+    margin-right: 0%;
+    margin-bottom: 5%;
+  }
+  .contentStage .productContent {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+  .contentStage .productContent .ProductsListStage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 2%;
+  }
+  .contentStage .productContent .ProductsListStage .ProductsListCard {
+    width: 40%;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .infoStage {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .infoStage .results {
+    margin-top: 5%;
+  }
+  .contentStage {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .contentStage .departmentContent {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-left: 5%;
+    margin-right: 0%;
+    margin-bottom: 5%;
+  }
+  .contentStage .productContent {
+    -webkit-box-flex: 100%;
+        -ms-flex: 100%;
+            flex: 100%;
+  }
+  .contentStage .productContent .ProductsListStage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin-bottom: 2%;
+  }
+  .contentStage .productContent .ProductsListStage .ProductsListCard {
+    width: 100%;
+    margin: 20px;
+  }
+}
+/*# sourceMappingURL=search.css.map */

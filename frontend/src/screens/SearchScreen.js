@@ -8,6 +8,7 @@ import Product from '../components/Product';
 import Rating from '../components/Rating';
 import { prices, ratings } from '../utils';
 import SearchBox from '../components/SearchBox';
+import "../screens/Styles/Search/search.css";
 
 export default function SearchScreen(props) {
   //const { name = 'all' } = useParams(); //53.Create Search Box and Search Screen,
@@ -43,28 +44,30 @@ export default function SearchScreen(props) {
   }
   return (
     <div>
-      <div className="row">
-        {loading ? (<LoadingBox></LoadingBox>) 
-        : error ? ( <MessageBox variant="danger">{error}</MessageBox>) : 
-        (
-          <div>{products.length} Results</div>
-        )}
-          <div>
-            Sort by{' '}
-            <select value={order} onChange={(e) => { props.history.push(getFilterUrl({ order: e.target.value }));}}>
-              <option value="newest">Newest Arrivals</option>
-              <option value="lowest">Price: Low to High</option>
-              <option value="highest">Price: High to Low</option>
-              <option value="toprated">Avg. Customer Reviews</option>
-            </select>
-            <div>
-              <br/>
-              <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
-            </div>
-          </div>
+      <div className="infoStage">
+          {loading ? (<LoadingBox></LoadingBox>) 
+          : error ? ( <MessageBox variant="danger">{error}</MessageBox>) : 
+          (
+            <>
+              <div className="results">{products.length} Results</div>
+              <div>
+                  Sort by{' '}
+                  <select value={order} onChange={(e) => { props.history.push(getFilterUrl({ order: e.target.value }));}}>
+                    <option value="newest">Newest Arrivals</option>
+                    <option value="lowest">Price: Low to High</option>
+                    <option value="highest">Price: High to Low</option>
+                    <option value="toprated">Avg. Customer Reviews</option>
+                  </select>
+                  <div>
+                    <br/>
+                    <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
+                  </div>
+              </div>
+            </>
+          )}
       </div>
-      <div className="row top">
-        <div className="col-1">
+      <div className="contentStage">
+        <div className="departmentContent">
           <h3>Department</h3>
           <div>
             {loadingCategories ? (<LoadingBox></LoadingBox>) : errorCategories ? ( <MessageBox variant="danger">{errorCategories}</MessageBox>) : 
@@ -105,7 +108,7 @@ export default function SearchScreen(props) {
             </ul>
           </div>
         </div>
-        <div className="col-3">
+        <div className="productContent">
           {loading ? (
             <LoadingBox></LoadingBox>) : error ? (  <MessageBox variant="danger">{error}</MessageBox>) : 
             (
@@ -113,15 +116,17 @@ export default function SearchScreen(props) {
                     {products.length === 0 && (
                         <MessageBox>No Product Found</MessageBox>
                     )}
-                    <div className="row center">
+                    <div className="ProductsListStage">
                         {products.map((product) => (
                         <Product key={product._id} product={product}></Product>
                         ))}
                     </div>
-                    <div className="row center pagination"> {/*59.Implement Pagination*/}
-                      {[...Array(pages).keys()].map((x) => (
-                        <Link className={x + 1 === page ? 'active' : ''} key={x + 1} to={getFilterUrl({ page: x + 1 })}>{x + 1}</Link>
-                      ))}
+                    <div className="paginationStage"> {/*59.Implement Pagination*/}
+                          <div className="pagination">
+                            {[...Array(pages).keys()].map((x) => (
+                            <Link className={x + 1 === page ? 'active' : ''} key={x + 1} to={getFilterUrl({ page: x + 1 })}>{x + 1}</Link>
+                            ))}
+                          </div>
                     </div>
                 </>
             )}

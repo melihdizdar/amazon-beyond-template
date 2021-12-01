@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import "../screens/Styles/Search/search.css";
 
 export default function SearchBox(props) {
     const [name, setName] = useState(''); //53.Create Search Box and Search Screen
