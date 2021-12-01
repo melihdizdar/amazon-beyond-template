@@ -7,9 +7,9 @@ export default function PListButton(props) {
         props.history.push(`/search/name/${name}`); //53.Create Search Box and Search Screen
     }
     return (
-        <form className="search">
-            <div className="row">
-                <button className="primary" type="submit" onClick={submitHandler}>Show All</button>
+        <form>
+            <div>
+                <button className="showall" type="submit" onClick={submitHandler}>Show All</button>
             </div>
         </form>
     )

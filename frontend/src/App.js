@@ -26,7 +26,6 @@ import { useEffect, useState } from "react";
 import { listProductCategories } from "./actions/productActions";
 import LoadingBox from "./components/LoadingBox";
 import MessageBox from "./components/MessageBox";
-import MapScreen from "./screens/MapScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
@@ -220,7 +219,6 @@ function App(props) {
             <Route path="/search/category/:category/name/:name" component={SearchScreen} exact/>
             <Route path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber" component={SearchScreen} exact/>
             <PrivateRoute path="/profile" component={ProfileScreen}/>
-            <PrivateRoute path="/map" component={MapScreen}/>
             <AdminRoute path="/productlist" component={ProductListScreen} exact/>
             <AdminRoute path="/productlist/pageNumber/:pageNumber" component={ProductListScreen} exact/>
             <AdminRoute path="/orderlist" component={OrderListScreen} exact/>
