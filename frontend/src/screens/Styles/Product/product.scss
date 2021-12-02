@@ -51,6 +51,7 @@
                     flex-direction: column;
                     justify-content: center;
                     align-self: flex-start;
+                    text-align: center;
                     .productCard{
                         width: 100%;
                         box-shadow: 0 0 10px 5px #e1e5ee;
@@ -58,10 +59,10 @@
                         color: #4f546c;
                         h1{
                             font-weight: bold;
-                            color: black;
+                            color: #1F2934;
                         }
                         strong{
-                            color: black;
+                            color: #1F2934;
                         }
                     }
                 }
@@ -70,8 +71,11 @@
                 flex: 100%;
                 margin-top: 5%;
                 margin-bottom: 5%;
+                h2{
+                    color: #1F2934;
+                }
                 strong{
-                    color: black;
+                    color: #1F2934;
                 }
                 .rating{
                     padding: 1rem;
@@ -122,12 +126,30 @@
                     button:hover{
                         opacity: 0.9;
                     }
-                    h2{
+                    a{
+                        text-align: center;
                         font-weight: bold;
-                        color: black;
+                        color: #1F2934;
+                        font-size: 2rem;
+                    }
+                    a:hover{
+                        opacity: 0.9;
+                    }
+                    h4{
+                        text-align: center;
+                    }
+                    h3{
+                        text-align: center;
+                        font-weight: 400;
+                        font-size: 1.5rem;
+                    }
+                    h2{
+                        text-align: center;
+                        font-weight: bold;
+                        color: #1F2934;
                     }
                     strong{
-                        color: black;
+                        color: #1F2934;
                     }
                 }
                 .reviewsStage{
@@ -149,16 +171,16 @@
                             overflow-y: scroll;
                             height: 360px;
                             .scroll-object{
-                                color: black;
+                                color: #1F2934;
                                 font-size: 15px;
                                 margin-right: 10%;
                                 margin-left: 10%;
                                 .reviewsCard{
                                     strong{
-                                        color: black;
+                                        color: #1F2934;
                                     }
                                     .date{
-                                        color: black;
+                                        color: #1F2934;
                                     }
                                     width: 100%;
                                     box-shadow: 0 0 10px 5px #e1e5ee;

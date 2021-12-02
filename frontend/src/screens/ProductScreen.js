@@ -129,7 +129,7 @@ export default function ProductScreen(props) {
                                         {product.seller.seller.name}
                                     </Link>
                                     </h2>
-                                    <Rating rating={product.seller.seller.rating} numReviews={product.seller.seller.numReviews} ></Rating>
+                                    <h3><Rating rating={product.seller.seller.rating} numReviews={product.seller.seller.numReviews} ></Rating></h3>
                                 </li>
                                 <li>
                                     <div className="row">

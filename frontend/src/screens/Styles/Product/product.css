@@ -123,6 +123,7 @@
           justify-content: center;
   -ms-flex-item-align: start;
       align-self: flex-start;
+  text-align: center;
 }
 
 .product .contentStage .left .split .productDescStage .productCard {
@@ -135,11 +136,11 @@
 
 .product .contentStage .left .split .productDescStage .productCard h1 {
   font-weight: bold;
-  color: black;
+  color: #1F2934;
 }
 
 .product .contentStage .left .split .productDescStage .productCard strong {
-  color: black;
+  color: #1F2934;
 }
 
 .product .contentStage .left .commentStage {
@@ -150,8 +151,12 @@
   margin-bottom: 5%;
 }
 
+.product .contentStage .left .commentStage h2 {
+  color: #1F2934;
+}
+
 .product .contentStage .left .commentStage strong {
-  color: black;
+  color: #1F2934;
 }
 
 .product .contentStage .left .commentStage .rating {
@@ -234,13 +239,35 @@
   opacity: 0.9;
 }
 
-.product .contentStage .right .RightContentStage .buyCard h2 {
+.product .contentStage .right .RightContentStage .buyCard a {
+  text-align: center;
   font-weight: bold;
-  color: black;
+  color: #1F2934;
+  font-size: 2rem;
+}
+
+.product .contentStage .right .RightContentStage .buyCard a:hover {
+  opacity: 0.9;
+}
+
+.product .contentStage .right .RightContentStage .buyCard h4 {
+  text-align: center;
+}
+
+.product .contentStage .right .RightContentStage .buyCard h3 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.product .contentStage .right .RightContentStage .buyCard h2 {
+  text-align: center;
+  font-weight: bold;
+  color: #1F2934;
 }
 
 .product .contentStage .right .RightContentStage .buyCard strong {
-  color: black;
+  color: #1F2934;
 }
 
 .product .contentStage .right .RightContentStage .reviewsStage {
@@ -277,7 +304,7 @@
 }
 
 .product .contentStage .right .RightContentStage .reviewsStage .scroll-bg .scroll-div .scroll-object {
-  color: black;
+  color: #1F2934;
   font-size: 15px;
   margin-right: 10%;
   margin-left: 10%;
@@ -293,11 +320,11 @@
 }
 
 .product .contentStage .right .RightContentStage .reviewsStage .scroll-bg .scroll-div .scroll-object .reviewsCard strong {
-  color: black;
+  color: #1F2934;
 }
 
 .product .contentStage .right .RightContentStage .reviewsStage .scroll-bg .scroll-div .scroll-object .reviewsCard .date {
-  color: black;
+  color: #1F2934;
 }
 
 @media screen and (max-width: 900px) {
