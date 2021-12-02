@@ -64,14 +64,14 @@ export default function ChatBox(props) {
   return (
     <div className="chatbox">
       {!isOpen ? (
-        <button type="button" onClick={supportHandler}>
+        <button type="button" onClick={supportHandler} className="messageButton">
           <i className="fas fa-comments" />
         </button>
       ) : (
-        <div className="card card-body">
-          <div className="row">
+        <div className="cbCard">
+          <div className="headerClose">
             <strong>Support </strong>
-            <button type="button" onClick={closeHandler}>
+            <button type="button" onClick={closeHandler} className="closeButton">
               <i className="fas fa-times" />
             </button>
           </div>
@@ -83,7 +83,7 @@ export default function ChatBox(props) {
             ))}
           </ul>
           <div>
-            <form onSubmit={submitHandler} className="row">
+            <form onSubmit={submitHandler} className="inputButton">
               <input value={messageBody} onChange={(e) => setMessageBody(e.target.value)} type="text" placeholder="type message"/>
               <button type="submit">Send</button>
             </form>

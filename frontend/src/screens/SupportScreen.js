@@ -129,7 +129,7 @@ export default function SupportScreen() {
                     <MessageBox>Select a user to start chat</MessageBox>) : 
                     (
                         <div>
-                            <div className="row">
+                            <div className="supportchatHeader">
                                 <strong>Chat with {selectedUser.name}</strong>
                             </div>
                             <ul ref={uiMessagesRef}>
@@ -143,8 +143,8 @@ export default function SupportScreen() {
                             <div>
                                 <form onSubmit={submitHandler} className="row">
                                     <input value={messageBody} onChange={(e) => setMessageBody(e.target.value)} type="text" placeholder="type message"/>
-                                </form>
-                                <button type="submit">Send</button>
+                                    <button type="submit">Send</button>
+                                </form>     
                             </div>
                         </div>
                     )

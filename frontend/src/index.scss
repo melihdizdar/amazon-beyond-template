@@ -143,7 +143,7 @@ footer{
 }
 
 .footer-bottom {
-	padding: 10px;
+	padding: 12.5px;
 	background: #e5e5e5;
 	color: black;
 	font-size: 12px;
@@ -475,23 +475,80 @@ img.large{
 .chatbox {
   color: #000000;
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: 0;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  .cbCard{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #D6D6D6;
+    width: 100%;
+    height: 250px;
+    box-shadow: 0 0 0px 0px #D6D6D6;
+    border-radius: 15px 15px 0 0;
+    .headerClose{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1%;
+      margin-left: 2%;
+    }
+    .inputButton{
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: nowrap;
+      margin: 2%;
+    }
+  }
+  ul {
+    overflow: scroll;
+    height: 20rem;
+    margin: 3%;
+  }
+  li {
+    margin-bottom: 1rem;
+    color: #141414;
+    strong{
+      color: #0f0f0f;
+    }
+  }
+  input {
+    width: calc(100% - 9rem);
+    border-radius: 0;
+  }
+  .messageButton{
+    color:#051b33;
+    background: none;
+    border: none;
+  }
+  .closeButton{
+    background: none;
+    border: none;
+    color: #1F2934;
+    font-size: 2rem;
+  }
+  button{
+    background-color: #1F2934;
+    color: white;
+    border-radius: 0;
+    border: none;
+  }
+  button:hover{
+    opacity: 0.9;
+  }
 }
-.chatbox ul {
-  overflow: scroll;
-  max-height: 20rem;
+.supportchatHeader{
+  margin-top: 1%;
+  margin-bottom: 2%;
+  color: #1F2934;
+  font-size: 1.8rem;
 }
-.chatbox li {
-  margin-bottom: 1rem;
-}
-.chatbox input {
-  width: calc(100% - 9rem);
-}
-
 .support-users {
   background: #f0f0f0;
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 .support-users li {
   background-color: #f8f8f8;
@@ -503,31 +560,54 @@ img.large{
 }
 .support-users li {
   margin: 0;
-  background-color: #f0f0f0;
-  border-bottom: 0.1rem #c0c0c0 solid;
+  background-color: white;
+  border-bottom: 0.1rem #1F2934 solid;
+  button{
+    color: #1F2934;
+  }
 }
 
 .support-users li:hover {
-  background-color: #f0f0f0;
+  background-color: #1F2934;
+  button{
+    color: white;
+  }
 }
 .support-users li.selected {
-  background-color: #c0c0c0;
+  background-color: #1F2934;
+  button{
+    color: white;
+  }
 }
 .support-messages {
   padding: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 .support-messages input {
   width: calc(100% - 9rem);
+  border-radius: 0;
+}
+.support-messages button {
+  border-radius: 0;
+  background-color: #1F2934;
+  color: white;
+}
+.support-messages button:hover {
+  opacity: 0.9;
 }
 .support-messages ul {
   height: calc(100vh - 18rem);
   max-height: calc(100vh - 18rem);
   overflow: scroll;
+  margin-bottom: 1%;
 }
 .support-messages li {
   margin-bottom: 1rem;
+  color: #141414;
+  strong{
+    color: #1F2934;
+  }
 }
-
 .support-users span {
   width: 2rem;
   height: 2rem;

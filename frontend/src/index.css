@@ -25,9 +25,7 @@ body {
 .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'header'
- 'main'
- 'footer';
+      grid-template-areas: 'header' 'main' 'footer';
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   -ms-grid-rows: 5rem 1fr 5rem;
@@ -38,17 +36,23 @@ body {
 }
 
 header {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
   grid-area: header;
   background-color: #203040;
 }
 
 main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
   grid-area: main;
   padding: 1rem;
 }
 
 /*Footer Styles*/
 footer {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
   grid-area: footer;
 }
 
@@ -164,7 +168,7 @@ footer {
 }
 
 .footer-bottom {
-  padding: 10px;
+  padding: 12.5px;
   background: #e5e5e5;
   color: black;
   font-size: 12px;
@@ -600,26 +604,112 @@ img.large {
 .chatbox {
   color: #000000;
   position: fixed;
-  right: 1rem;
-  bottom: 1rem;
+  right: 0;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.chatbox .cbCard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  background-color: #D6D6D6;
+  width: 100%;
+  height: 250px;
+  -webkit-box-shadow: 0 0 0px 0px #D6D6D6;
+          box-shadow: 0 0 0px 0px #D6D6D6;
+  border-radius: 15px 15px 0 0;
+}
+
+.chatbox .cbCard .headerClose {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 1%;
+  margin-left: 2%;
+}
+
+.chatbox .cbCard .inputButton {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  margin: 2%;
 }
 
 .chatbox ul {
   overflow: scroll;
-  max-height: 20rem;
+  height: 20rem;
+  margin: 3%;
 }
 
 .chatbox li {
   margin-bottom: 1rem;
+  color: #141414;
+}
+
+.chatbox li strong {
+  color: #0f0f0f;
 }
 
 .chatbox input {
   width: calc(100% - 9rem);
+  border-radius: 0;
+}
+
+.chatbox .messageButton {
+  color: #051b33;
+  background: none;
+  border: none;
+}
+
+.chatbox .closeButton {
+  background: none;
+  border: none;
+  color: #1F2934;
+  font-size: 2rem;
+}
+
+.chatbox button {
+  background-color: #1F2934;
+  color: white;
+  border-radius: 0;
+  border: none;
+}
+
+.chatbox button:hover {
+  opacity: 0.9;
+}
+
+.supportchatHeader {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  color: #1F2934;
+  font-size: 1.8rem;
 }
 
 .support-users {
   background: #f0f0f0;
   height: 100%;
+  font-family: 'Roboto', sans-serif;
 }
 
 .support-users li {
@@ -634,34 +724,64 @@ img.large {
 
 .support-users li {
   margin: 0;
-  background-color: #f0f0f0;
-  border-bottom: 0.1rem #c0c0c0 solid;
+  background-color: white;
+  border-bottom: 0.1rem #1F2934 solid;
+}
+
+.support-users li button {
+  color: #1F2934;
 }
 
 .support-users li:hover {
-  background-color: #f0f0f0;
+  background-color: #1F2934;
+}
+
+.support-users li:hover button {
+  color: white;
 }
 
 .support-users li.selected {
-  background-color: #c0c0c0;
+  background-color: #1F2934;
+}
+
+.support-users li.selected button {
+  color: white;
 }
 
 .support-messages {
   padding: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 .support-messages input {
   width: calc(100% - 9rem);
+  border-radius: 0;
+}
+
+.support-messages button {
+  border-radius: 0;
+  background-color: #1F2934;
+  color: white;
+}
+
+.support-messages button:hover {
+  opacity: 0.9;
 }
 
 .support-messages ul {
   height: calc(100vh - 18rem);
   max-height: calc(100vh - 18rem);
   overflow: scroll;
+  margin-bottom: 1%;
 }
 
 .support-messages li {
   margin-bottom: 1rem;
+  color: #141414;
+}
+
+.support-messages li strong {
+  color: #1F2934;
 }
 
 .support-users span {
