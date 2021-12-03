@@ -1,27 +1,66 @@
-import React from 'react'
+import React from 'react';
 
 export default function Rating(props) {
-    //const{rating, numReviews} = props;
-    const{rating, numReviews, caption } = props; //55.Sort and filter product
-    return (
-        <div className="rating">
-            {/*girilen rating verilerine göre fa-starların nasıl gözükeceğinin belirlendiği yer*/}
-            <span>
-                <i className={rating >=1?'fa fa-star': rating >=0.5?'fa fa-star-half':'fa fa-star-half-o'}></i>
-            </span>
-            <span>
-                <i className={rating >=2?'fa fa-star': rating >=1.5?'fa fa-star-half':'fa fa-star-half-o'}></i>
-            </span>
-            <span>
-                <i className={rating >=3?'fa fa-star': rating >=2.5?'fa fa-star-half':'fa fa-star-half-o'}></i>
-            </span>
-            <span>
-                <i className={rating >=4?'fa fa-star': rating >=3.5?'fa fa-star-half':'fa fa-star-half-o'}></i>
-            </span>
-            <span>
-                <i className={rating >=5?'fa fa-star': rating >=4.5?'fa fa-star-half':'fa fa-star-half-o'}></i>
-            </span>
-            {caption ? (<span>{caption}</span> ) : (   <span>{numReviews + ' reviews'}</span> )}
-        </div>
-    )
+  return !props.value ? (
+    <div></div>
+  ) : (
+    <div className="rating">
+      <span>
+        <i
+          className={
+            props.value >= 1
+              ? 'fa fa-star'
+              : props.value >= 0.5
+              ? 'fa fa-star-half-o'
+              : 'fa fa-star-o'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          className={
+            props.value >= 2
+              ? 'fa fa-star'
+              : props.value >= 1.5
+              ? 'fa fa-star-half-o'
+              : 'fa fa-star-o'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          className={
+            props.value >= 3
+              ? 'fa fa-star'
+              : props.value >= 2.5
+              ? 'fa fa-star-half-o'
+              : 'fa fa-star-o'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          className={
+            props.value >= 4
+              ? 'fa fa-star'
+              : props.value >= 3.5
+              ? 'fa fa-star-half-o'
+              : 'fa fa-star-o'
+          }
+        ></i>
+      </span>
+      <span>
+        <i
+          className={
+            props.value >= 5
+              ? 'fa fa-star'
+              : props.value >= 4.5
+              ? 'fa fa-star-half-o'
+              : 'fa fa-star-o'
+          }
+        ></i>
+      </span>
+      <span>{props.text ? props.text : ''}</span>
+    </div>
+  );
 }

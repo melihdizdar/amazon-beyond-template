@@ -70,7 +70,7 @@ export default function ProductScreen(props) {
                                         <h1>{product.name}</h1> {/*ürünün adının çekildiği satır.*/}
                                     </li>
                                     <li>
-                                        <Rating rating={product.rating} numReviews={product.numReviews}/>
+                                    <Rating value={product.rating} text={product.numReviews + ' reviews'} />
                                         {/*ürünün ratinginin ve review kısmının çekildiği satır.*/}
                                     </li>
                                     <li>
@@ -188,7 +188,7 @@ export default function ProductScreen(props) {
                                             <div className="reviewsCard">
                                                 <li key={review._id}>
                                                 <strong>{review.name}</strong>
-                                                <Rating rating={review.rating} caption=" "></Rating>
+                                                <Rating value={review.rating}></Rating>
                                                 <p className="date">{review.createdAt.substring(0, 10)}</p>
                                                 <p>{review.comment}</p>
                                                 </li>
