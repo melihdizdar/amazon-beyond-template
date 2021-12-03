@@ -284,23 +284,51 @@ button.open-sidebar {
   padding: 0.2rem 0.5rem;
   margin: 0 0.5rem;
   background: none;
-  color: #ffffff;
+  color: black;
   cursor: pointer;
+  border: none;
 }
 button.open-sidebar:hover {
   border-color: #ffffff;
+  opacity: 0.8;
 }
 aside ul {
   padding: 0;
   list-style: none;
 }
 aside li {
+  strong{
+    margin-left: 5%;
+  }
+}
+.categoriesli{
+  background-color: #1F2934;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.categoriesli:hover{
+  opacity: 0.8;
+}
+.sidebarHeaderStage{
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
+  align-items: center;
 }
 button.close-sidebar {
-  padding: 0.3rem 0.8rem;
+  font-size: 3rem;
+  padding: 0.2rem 0.5rem;
+  margin: 0 0.5rem;
+  background: none;
+  color: black;
+  cursor: pointer;
+  border: none;
+}
+button.close-sidebar:hover {
+  border-color: #ffffff;
+  opacity: 0.8;
 }
 /*Image*/
 img{
