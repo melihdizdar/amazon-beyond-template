@@ -9,7 +9,6 @@ export default function Product(props) {
         <div className="ProductsListCard" key={product._id}>
             <div className="imageStage">
                 <Link to={`/product/${product._id}`}><img src={product.image} alt="product"/></Link>
-                <div className="topleft"><Link to={`/seller/${product.seller._id}`}>{product.seller.seller.name}</Link></div>
             </div>
             <Link to={`/product/${product._id}`}><h1>{product.name}</h1></Link>
             <span><Rating value={product.rating} text={product.numReviews + ' reviews'} /></span>

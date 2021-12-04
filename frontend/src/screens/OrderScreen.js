@@ -132,7 +132,7 @@ export default function OrderScreen(props) {
                   {errorDeliver && <MessageBox variant="danger">{errorDeliver}</MessageBox>}
                   {userInfo.isAdmin && order.isPaid && !order.isDelivered && (
                     <li>
-                      <button type="button" className="primary block" onClick={deliverHandler}>Deliver Order</button>
+                      <button type="button" className="block" onClick={deliverHandler}>Deliver Order</button>
                     </li>
                   )}
                 </ul>
@@ -174,13 +174,13 @@ export default function OrderScreen(props) {
                   </div>
                 </div>
               </li>
-              {/*30.PayPal Button ekleme dersi*/}
+              {/*30.PayPal Button ekleme*/}
                 {!order.isPaid && ( 
                   <li>
                     {!sdkReady ? 
                     (
                       <LoadingBox/> ) : (
-                    /* <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} /> //30.PayPal Button ekleme dersi */
+                    /* <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} /> //30.PayPal Button ekleme */
                     <>
                       {errorPay && (
                       <MessageBox variant="danger">{errorPay}</MessageBox>)}

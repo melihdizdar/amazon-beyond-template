@@ -5,8 +5,7 @@ import { listProducts } from '../actions/productActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import Product from '../components/Product';
-import Rating from '../components/Rating';
-import { prices, ratings } from '../utils';
+import { prices} from '../utils';
 import SearchBox from '../components/SearchBox';
 import "../screens/Styles/Search/search.css";
 
@@ -91,18 +90,6 @@ export default function SearchScreen(props) {
               {prices.map((p) => (
                 <li key={p.name}>
                   <Link to={getFilterUrl({ min: p.min, max: p.max })} className={`${p.min}-${p.max}` === `${min}-${max}` ? 'active' : '' }>{p.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div>
-            <h3>Avg. Customer Review</h3>
-            <ul>
-              {ratings.map((r) => (
-                <li key={r.name}>
-                  <Link to={getFilterUrl({ rating: r.rating })} className={`${r.rating}` === `${rating}` ? 'active' : ''}>
-                    <Rating caption={' & up'} rating={r.rating}></Rating>
-                  </Link>
                 </li>
               ))}
             </ul>

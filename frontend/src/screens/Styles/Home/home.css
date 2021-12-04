@@ -405,24 +405,6 @@
   opacity: 0.8;
 }
 
-.ProductsListCard .imageStage .topleft {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1.5rem;
-  background-color: #1F2934;
-  font-family: 'Roboto', sans-serif;
-}
-
-.ProductsListCard .imageStage .topleft a {
-  color: white;
-  margin: 10px;
-}
-
-.ProductsListCard .imageStage .topleft a:hover {
-  opacity: 0.8;
-}
-
 .ProductsListCard h1 {
   font-size: 1.6rem;
   color: #1F2934;

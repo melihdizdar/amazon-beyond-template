@@ -19,8 +19,6 @@ import ProductEditScreen from "./screens/ProductEditScreen";
 import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
-import SellerRoute from './components/SellerRoute';
-import SellerScreen from './screens/SellerScreen';
 import SearchScreen from "./screens/SearchScreen";
 import { useEffect, useState } from "react";
 import { listProductCategories } from "./actions/productActions";
@@ -32,7 +30,6 @@ import ChatBox from './components/ChatBox';
 import './components/NavBar/Navbar.css';
 import Dropdown from './components/NavBar/Dropdown';
 import DropdownUser from './components/NavBar/DropdownUser';
-import DropdownSeller from './components/NavBar/DropdownSeller';
 import { signout } from "./actions/userActions";
 import FooterProducts from "./components/FooterProducts";
 import ButtonMailto from "./components/ButtonMailto";
@@ -64,7 +61,6 @@ function App(props) {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const [userdropdown, setUserDropdown] = useState(false);
-  const [sellerdropdown, setSellerDropdown] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -85,14 +81,6 @@ function App(props) {
     }
   };
 
-  const onSellerMouseEnter = () => {
-    if (window.innerWidth < 960) {
-        setSellerDropdown(false);
-    } else {
-        setSellerDropdown(true);
-    }
-  };
-
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -109,13 +97,6 @@ function App(props) {
     }
   };
 
-  const onSellerMouseLeave = () => {
-    if (window.innerWidth < 960) {
-        setSellerDropdown(false);
-    } else {
-        setSellerDropdown(false);
-    }
-  };
   return (
     <BrowserRouter>
         <aside className={sidebarIsOpen? 'open': ''}>
@@ -163,14 +144,6 @@ function App(props) {
                     )}
               </Link>
             </li>
-            {userInfo && userInfo.isSeller && (
-              <li className='nav-item' onMouseEnter={onSellerMouseEnter} onMouseLeave={onSellerMouseLeave}>
-                  <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                  Seller<i className='fas fa-caret-down' />
-                  </Link>
-                  {sellerdropdown && <DropdownSeller />}
-              </li>
-            )}
             {userInfo && userInfo.isAdmin && (
               <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
                   <Link to="/dashboard" className='nav-links' onClick={closeMobileMenu}>
@@ -201,7 +174,6 @@ function App(props) {
           </ul>
         </nav>
           <main>
-            <Route path="/seller/:id" component={SellerScreen}/>
             <Route path="/cart/:id?" component={CartScreen}/>
             <Route path="/product/:id" component={ProductScreen} exact/>
             <Route path="/product/:id/edit" component={ProductEditScreen} exact/>
@@ -224,8 +196,6 @@ function App(props) {
             <AdminRoute path="/user/:id/edit" component={UserEditScreen}/>
             <AdminRoute path="/dashboard" component={DashboardScreen}/>
             <AdminRoute path="/support" component={SupportScreen}/>
-            <SellerRoute path="/productlist/seller" component={ProductListScreen}/>
-            <SellerRoute path="/orderlist/seller" component={OrderListScreen}/>
             <Route path="/about" component={AboutScreen}/>
             <Route path="/" component={HomeScreen} exact/>
             <Route path="/contact-us" component={ContactScreen}/>

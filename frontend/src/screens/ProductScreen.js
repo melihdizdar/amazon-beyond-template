@@ -123,15 +123,6 @@ export default function ProductScreen(props) {
                         <div className="buyCard">
                             <ul>
                                 <li>
-                                    <h4>Seller{' '}</h4>
-                                    <h2>
-                                    <Link to={`/seller/${product.seller._id}`}>
-                                        {product.seller.seller.name}
-                                    </Link>
-                                    </h2>
-                                    <h3><Rating rating={product.seller.seller.rating} numReviews={product.seller.seller.numReviews} ></Rating></h3>
-                                </li>
-                                <li>
                                     <div className="row">
                                         <div><strong>Price</strong></div>
                                         <div className="price">${product.price}</div>

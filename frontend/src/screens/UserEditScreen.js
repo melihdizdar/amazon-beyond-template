@@ -65,10 +65,6 @@ export default function UserEditScreen(props) {
               <input id="email" type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
             </div>
             <div>
-              <label htmlFor="isSeller">Is Seller</label>
-              <input id="isSeller" type="checkbox" checked={isSeller} onChange={(e) => setIsSeller(e.target.checked)}></input>
-            </div>
-            <div>
               <label htmlFor="isAdmin">Is Admin</label>
               <input id="isAdmin" type="checkbox" checked={isAdmin} onChange={(e) => setIsAdmin(e.target.checked)}></input>
             </div>
