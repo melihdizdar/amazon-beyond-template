@@ -94,10 +94,12 @@ export default function ProductListScreen(props) {
               </tbody>
             </table>
           </div>
-          <div className="row center pagination"> {/*59.Implement Pagination*/}
-            {[...Array(pages).keys()].map((x) => (
-              <Link className={x + 1 === page ? 'active' : ''} key={x + 1} to={`/productlist/pageNumber/${x + 1}`}>{x + 1}</Link>
-            ))}
+          <div className="paginationStage"> {/*59.Implement Pagination*/}
+              <div className="pagination">
+                  {[...Array(pages).keys()].map((x) => (
+                    <Link className={x + 1 === page ? 'active' : ''} key={x + 1} to={`/productlist/pageNumber/${x + 1}`}>{x + 1}</Link>
+                  ))}
+              </div>
           </div>
         </>
       )}

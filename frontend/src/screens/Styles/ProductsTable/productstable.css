@@ -91,6 +91,23 @@
           flex: 100%;
 }
 
+.productstable .paginationStage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
 @media screen and (max-width: 600px) {
   table {
     border-collapse: collapse;

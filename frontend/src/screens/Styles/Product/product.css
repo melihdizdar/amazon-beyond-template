@@ -38,6 +38,14 @@
   margin-top: 1%;
 }
 
+.product .back a {
+  color: #1F2934;
+}
+
+.product .back a:hover {
+  opacity: 0.9;
+}
+
 .product .contentStage {
   -webkit-box-flex: 100%;
       -ms-flex: 100%;

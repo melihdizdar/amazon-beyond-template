@@ -17,6 +17,12 @@
         text-indent: 20px;
         margin-bottom: 1%;
         margin-top: 1%;
+        a{
+            color: #1F2934;
+        }
+        a:hover{
+            opacity: 0.9;
+        }
     }
     .contentStage{
         flex:100%;
