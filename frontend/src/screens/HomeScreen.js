@@ -6,7 +6,6 @@ import MessageBox from '../components/MessageBox';
 import LoadingBox from '../components/LoadingBox';
 import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
-import { listTopSellers } from '../actions/userActions';
 import { Link,Route } from 'react-router-dom';
 import PListButton from '../components/PListButton';
 import HomeCard from '../components/HomeCard';
@@ -26,8 +25,7 @@ export default function HomeScreen() {
   useEffect(() =>{
     //dispatch(listProducts());
     dispatch(listHomeCards());
-    dispatch(listProducts({})); //49.Implement Seller View
-    dispatch(listTopSellers()); //51.Add Top Seller Carousel
+    dispatch(listProducts({})); //Implement Seller View
   }, [dispatch]);
     return (
         <div className="home">

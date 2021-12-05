@@ -7,12 +7,6 @@ import { generateToken, isAdmin, isAuth } from './utils.js';
 
 const userRouter = express.Router();
 
-userRouter.get('/top-sellers',expressAsyncHandler(async (req, res) => { //51.Add Top Seller Carousel
-    const topSellers = await User.find({ isSeller: true }) .sort({ 'seller.rating': -1 }) .limit(3); //51.Add Top Seller Carousel
-    res.send(topSellers); //51.Add Top Seller Carousel
-  })
-);
-
 userRouter.get('/seed', expressAsyncHandler(async(req,res) =>{
     //Kullanıcıların seedinin yollanması için gereken kod satırı
     //await User.remove({});
@@ -30,7 +24,7 @@ userRouter.post('/signin', expressAsyncHandler(async (req,res) =>{
                 name: user.name,
                 email : user.email,
                 isAdmin: user.isAdmin,
-                isSeller: user.isSeller, //49.Implement Seller View
+                isSeller: user.isSeller, //Implement Seller View
                 token: generateToken(user),
             });
             return;
@@ -50,13 +44,13 @@ userRouter.post('/register', expressAsyncHandler(async (req, res) => {
         name: createdUser.name,
         email: createdUser.email,
         isAdmin: createdUser.isAdmin,
-        isSeller: user.isSeller, //49.Implement Seller View
+        isSeller: user.isSeller, //Implement Seller View
         token: generateToken(createdUser),
       });
     })
   );
 
-userRouter.get('/:id', expressAsyncHandler(async(req,res) => { // 33.display user profile
+userRouter.get('/:id', expressAsyncHandler(async(req,res) => { //display user profile
   const user = await User.findById(req.params.id);
   if(user) {
     res.send(user);
@@ -65,15 +59,15 @@ userRouter.get('/:id', expressAsyncHandler(async(req,res) => { // 33.display use
   }
 }));
 
-userRouter.put('/profile',isAuth,expressAsyncHandler(async (req, res) => { //34.Update user profile
+userRouter.put('/profile',isAuth,expressAsyncHandler(async (req, res) => { //Update user profile
     const user = await User.findById(req.user._id);
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
-    if (user.isSeller) { //49.Implement Seller View
-      user.seller.name = req.body.sellerName || user.seller.name; //49.Implement Seller View
-      user.seller.logo = req.body.sellerLogo || user.seller.logo; //49.Implement Seller View
-      user.seller.description = req.body.sellerDescription || user.seller.description; //49.Implement Seller View
+    if (user.isSeller) { //Implement Seller View
+      user.seller.name = req.body.sellerName || user.seller.name; //Implement Seller View
+      user.seller.logo = req.body.sellerLogo || user.seller.logo; //Implement Seller View
+      user.seller.description = req.body.sellerDescription || user.seller.description; //Implement Seller View
     }
     if (req.body.password) {
         user.password = bcrypt.hashSync(req.body.password, 8);
@@ -84,19 +78,19 @@ userRouter.put('/profile',isAuth,expressAsyncHandler(async (req, res) => { //34.
         name: updatedUser.name,
         email: updatedUser.email,
         isAdmin: updatedUser.isAdmin,
-        isSeller: user.isSeller, //49.Implement Seller View
+        isSeller: user.isSeller, //Implement Seller View
         token: generateToken(updatedUser),
       });
     }
   })
 );
 
-userRouter.get('/',isAuth,isAdmin,expressAsyncHandler(async(req,res) => { //46.list users
+userRouter.get('/',isAuth,isAdmin,expressAsyncHandler(async(req,res) => { //list users
   const users = await User.find({});
   res.send(users);
 }));
 
-userRouter.delete('/:id',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //47.delete user
+userRouter.delete('/:id',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //delete user
     const user = await User.findById(req.params.id);
     if (user) {
       if (user.email === 'admin@example.com') {
@@ -111,13 +105,13 @@ userRouter.delete('/:id',isAuth,isAdmin,expressAsyncHandler(async (req, res) => 
   })
 );
 
-userRouter.put('/:id',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //48.Edit Users
+userRouter.put('/:id',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //Edit Users
     const user = await User.findById(req.params.id);
     if (user) {
       user.name = req.body.name || user.name;
       user.email = req.body.email || user.email;
-      user.isSeller = Boolean(req.body.isSeller); //58.Bugfix runnig locally without issue
-      user.isAdmin = Boolean(req.body.isAdmin); //58.Bugfix runnig locally without issue
+      user.isSeller = Boolean(req.body.isSeller); //Bugfix runnig locally without issue
+      user.isAdmin = Boolean(req.body.isAdmin); //Bugfix runnig locally without issue
       //user.isSeller = req.body.isSeller === user.isSeller ? user.isSeller : req.body.isSeller;
       //user.isAdmin = req.body.isAdmin === user.isAdmin ? user.isAdmin : req.body.isAdmin;
       //user.isSeller = req.body.isSeller || user.isSeller; => check buttonlar güncellendikten sonra tekrardan değiştirilemiyor

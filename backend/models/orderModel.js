@@ -21,17 +21,17 @@ const orderSchema = new mongoose.Schema(
       city: { type: String, required: true },
       postalCode: { type: String, required: true },
       country: { type: String, required: true },
-      lat: Number, //57.Choose address on google map
-      lng: Number, //57.Choose address on google map
+      lat: Number, //Choose address on google map
+      lng: Number, //Choose address on google map
     },
     paymentMethod: { type: String, required: true },
-    paymentResult: {id:String,status:String,update_time:String,email_address:String,}, // 31.Pay Order
+    paymentResult: {id:String,status:String,update_time:String,email_address:String,}, //Pay Order
     itemsPrice: { type: Number, required: true },
     shippingPrice: { type: Number, required: true },
     taxPrice: { type: Number, required: true },
     totalPrice: { type: Number, required: true },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
-    seller: { type: mongoose.Schema.Types.ObjectID, ref: 'User' }, //49.Implement Seller View
+    seller: { type: mongoose.Schema.Types.ObjectID, ref: 'User' }, //Implement Seller View
     isPaid: { type: Boolean, default: false },
     paidAt: { type: Date },
     isDelivered: { type: Boolean, default: false },

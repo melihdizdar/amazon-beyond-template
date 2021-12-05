@@ -50,13 +50,13 @@ function App(props) {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   //Değişkenleri tanımladığımız kod satırı.
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false); //54.Add Category Sidebar and Filter
+  const [sidebarIsOpen, setSidebarIsOpen] = useState(false); //Add Category Sidebar and Filter
   const dispatch = useDispatch();
-  const productCategoryList = useSelector((state) => state.productCategoryList); //54.Add Category Sidebar and Filter
-  const { loading:loadingCategories, error:errorCategories, categories } = productCategoryList; //54.Add Category Sidebar and Filter
-  useEffect(() => { //54.Add Category Sidebar and Filter
-    dispatch(listProductCategories()); //54.Add Category Sidebar and Filter
-  },[dispatch]) //54.Add Category Sidebar and Filter
+  const productCategoryList = useSelector((state) => state.productCategoryList); //Add Category Sidebar and Filter
+  const { loading:loadingCategories, error:errorCategories, categories } = productCategoryList; //Add Category Sidebar and Filter
+  useEffect(() => { //Add Category Sidebar and Filter
+    dispatch(listProductCategories()); //Add Category Sidebar and Filter
+  },[dispatch]) //Add Category Sidebar and Filter
   //Navbar Dropdown Menu
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);

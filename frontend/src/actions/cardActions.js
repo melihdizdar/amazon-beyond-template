@@ -6,27 +6,27 @@ export const addToCart = (productId,qty) => async(dispatch,getState) =>{
     linkleme işleminin hangi idden çekileceğini ayarladık.*/
     /*Sepete ürün aktarma aksiyonu*/
     const {data} = await axios.get(`/api/products/${productId}`);
-    const {cart:{cartItems},} = getState(); //52.Force order items from one seller
-    if (cartItems.length > 0 && data.seller._id !== cartItems[0].seller._id) { //52.Force order items from one seller
-        dispatch({ //52.Force order items from one seller
-            type: CART_ADD_ITEM_FAIL, //52.Force order items from one seller
-            payload: `Can't Add To Cart. Buy only from ${cartItems[0].seller.seller.name} in this order`, //52.Force order items from one seller
+    const {cart:{cartItems},} = getState(); //Force order items from one seller
+    if (cartItems.length > 0 && data.seller._id !== cartItems[0].seller._id) { //Force order items from one seller
+        dispatch({ //Force order items from one seller
+            type: CART_ADD_ITEM_FAIL, //Force order items from one seller
+            payload: `Can't Add To Cart. Buy only from ${cartItems[0].seller.seller.name} in this order`, //Force order items from one seller
         });
     }
     else{
-        dispatch({ //52.Force order items from one seller
-        type: CART_ADD_ITEM, //52.Force order items from one seller
-        payload:{ //52.Force order items from one seller
-            name: data.name, //52.Force order items from one seller
-            image: data.image, //52.Force order items from one seller
-            price: data.price, //52.Force order items from one seller
-            coutInStock: data.coutInStock, //52.Force order items from one seller
-            product: data._id, //52.Force order items from one seller
-            seller: data.seller, //52.Force order items from one seller
-            qty, //52.Force order items from one seller
+        dispatch({ //Force order items from one seller
+        type: CART_ADD_ITEM, //Force order items from one seller
+        payload:{ //Force order items from one seller
+            name: data.name, //Force order items from one seller
+            image: data.image, //Force order items from one seller
+            price: data.price, //Force order items from one seller
+            coutInStock: data.coutInStock, //Force order items from one seller
+            product: data._id, //Force order items from one seller
+            seller: data.seller, //Force order items from one seller
+            qty, //Force order items from one seller
         },
     });
-    localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems)); //52.Force order items from one seller
+    localStorage.setItem('cartItems',JSON.stringify(getState().cart.cartItems)); //Force order items from one seller
     }
     /*dispatch({
         type: CART_ADD_ITEM,

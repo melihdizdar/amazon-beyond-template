@@ -7,46 +7,46 @@ import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
 import "../screens/Styles/Profile/profile.css";
 
 export default function ProfileScreen() {
-  const [name, setName] = useState(''); //34.uptade user profile
-  const [email, setEmail] = useState(''); //34.uptade user profile
-  const [password, setPassword] = useState(''); //34.uptade user profile
-  const [confirmPassword, setConfirmPassword] = useState(''); //34.uptade user profile
+  const [name, setName] = useState(''); //update user profile
+  const [email, setEmail] = useState(''); //update user profile
+  const [password, setPassword] = useState(''); //update user profile
+  const [confirmPassword, setConfirmPassword] = useState(''); //update user profile
 
-  const [sellerName, setSellerName] = useState(''); //49.Implement Seller View
-  const [sellerLogo, setSellerLogo] = useState(''); //49.Implement Seller View
-  const [sellerDescription, setSellerDescription] = useState(''); //49.Implement Seller View
+  const [sellerName, setSellerName] = useState(''); //updateImplement Seller View
+  const [sellerLogo, setSellerLogo] = useState(''); //updateImplement Seller View
+  const [sellerDescription, setSellerDescription] = useState(''); //updateImplement Seller View
 
-  const userSignin = useSelector((state) => state.userSignin); //33.display user profile
-  const { userInfo } = userSignin; //33.display user profile
-  const userDetails = useSelector((state) => state.userDetails); //33.display user profile
-  const { loading, error, user } = userDetails; //33.display user profile
-  const userUpdateProfile = useSelector((state) => state.userUpdateProfile); //34.uptade user profile
-  const { success: successUpdate, error: errorUpdate, loading: loadingUpdate, } = userUpdateProfile; //34.uptade user profile
-  const dispatch = useDispatch(); //33.display user profile
-  useEffect(() => { //33.display user profile
-    if (!user) { //34.uptade user profile
-      dispatch({ type: USER_UPDATE_PROFILE_RESET }); //34.uptade user profile
-      dispatch(detailsUser(userInfo._id)); //34.uptade user profile
-    } else { //34.uptade user profile
-      setName(user.name); //34.uptade user profile
-      setEmail(user.email); //34.uptade user profile
-      if (user.seller) { //49.Implement Seller View
-        setSellerName(user.seller.name); //49.Implement Seller View
-        setSellerLogo(user.seller.logo); //49.Implement Seller View
-        setSellerDescription(user.seller.description); //49.Implement Seller View
+  const userSignin = useSelector((state) => state.userSignin); //display user profile
+  const { userInfo } = userSignin; //display user profile
+  const userDetails = useSelector((state) => state.userDetails); //display user profile
+  const { loading, error, user } = userDetails; //display user profile
+  const userUpdateProfile = useSelector((state) => state.userUpdateProfile); //update user profile
+  const { success: successUpdate, error: errorUpdate, loading: loadingUpdate, } = userUpdateProfile; //update user profile
+  const dispatch = useDispatch(); //display user profile
+  useEffect(() => { //display user profile
+    if (!user) { //update user profile
+      dispatch({ type: USER_UPDATE_PROFILE_RESET }); //update user profile
+      dispatch(detailsUser(userInfo._id)); //update user profile
+    } else { //update user profile
+      setName(user.name); //update user profile
+      setEmail(user.email); //update user profile
+      if (user.seller) { //updateImplement Seller View
+        setSellerName(user.seller.name); //updateImplement Seller View
+        setSellerLogo(user.seller.logo); //updateImplement Seller View
+        setSellerDescription(user.seller.description); //updateImplement Seller View
       }
     }
-  }, [dispatch, userInfo._id, user]); //34.uptade user profile
-  //  dispatch(detailsUser(userInfo._id)); //33.display user profile
-  //}, [dispatch, userInfo._id]); //33.display user profile
-  const submitHandler = (e) => { //33.display user profile
-    e.preventDefault(); //33.display user profile
-    if (password !== confirmPassword) { //34.update user profile
-      alert('Password and Confirm Password Are Not Matched'); //34.update user profile
-    } else { //34.update user profile
-      //dispatch(updateUserProfile({ userId: user._id, name, email, password })); //34.update user profile
+  }, [dispatch, userInfo._id, user]); //update user profile
+  //  dispatch(detailsUser(userInfo._id)); //display user profile
+  //}, [dispatch, userInfo._id]); //display user profile
+  const submitHandler = (e) => { //display user profile
+    e.preventDefault(); //display user profile
+    if (password !== confirmPassword) { //update user profile
+      alert('Password and Confirm Password Are Not Matched'); //update user profile
+    } else { //update user profile
+      //dispatch(updateUserProfile({ userId: user._id, name, email, password })); //update user profile
       dispatch(
-        updateUserProfile({userId: user._id,name,email,password,sellerName,sellerLogo,sellerDescription,})); //49.Implement Seller View
+        updateUserProfile({userId: user._id,name,email,password,sellerName,sellerLogo,sellerDescription,})); //updateImplement Seller View
     }
   };
   return (

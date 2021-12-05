@@ -7,21 +7,21 @@ import { USER_DETAILS_RESET } from '../constants/userConstants';
 import "../screens/Styles/UserList/userlist.css";
 
 export default function UserListScreen(props) {
-  const userList = useSelector((state) => state.userList); //46.list users
-  const { loading, error, users } = userList; //46.list users
-  const userDelete = useSelector((state) => state.userDelete); //47.delete user
-  const {loading: loadingDelete,error: errorDelete,success: successDelete,} = userDelete; //47.delete user
-  const dispatch = useDispatch(); //46.list users
-  useEffect(() => { //46.list users
-    dispatch(listUsers()); //46.list users
+  const userList = useSelector((state) => state.userList); //list users
+  const { loading, error, users } = userList; //list users
+  const userDelete = useSelector((state) => state.userDelete); //delete user
+  const {loading: loadingDelete,error: errorDelete,success: successDelete,} = userDelete; //delete user
+  const dispatch = useDispatch(); //list users
+  useEffect(() => { //list users
+    dispatch(listUsers()); //list users
     dispatch({
       type: USER_DETAILS_RESET,
     });
-  //}, [dispatch]); //46.list users
-  }, [dispatch, successDelete]); //47.delete user
-  const deleteHandler = (user) => { //47.delete user
-    if (window.confirm('Are you sure?')) { //47.delete user
-      dispatch(deleteUser(user._id)); //47.delete user
+  //}, [dispatch]); //list users
+  }, [dispatch, successDelete]); //delete user
+  const deleteHandler = (user) => { //delete user
+    if (window.confirm('Are you sure?')) { //delete user
+      dispatch(deleteUser(user._id)); //delete user
     }
   };
   return (

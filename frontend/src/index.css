@@ -25,7 +25,9 @@ body {
 .grid-container {
   display: -ms-grid;
   display: grid;
-      grid-template-areas: 'header' 'main' 'footer';
+      grid-template-areas: 'header'
+ 'main'
+ 'footer';
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   -ms-grid-rows: 5rem 1fr 5rem;
@@ -36,23 +38,17 @@ body {
 }
 
 header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
   grid-area: header;
   background-color: #203040;
 }
 
 main {
-  -ms-grid-row: 2;
-  -ms-grid-column: 1;
   grid-area: main;
   padding: 1rem;
 }
 
 /*Footer Styles*/
 footer {
-  -ms-grid-row: 3;
-  -ms-grid-column: 1;
   grid-area: footer;
 }
 

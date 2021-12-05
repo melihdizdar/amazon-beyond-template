@@ -37,7 +37,7 @@ export const productListReducer = (state = { loading:true, products:[] },action)
             return{loading:true};
         case PRODUCTS_LIST_SUCCESS:
             //return{loading:false,products: action.payload};
-            return {loading: false,products: action.payload.products,pages: action.payload.pages,page: action.payload.page,}; //59.Implement Pagination
+            return {loading: false,products: action.payload.products,pages: action.payload.pages,page: action.payload.page,}; //Implement Pagination
         case PRODUCTS_LIST_FAIL:
             return{loading:false,error:action.payload};
         default:
@@ -45,7 +45,7 @@ export const productListReducer = (state = { loading:true, products:[] },action)
     }
 }
 
-export const productCategoryListReducer = (state = { loading:true, products:[] },action) => { //54.Add Category Sidebar and Filter
+export const productCategoryListReducer = (state = { loading:true, products:[] },action) => { //Add Category Sidebar and Filter
   switch(action.type){
       case PRODUCTS_CATEGORY_LIST_REQUEST:
           return{loading:true};
@@ -59,7 +59,7 @@ export const productCategoryListReducer = (state = { loading:true, products:[] }
 }
 
 //export const productDetailsReducer = (state = {product:{},loading:true},action) => {
-export const productDetailsReducer = (state = {loading:true},action) => { //38.build product edit screen
+export const productDetailsReducer = (state = {loading:true},action) => { //build product edit screen
     /*
         Ürüne tıklanıldığı zaman ürün detayları sayfası gelirken öncesinde yükleme ekranının geleceğini,
         başarılı olduğu taktirde loading ekranının gelmeyip ürünlerin detay sayfasına girileceğini,
@@ -77,7 +77,7 @@ export const productDetailsReducer = (state = {loading:true},action) => { //38.b
     }
 };
 
-export const productCreateReducer = (state = {},action) => { //37.create product
+export const productCreateReducer = (state = {},action) => { //create product
     switch(action.type){
         case PRODUCT_CREATE_REQUEST:
             return {loading:true};
@@ -92,7 +92,7 @@ export const productCreateReducer = (state = {},action) => { //37.create product
     }
 };
 
-export const productUpdateReducer = (state = {}, action) => { //39.update product
+export const productUpdateReducer = (state = {}, action) => { //update product
     switch (action.type) {
       case PRODUCT_UPDATE_REQUEST:
         return { loading: true };
@@ -107,7 +107,7 @@ export const productUpdateReducer = (state = {}, action) => { //39.update produc
     }
   };
 
-export const productDeleteReducer = (state = {}, action) => {  //41.delete product
+export const productDeleteReducer = (state = {}, action) => {  //delete product
   switch (action.type) {
     case PRODUCT_DELETE_REQUEST:
       return { loading: true };
@@ -122,7 +122,7 @@ export const productDeleteReducer = (state = {}, action) => {  //41.delete produ
   }
 };
 
-export const productReviewCreateReducer = (state = {},action) => { //56.Rate and Review Products
+export const productReviewCreateReducer = (state = {},action) => { //Rate and Review Products
   switch(action.type){
       case PRODUCT_REVIEW_CREATE_REQUEST:
           return {loading:true};

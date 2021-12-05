@@ -1,17 +1,17 @@
 import mongoose from 'mongoose';
 
-const reviewSchema = new mongoose.Schema({ //56.Rate and Review Products
-    name: {type:String, required:true}, //56.Rate and Review Products
-    comment: {type:String, required:true}, //56.Rate and Review Products
-    rating: {type:Number, required:true}, //56.Rate and Review Products
+const reviewSchema = new mongoose.Schema({ //Rate and Review Products
+    name: {type:String, required:true}, //Rate and Review Products
+    comment: {type:String, required:true}, //Rate and Review Products
+    rating: {type:Number, required:true}, //Rate and Review Products
 },{
-    timestamps:true, //56.Rate and Review Products
+    timestamps:true, //Rate and Review Products
 })
 //backend/data.js'deki products dizisindeki verilerin tanımlanması için kullanılan kod satırı.
 
 const productSchema = new mongoose.Schema({
     name: {type:String,required:true,unique:true},
-    seller: { type: mongoose.Schema.Types.ObjectID, ref: 'User' }, //49.Implement Seller View
+    seller: { type: mongoose.Schema.Types.ObjectID, ref: 'User' }, //Implement Seller View
     image: {type:String,required:true},
     brand: {type:String,required:true},
     category: {type:String,required:true},
@@ -20,7 +20,7 @@ const productSchema = new mongoose.Schema({
     coutInStock: {type:Number,required:true},
     rating: {type:Number,required:true},
     numReviews: {type:Number,required:true},
-    reviews:[reviewSchema], //56.Rate and Review Products
+    reviews:[reviewSchema], //Rate and Review Products
 },{
     timestamps:true,
 })

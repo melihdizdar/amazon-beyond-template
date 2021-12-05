@@ -7,12 +7,12 @@ import MessageBox from '../components/MessageBox';
 import "../screens/Styles/Dashboard/dashboard.css";
 
 export default function DashboardScreen() {
-  const orderSummary = useSelector((state) => state.orderSummary); //61.Create dashboard screen
-  const { loading, summary, error } = orderSummary; //61.Create dashboard screen
-  const dispatch = useDispatch(); //61.Create dashboard screen
-  useEffect(() => { //61.Create dashboard screen
-    dispatch(summaryOrder()); //61.Create dashboard screen
-  }, [dispatch]); //61.Create dashboard screen
+  const orderSummary = useSelector((state) => state.orderSummary); //Create dashboard screen
+  const { loading, summary, error } = orderSummary; //Create dashboard screen
+  const dispatch = useDispatch(); //Create dashboard screen
+  useEffect(() => { //Create dashboard screen
+    dispatch(summaryOrder()); //Create dashboard screen
+  }, [dispatch]); //Create dashboard screen
   return (
     <div className="dashboard">
       <div className="headerStage">

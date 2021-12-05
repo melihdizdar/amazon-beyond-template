@@ -10,55 +10,55 @@ import { ORDER_DELIVER_RESET, ORDER_PAY_RESET } from '../constants/orderConstant
 import "../screens/Styles/Order/order.css";
 
 export default function OrderScreen(props) {
-  // 30.PayPal Button ekleme dersi ve 31.Pay Order
+  //Add PayPal Button ve Pay Order
   const orderId = props.match.params.id;
-  const [sdkReady,setSdkReady] = useState(false); // 30.PayPal Button ekleme dersi
+  const [sdkReady,setSdkReady] = useState(false); //Add PayPal Button
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
-  const userSignin = useSelector((state) => state.userSignin); //44.Deliver order
-  const { userInfo } = userSignin; //44.Deliver order
+  const userSignin = useSelector((state) => state.userSignin); //Deliver order
+  const { userInfo } = userSignin; //Deliver order
   
-  const orderPay = useSelector((state) => state.orderPay); // 31.Pay Order
-  const { loading: loadingPay, error: errorPay, success: successPay } = orderPay; // 31.Pay Order
-  const orderDeliver = useSelector((state) => state.orderPay); // 44.deliver order
-  const { loading: loadingDeliver, error: errorDeliver, success: successDeliver } = orderDeliver; // 44.deliver order
+  const orderPay = useSelector((state) => state.orderPay); //Pay Order
+  const { loading: loadingPay, error: errorPay, success: successPay } = orderPay; //Pay Order
+  const orderDeliver = useSelector((state) => state.orderPay); //deliver order
+  const { loading: loadingDeliver, error: errorDeliver, success: successDeliver } = orderDeliver; //deliver order
   const dispatch = useDispatch();
   useEffect(() => { 
-    const addPayPalScript = async () => { // 30.PayPal Button ekleme dersi
-      const {data} = await axios.get('/api/config/paypal'); // 30.PayPal Button ekleme dersi
-      const script = document.createElement('script'); // 30.PayPal Button ekleme dersi
-      script.type='text/javascript'; // 30.PayPal Button ekleme dersi
-      script.src=`https://www.paypal.com/sdk/js?client-id=${data}`;// 30.PayPal Button ekleme dersi
-      script.async = true; // 30.PayPal Button ekleme dersi
-      script.onload = () => { // 30.PayPal Button ekleme dersi
-        setSdkReady(true); // 30.PayPal Button ekleme dersi
+    const addPayPalScript = async () => { //Add PayPal Button
+      const {data} = await axios.get('/api/config/paypal'); //Add PayPal Button
+      const script = document.createElement('script'); //Add PayPal Button
+      script.type='text/javascript'; //Add PayPal Button
+      script.src=`https://www.paypal.com/sdk/js?client-id=${data}`;//Add PayPal Button
+      script.async = true; //Add PayPal Button
+      script.onload = () => { //Add PayPal Button
+        setSdkReady(true); //Add PayPal Button
       };
-      document.body.appendChild(script);// 30.PayPal Button ekleme dersi
+      document.body.appendChild(script);//Add PayPal Button
     };
-    /*if(!order){ 30.PayPal Button ekleme dersi */
-    //if(!order || successPay || (order && order._id !== orderId)){ // 31.Pay Order
-      if(!order || successPay || successDeliver || (order && order._id !== orderId)){ //44.deliver order
-      dispatch({type: ORDER_PAY_RESET}); // 31.Pay Order
-      dispatch({type: ORDER_DELIVER_RESET}); //44.deliver order
-      dispatch(detailsOrder(orderId)); // 30.PayPal Button ekleme dersi
-    } else{ // 30.PayPal Button ekleme dersi
-      if(!order.isPaid){ // 30.PayPal Button ekleme dersi
-        if(!window.paypal){ // 30.PayPal Button ekleme dersi
-          addPayPalScript(); // 30.PayPal Button ekleme dersi
-        } else{ // 30.PayPal Button ekleme dersi
-          setSdkReady(true); // 30.PayPal Button ekleme dersi
+    /*if(!order){ //Add PayPal Button */
+    //if(!order || successPay || (order && order._id !== orderId)){ //Pay Order
+      if(!order || successPay || successDeliver || (order && order._id !== orderId)){ //deliver order
+      dispatch({type: ORDER_PAY_RESET}); //Pay Order
+      dispatch({type: ORDER_DELIVER_RESET}); //deliver order
+      dispatch(detailsOrder(orderId)); //Add PayPal Button
+    } else{ //Add PayPal Button
+      if(!order.isPaid){ //Add PayPal Button
+        if(!window.paypal){ //Add PayPal Button
+          addPayPalScript(); //Add PayPal Button
+        } else{ //Add PayPal Button
+          setSdkReady(true); //Add PayPal Button
         }
       }
     }
-  /* }, [dispatch, order,orderId,sdkReady]); 30.PayPal Button ekleme dersi */
-  //}, [dispatch, order,orderId,sdkReady,successPay]); // 31.Pay Order
-    }, [dispatch, order,orderId,sdkReady,successPay,successDeliver]); //44.Deliver order
-  /* const successPaymentHandler = () => {}; // 30.PayPal Button ekleme dersi */
-  const successPaymentHandler = (paymentResult) => { // 31.Pay Order
-    dispatch(payOrder(order,paymentResult)); // 31.Pay Order
+  /* }, [dispatch, order,orderId,sdkReady]); Add PayPal Button */
+  //}, [dispatch, order,orderId,sdkReady,successPay]); //Pay Order
+    }, [dispatch, order,orderId,sdkReady,successPay,successDeliver]); //Deliver order
+  /* const successPaymentHandler = () => {}; //Add PayPal Button */
+  const successPaymentHandler = (paymentResult) => { //Pay Order
+    dispatch(payOrder(order,paymentResult)); //Pay Order
   };
-  const deliverHandler = () => { //44.Deliver order
-    dispatch(deliverOrder(order._id)); //44.Deliver order
+  const deliverHandler = () => { //Deliver order
+    dispatch(deliverOrder(order._id)); //Deliver order
   };
   return loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : (
     <div className="order">
@@ -174,13 +174,13 @@ export default function OrderScreen(props) {
                   </div>
                 </div>
               </li>
-              {/*30.PayPal Button ekleme*/}
+              {/*Add PayPal Button*/}
                 {!order.isPaid && ( 
                   <li>
                     {!sdkReady ? 
                     (
                       <LoadingBox/> ) : (
-                    /* <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} /> //30.PayPal Button ekleme */
+                    /* <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} /> //Add PayPal Button */
                     <>
                       {errorPay && (
                       <MessageBox variant="danger">{errorPay}</MessageBox>)}

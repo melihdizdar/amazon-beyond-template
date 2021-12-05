@@ -6,7 +6,7 @@ import { cartReducer } from './reducers/cartReducers';
 import { HomeCardsListReducer } from './reducers/homeReducers';
 import { orderCreateReducer, orderDeleteReducer, orderDeliverReducer, orderDetailsReducer, orderListReducer, orderMineListReducer, orderPayReducer, orderSummaryReducer } from './reducers/orderReducers';
 import { productListReducer,productDetailsReducer, productCreateReducer, productUpdateReducer, productDeleteReducer, productCategoryListReducer, productReviewCreateReducer } from "./reducers/productReducers";
-import { userAddressMapReducer, userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userTopSellerListReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
+import { userAddressMapReducer, userDeleteReducer, userDetailsReducer, userListReducer, userRegisterReducer, userSigninReducer, userUpdateProfileReducer, userUpdateReducer } from './reducers/userReducers';
 
 /*react-redux kısmındaki store kısmını açma komutları*/
 
@@ -43,7 +43,6 @@ const reducer = combineReducers({
     orderDeliver: orderDeliverReducer,
     userList: userListReducer,
     userDelete: userDeleteReducer,
-    userTopSellersList: userTopSellerListReducer,
     productCategoryList: productCategoryListReducer,
     productReviewCreate: productReviewCreateReducer,
     userAddressMap: userAddressMapReducer,

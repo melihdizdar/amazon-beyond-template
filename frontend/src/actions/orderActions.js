@@ -44,7 +44,7 @@ export const detailsOrder = (orderId) => async (dispatch, getState) => {
   }
 };
 
-// 31.Pay Order
+//Pay Order
 export const payOrder = (order, paymentResult) => async (dispatch,getState) => {
   dispatch({ type: ORDER_PAY_REQUEST, payload: { order, paymentResult } });
   const {userSignin: { userInfo },} = getState();
@@ -59,7 +59,7 @@ export const payOrder = (order, paymentResult) => async (dispatch,getState) => {
   }
 };
 
-// 32.Display Orders History
+//Display Orders History
 export const listOrderMine = () => async (dispatch, getState) => {
   dispatch({ type: ORDER_MINE_LIST_REQUEST });
   const {
@@ -79,12 +79,12 @@ export const listOrderMine = () => async (dispatch, getState) => {
 };
 
 //export const listOrders = () => async (dispatch, getState) => { //42.list orders
-export const listOrders = ({ seller = '' }) => async (dispatch, getState) => {//49.Implement Seller View
+export const listOrders = ({ seller = '' }) => async (dispatch, getState) => {//Implement Seller View
   dispatch({ type: ORDER_LIST_REQUEST });
   const {userSignin: { userInfo },} = getState();
   try {
     //const { data } = await axios.get('/api/orders', {
-      const { data } = await axios.get(`/api/orders?seller=${seller}`, {//49.Implement Seller View
+      const { data } = await axios.get(`/api/orders?seller=${seller}`, {//Implement Seller View
       headers: { Authorization: `Bearer ${userInfo.token}` },
     });
     console.log(data);
@@ -95,7 +95,7 @@ export const listOrders = ({ seller = '' }) => async (dispatch, getState) => {//
   }
 };
 
-export const deleteOrder = (orderId) => async (dispatch, getState) => { //43.delete order
+export const deleteOrder = (orderId) => async (dispatch, getState) => { //delete order
   dispatch({ type: ORDER_DELETE_REQUEST, payload: orderId });
   const {
     userSignin: { userInfo },
@@ -114,7 +114,7 @@ export const deleteOrder = (orderId) => async (dispatch, getState) => { //43.del
   }
 };
 
-export const deliverOrder = (orderId) => async (dispatch,getState) => { //44.deliver order
+export const deliverOrder = (orderId) => async (dispatch,getState) => { //deliver order
   dispatch({ type: ORDER_DELIVER_REQUEST, payload: orderId});
   const {userSignin: { userInfo },} = getState();
   try {
@@ -128,7 +128,7 @@ export const deliverOrder = (orderId) => async (dispatch,getState) => { //44.del
   }
 };
 
-export const summaryOrder = () => async (dispatch, getState) => { //61.Create dashboard screen
+export const summaryOrder = () => async (dispatch, getState) => { //Create dashboard screen
   dispatch({ type: ORDER_SUMMARY_REQUEST });
   const {
     userSignin: { userInfo },

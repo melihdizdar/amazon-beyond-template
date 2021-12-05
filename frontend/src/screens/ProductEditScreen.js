@@ -8,65 +8,65 @@ import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
 import "../screens/Styles/ProductsEdit/productsedit.css";
 
 export default function ProductEditScreen(props) {
-    const productId = props.match.params.id; //38.build product edit screen
-    const [name,setName] = useState(''); //38.build product edit screen
-    const [price,setPrice] = useState(''); //38.build product edit screen
-    const [image,setImage] = useState(''); //38.build product edit screen
-    const [category,setCategory] = useState(''); //38.build product edit screen
-    const [coutInStock,setCoutInStock] = useState(''); //38.build product edit screen
-    const [brand,setBrand] = useState(''); //38.build product edit screen
-    const [description,setDescription] = useState(''); //38.build product edit screen
+    const productId = props.match.params.id; //build product edit screen
+    const [name,setName] = useState(''); //build product edit screen
+    const [price,setPrice] = useState(''); //build product edit screen
+    const [image,setImage] = useState(''); //build product edit screen
+    const [category,setCategory] = useState(''); //build product edit screen
+    const [coutInStock,setCoutInStock] = useState(''); //build product edit screen
+    const [brand,setBrand] = useState(''); //build product edit screen
+    const [description,setDescription] = useState(''); //build product edit screen
 
-    const productDetails = useSelector((state) => state.productDetails); //38.build product edit screen
-    const { loading,error,product } = productDetails; //38.build product edit screen
-    const productUpdate = useSelector((state) => state.productUpdate); //39.update product
-    const {loading: loadingUpdate,error: errorUpdate,success: successUpdate,} = productUpdate; //39.update product
-    const dispatch = useDispatch(); //38.build product edit screen
-    useEffect(() => { //38.build product edit screen
-        //if(!product || (product._id !== productId)) { //38.build product edit screen
+    const productDetails = useSelector((state) => state.productDetails); //build product edit screen
+    const { loading,error,product } = productDetails; //build product edit screen
+    const productUpdate = useSelector((state) => state.productUpdate); //update product
+    const {loading: loadingUpdate,error: errorUpdate,success: successUpdate,} = productUpdate; //update product
+    const dispatch = useDispatch(); //build product edit screen
+    useEffect(() => { //build product edit screen
+        //if(!product || (product._id !== productId)) { //build product edit screen
         if (successUpdate) {
-            props.history.push('/productlist'); //39.update product
+            props.history.push('/productlist'); //update product
         }
-        if (!product || product._id !== productId || successUpdate) { //39.update product
-            dispatch({ type: PRODUCT_UPDATE_RESET }); //39.update product
-            dispatch(detailsProduct(productId)); //38.build product edit screen    
+        if (!product || product._id !== productId || successUpdate) { //update product
+            dispatch({ type: PRODUCT_UPDATE_RESET }); //update product
+            dispatch(detailsProduct(productId)); //build product edit screen    
         } else {
-            setName(product.name); //38.build product edit screen
-            setPrice(product.price); //38.build product edit screen
-            setImage(product.image); //38.build product edit screen
-            setCategory(product.category); //38.build product edit screen
-            setCoutInStock(product.coutInStock); //38.build product edit screen
-            setBrand(product.brand); //38.build product edit screen
-            setDescription(product.description); //38.build product edit screen
+            setName(product.name); //build product edit screen
+            setPrice(product.price); //build product edit screen
+            setImage(product.image); //build product edit screen
+            setCategory(product.category); //build product edit screen
+            setCoutInStock(product.coutInStock); //build product edit screen
+            setBrand(product.brand); //build product edit screen
+            setDescription(product.description); //build product edit screen
         }
-    }, [product, dispatch, productId, successUpdate, props.history]); //39.update product
-    //}, [product,dispatch,productId]); //38.build product edit screen
-    const submitHandler = (e) => { //38.build product edit screen
-        e.preventDefault(); //38.build product edit screen
-        dispatch(updateProduct({_id: productId,name,price,image,category,brand,coutInStock,description,})); //39.update product
+    }, [product, dispatch, productId, successUpdate, props.history]); //update product
+    //}, [product,dispatch,productId]); //build product edit screen
+    const submitHandler = (e) => { //build product edit screen
+        e.preventDefault(); //build product edit screen
+        dispatch(updateProduct({_id: productId,name,price,image,category,brand,coutInStock,description,})); //update product
     };
-    const [loadingUpload, setLoadingUpload] = useState(false); //40.upload product image
-    const [errorUpload, setErrorUpload] = useState(''); //40.upload product image
+    const [loadingUpload, setLoadingUpload] = useState(false); //upload product image
+    const [errorUpload, setErrorUpload] = useState(''); //upload product image
   
-    const userSignin = useSelector((state) => state.userSignin); //40.upload product image
-    const { userInfo } = userSignin; //40.upload product image
-    const uploadFileHandler = async (e) => { //40.upload product image
-      const file = e.target.files[0]; //40.upload product image
-      const bodyFormData = new FormData(); //40.upload product image
-      bodyFormData.append('image', file); //40.upload product image
-      setLoadingUpload(true); //40.upload product image
+    const userSignin = useSelector((state) => state.userSignin); //upload product image
+    const { userInfo } = userSignin; //upload product image
+    const uploadFileHandler = async (e) => { //upload product image
+      const file = e.target.files[0]; //upload product image
+      const bodyFormData = new FormData(); //upload product image
+      bodyFormData.append('image', file); //upload product image
+      setLoadingUpload(true); //upload product image
       try {
-        const { data } = await axios.post('/api/uploads', bodyFormData, { //40.upload product image
-          headers: { //40.upload product image
-            'Content-Type': 'multipart/form-data', //40.upload product image
-            Authorization: `Bearer ${userInfo.token}`, //40.upload product image
+        const { data } = await axios.post('/api/uploads', bodyFormData, { //upload product image
+          headers: { //upload product image
+            'Content-Type': 'multipart/form-data', //upload product image
+            Authorization: `Bearer ${userInfo.token}`, //upload product image
           },
         });
-        setImage(data); //40.upload product image
-        setLoadingUpload(false); //40.upload product image
-      } catch (error) { //40.upload product image
-        setErrorUpload(error.message); //40.upload product image
-        setLoadingUpload(false); //40.upload product image
+        setImage(data); //upload product image
+        setLoadingUpload(false); //upload product image
+      } catch (error) { //upload product image
+        setErrorUpload(error.message); //upload product image
+        setLoadingUpload(false); //upload product image
       }
     };
     return (
