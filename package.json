@@ -1,5 +1,5 @@
 {
-  "name": "amazon-beyond-template",
+  "name": "ecommerce-website",
   "type": "module",
   "version": "1.0.0",
   "description": "On this site, products are exhibited and sold with real payment method.",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/melihdizdar/amazon-beyond-template"
+    "url": "git+https://github.com/melihdizdar/ecommerce-website"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/melihdizdar/amazon-beyond-template/issues"
+    "url": "https://github.com/melihdizdar/ecommerce-website/issues"
   },
-  "homepage": "https://github.com/melihdizdar/amazon-beyond-template#readme",
+  "homepage": "https://github.com/melihdizdar/ecommerce-website#readme",
   "dependencies": {
     "axios": "^0.21.4",
     "bcryptjs": "^2.4.3",
@@ -27,7 +27,7 @@
     "mailgun-js": "^0.22.0",
     "mongoose": "^6.0.7",
     "multer": "^1.4.3",
-    "socket.io": "^4.4.0",
+    "socket.io": "^4.3.1",
     "socket.io-client": "^4.3.2"
   },
   "devDependencies": {
