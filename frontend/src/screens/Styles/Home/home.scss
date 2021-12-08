@@ -40,6 +40,11 @@
     .rightarrow:hover{
         opacity: 0.8;
     }
+    @media screen and (min-width:1366px){
+        .carousel .slider img {
+            height: 700px;
+        }
+    }
     @media screen and (max-width:600px){
         .carousel .slider img {
             height: 150px;
