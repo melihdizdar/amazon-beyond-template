@@ -17,6 +17,11 @@
     text-decoration: none;
     font-size: 2rem;
   }
+
+  .navbar-logo:hover {
+    color: black;
+    opacity: 0.75;
+  }
   
   .fa-firstdraft {
     margin-left: 0.5rem;
@@ -89,7 +94,7 @@
       width: 100%;
       height: 50vh;
       position: absolute;
-      top: 50px;
+      top: 49px;
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
@@ -101,7 +106,7 @@
       left: 0;
       opacity: 1;
       transition: all 0.5s ease;
-      z-index: 1;
+      z-index: 3;
     }
   
     .nav-links {
@@ -159,5 +164,23 @@
     }
     .navbar button {
       display: none;
+    }
+  }
+
+  @media screen and (max-width:768px){
+    .nav-menu {
+      height: 40vh;
+    }
+  }
+
+  @media screen and (max-width:600px){
+    .nav-menu {
+      height: 60vh;
+    }
+  }
+
+  @media screen and (max-width:320px){
+    .nav-menu {
+      height: 65vh;
     }
   }

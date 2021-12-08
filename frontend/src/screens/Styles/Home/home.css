@@ -48,6 +48,12 @@
   opacity: 0.8;
 }
 
+@media screen and (min-width: 1366px) {
+  .home .carousel .slider img {
+    height: 700px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .home .carousel .slider img {
     height: 150px;

@@ -29,7 +29,8 @@ export default function HomeScreen() {
   }, [dispatch]);
     return (
         <div className="home">
-          <Carousel showArrows autoPlay showThumbs={false} infiniteLoop interval={6000} showStatus={false}  centerSlidePercentage={100}            renderArrowPrev={(onClickHandler, hasPrev, label) =>
+          <Carousel showArrows autoPlay showThumbs={false} infiniteLoop interval={6000} showStatus={false}  centerSlidePercentage={100} emulateTouch     
+          renderArrowPrev={(onClickHandler, hasPrev, label) =>
                 hasPrev && (
                     <button type="button" onClick={onClickHandler} title={label} className="leftarrow">
                         <i class="fas fa-angle-left"></i>
