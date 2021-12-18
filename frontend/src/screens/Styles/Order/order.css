@@ -133,6 +133,12 @@
           flex: 3;
 }
 
+.order .mainContent .mainLeft button {
+  background-color: #1F2934;
+  color: white;
+  border-radius: 0;
+}
+
 .order .mainContent .mainRight {
   -webkit-box-flex: 30%;
       -ms-flex: 30%;

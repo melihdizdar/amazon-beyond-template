@@ -38,6 +38,14 @@
   margin-top: 1%;
 }
 
+.product .back a {
+  color: #1F2934;
+}
+
+.product .back a:hover {
+  opacity: 0.9;
+}
+
 .product .contentStage {
   -webkit-box-flex: 100%;
       -ms-flex: 100%;
@@ -250,20 +258,10 @@
   opacity: 0.9;
 }
 
-.product .contentStage .right .RightContentStage .buyCard h4 {
-  text-align: center;
-}
-
 .product .contentStage .right .RightContentStage .buyCard h3 {
   text-align: center;
   font-weight: 400;
   font-size: 1.5rem;
-}
-
-.product .contentStage .right .RightContentStage .buyCard h2 {
-  text-align: center;
-  font-weight: bold;
-  color: #1F2934;
 }
 
 .product .contentStage .right .RightContentStage .buyCard strong {

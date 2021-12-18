@@ -6,7 +6,7 @@ import MessageBox from '../components/MessageBox';
 import "../screens/Styles/OrderHistory/orderhistory.css"
 
 export default function OrderHistoryScreen(props) {
-  //32.display orders history
+  //display orders history
   const orderMineList = useSelector((state) => state.orderMineList);
   const { loading, error, orders } = orderMineList;
   const dispatch = useDispatch();

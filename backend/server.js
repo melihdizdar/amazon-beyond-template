@@ -19,7 +19,7 @@ const app = express();
 app.use(express.json()); //token
 app.use(express.urlencoded({extended:true})); //token
 
-mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/amazon-beyond',{
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://localhost/ecommerce-website',{
     //mongodb bağlantı kod satırı
     useUnifiedTopology: true,
     useNewUrlParser: true

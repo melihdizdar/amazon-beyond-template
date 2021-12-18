@@ -15,34 +15,34 @@ export default function ProductScreen(props) {
     const [qty, setQty] = useState(1);
     const productDetails = useSelector((state) => state.productDetails);
     const {loading,error,product} = productDetails;
-    const userSignin = useSelector((state) => state.userSignin); //56.Rate and Review Products
-    const { userInfo } = userSignin; //56.Rate and Review Products
+    const userSignin = useSelector((state) => state.userSignin); //Rate and Review Products
+    const { userInfo } = userSignin; //Rate and Review Products
 
-    const productReviewCreate = useSelector((state) => state.productReviewCreate); //56.Rate and Review Products
-    const {loading:loadingReviewCreate,error:errorReviewCreate,success:successReviewCreate} = productReviewCreate; //56.Rate and Review Products
+    const productReviewCreate = useSelector((state) => state.productReviewCreate); //Rate and Review Products
+    const {loading:loadingReviewCreate,error:errorReviewCreate,success:successReviewCreate} = productReviewCreate; //Rate and Review Products
 
-    const [rating, setRating] = useState(0); //56.Rate and Review Products
-    const [comment, setComment] = useState(''); //56.Rate and Review Products
+    const [rating, setRating] = useState(0); //Rate and Review Products
+    const [comment, setComment] = useState(''); //Rate and Review Products
     
     useEffect(() => {
-        if(successReviewCreate){ //56.Rate and Review Products
-            window.alert('Review Submitted Successfully'); //56.Rate and Review Products
-            setRating(''); //56.Rate and Review Products
-            setComment(''); //56.Rate and Review Products
-            dispatch({type: PRODUCT_REVIEW_CREATE_RESET}); //56.Rate and Review Products
+        if(successReviewCreate){ //Rate and Review Products
+            window.alert('Review Submitted Successfully'); //Rate and Review Products
+            setRating(''); //Rate and Review Products
+            setComment(''); //Rate and Review Products
+            dispatch({type: PRODUCT_REVIEW_CREATE_RESET}); //Rate and Review Products
         }
         dispatch(detailsProduct(productId));
-    },[dispatch,productId,successReviewCreate]); //56.Rate and Review Products
+    },[dispatch,productId,successReviewCreate]); //Rate and Review Products
     //},[dispatch,productId]);
     const addToCartHandler = () =>{
         props.history.push(`/cart/${productId}?qty=${qty}`);
     };
-    const submitHandler = (e) => { //56.Rate and Review Products
-        e.preventDefault(); //56.Rate and Review Products
-        if(comment && rating) { //56.Rate and Review Products
-            dispatch(createReview(productId, {rating,comment,name: userInfo.name})); //56.Rate and Review Products
+    const submitHandler = (e) => { //Rate and Review Products
+        e.preventDefault(); //Rate and Review Products
+        if(comment && rating) { //Rate and Review Products
+            dispatch(createReview(productId, {rating,comment,name: userInfo.name})); //Rate and Review Products
         } else {
-            alert('Please enter comment and rating'); //56.Rate and Review Products
+            alert('Please enter comment and rating'); //Rate and Review Products
         }
     }
     return (
@@ -122,15 +122,6 @@ export default function ProductScreen(props) {
                     <div className="RightContentStage">
                         <div className="buyCard">
                             <ul>
-                                <li>
-                                    <h4>Seller{' '}</h4>
-                                    <h2>
-                                    <Link to={`/seller/${product.seller._id}`}>
-                                        {product.seller.seller.name}
-                                    </Link>
-                                    </h2>
-                                    <h3><Rating rating={product.seller.seller.rating} numReviews={product.seller.seller.numReviews} ></Rating></h3>
-                                </li>
                                 <li>
                                     <div className="row">
                                         <div><strong>Price</strong></div>

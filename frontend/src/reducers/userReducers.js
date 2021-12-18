@@ -1,4 +1,4 @@
-import { USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS , USER_SIGNIN_FAIL, USER_SIGNOUT, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_DELETE_RESET, USER_DETAILS_RESET, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_UPDATE_RESET, USER_TOPSELLERS_REQUEST, USER_TOPSELLERS_SUCCESS, USER_TOPSELLERS_FAIL, USER_ADDRESS_MAP_CONFIRM } from "../constants/userConstants";
+import { USER_SIGNIN_REQUEST, USER_SIGNIN_SUCCESS , USER_SIGNIN_FAIL, USER_SIGNOUT, USER_REGISTER_FAIL, USER_REGISTER_REQUEST, USER_REGISTER_SUCCESS, USER_DETAILS_REQUEST, USER_DETAILS_SUCCESS, USER_DETAILS_FAIL, USER_UPDATE_PROFILE_REQUEST, USER_UPDATE_PROFILE_SUCCESS, USER_UPDATE_PROFILE_FAIL, USER_UPDATE_PROFILE_RESET, USER_LIST_REQUEST, USER_LIST_SUCCESS, USER_LIST_FAIL, USER_DELETE_REQUEST, USER_DELETE_SUCCESS, USER_DELETE_FAIL, USER_DELETE_RESET, USER_DETAILS_RESET, USER_UPDATE_REQUEST, USER_UPDATE_SUCCESS, USER_UPDATE_FAIL, USER_UPDATE_RESET,USER_ADDRESS_MAP_CONFIRM } from "../constants/userConstants";
 
 
 export const userRegisterReducer = (state = {}, action) => {
@@ -29,7 +29,7 @@ export const userSigninReducer = (state = {},action) =>{
     }
 }
 
-export const userDetailsReducer = (state = {loading:true},action) =>{ //33.display user profile
+export const userDetailsReducer = (state = {loading:true},action) =>{ //display user profile
   switch(action.type){
       case USER_DETAILS_REQUEST:
           return {loading:true};
@@ -44,7 +44,7 @@ export const userDetailsReducer = (state = {loading:true},action) =>{ //33.displ
   }
 }
 
-export const userUpdateProfileReducer = (state = {}, action) => { //34.uptade user profile
+export const userUpdateProfileReducer = (state = {}, action) => { //update user profile
   switch (action.type) {
     case USER_UPDATE_PROFILE_REQUEST:
       return { loading: true };
@@ -59,7 +59,7 @@ export const userUpdateProfileReducer = (state = {}, action) => { //34.uptade us
   }
 };
 
-export const userUpdateReducer = (state = {}, action) => { //48.Edit User
+export const userUpdateReducer = (state = {}, action) => { //Edit User
   switch (action.type) {
     case USER_UPDATE_REQUEST:
       return { loading: true };
@@ -74,7 +74,7 @@ export const userUpdateReducer = (state = {}, action) => { //48.Edit User
   }
 };
 
-export const userListReducer = (state = {loading:true}, action) => { //46.list users
+export const userListReducer = (state = {loading:true}, action) => { //list users
   switch(action.type){
     case USER_LIST_REQUEST:
         return {loading:true};
@@ -87,7 +87,7 @@ export const userListReducer = (state = {loading:true}, action) => { //46.list u
   }
 }
 
-export const userDeleteReducer = (state = {}, action) => { //47.delete user
+export const userDeleteReducer = (state = {}, action) => { //delete user
   switch (action.type) {
     case USER_DELETE_REQUEST:
       return { loading: true };
@@ -102,20 +102,7 @@ export const userDeleteReducer = (state = {}, action) => { //47.delete user
   }
 };
 
-export const userTopSellerListReducer = (state = {loading:true}, action) => { //51.Add Top Seller Carousel
-  switch(action.type){
-    case USER_TOPSELLERS_REQUEST:
-        return {loading:true};
-    case USER_TOPSELLERS_SUCCESS:
-        return {loading:false,users:action.payload}; 
-    case USER_TOPSELLERS_FAIL:
-        return {loading:false, error:action.payload};
-    default:
-        return state;
-  }
-};
-
-export const userAddressMapReducer = (state = {}, action) => { //57.Choose address on google map
+export const userAddressMapReducer = (state = {}, action) => { //Choose address on google map
   switch (action.type) {
     case USER_ADDRESS_MAP_CONFIRM:
       return { address: action.payload };

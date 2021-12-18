@@ -11,7 +11,7 @@ export default function CartScreen(props) {
     const qty = props.location.search ? Number(props.location.search.split('=')[1]) : 1;
     const cart = useSelector((state) => state.cart);
     //const { cartItems } = cart;
-    const { cartItems, error } = cart; //52.Force order items from one seller
+    const { cartItems, error } = cart; //Force order items from one seller
     const dispatch = useDispatch();
     useEffect(() =>{
         if(productId){

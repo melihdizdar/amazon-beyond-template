@@ -48,6 +48,12 @@
   opacity: 0.8;
 }
 
+@media screen and (min-width: 1366px) {
+  .home .carousel .slider img {
+    height: 700px;
+  }
+}
+
 @media screen and (max-width: 600px) {
   .home .carousel .slider img {
     height: 150px;
@@ -232,7 +238,6 @@
 }
 
 .HomeColumnStage2 {
-  margin-top: -0.4%;
   -webkit-box-flex: 100%;
       -ms-flex: 100%;
           flex: 100%;
@@ -403,24 +408,6 @@
 }
 
 .ProductsListCard .imageStage img:hover {
-  opacity: 0.8;
-}
-
-.ProductsListCard .imageStage .topleft {
-  position: absolute;
-  top: 0;
-  left: 0;
-  font-size: 1.5rem;
-  background-color: #1F2934;
-  font-family: 'Roboto', sans-serif;
-}
-
-.ProductsListCard .imageStage .topleft a {
-  color: white;
-  margin: 10px;
-}
-
-.ProductsListCard .imageStage .topleft a:hover {
   opacity: 0.8;
 }
 

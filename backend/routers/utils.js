@@ -10,7 +10,7 @@ export const generateToken = (user) =>{
         name:user.name,
         email:user.email,
         isAdmin:user.isAdmin,
-        isSeller: user.isSeller, //49.Implement Seller View
+        isSeller: user.isSeller, //Implement Seller View
     }, 
         process.env.JWT_SECRET || 'somethingsecret', //.env JWT_SECRET=somethingsecret
         {
@@ -36,7 +36,7 @@ export const isAuth = (req,res,next) => {
     }
 }
 
-export const isAdmin = (req,res,next) => { //35.create admin view
+export const isAdmin = (req,res,next) => { //create admin view
     if(req.user && req.user.isAdmin){
         next();
     } else {
@@ -44,7 +44,7 @@ export const isAdmin = (req,res,next) => { //35.create admin view
     }
 }
 
-export const isSeller = (req,res,next) => { //49.Implement Seller View
+export const isSeller = (req,res,next) => { //Implement Seller View
     if(req.user && req.user.isSeller){
         next();
     } else {
@@ -52,7 +52,7 @@ export const isSeller = (req,res,next) => { //49.Implement Seller View
     }
 }
 
-export const isSellerOrAdmin = (req,res,next) => { //49.Implement Seller View
+export const isSellerOrAdmin = (req,res,next) => { //Implement Seller View
     if(req.user && (req.user.isSeller || req.user.isAdmin)){
         next();
     } else {
@@ -60,12 +60,12 @@ export const isSellerOrAdmin = (req,res,next) => { //49.Implement Seller View
     }
 }
 
-export const mailgun = () => mg({ //60.Email order receipt
+export const mailgun = () => mg({ //Email order receipt
     apiKey: process.env.MAILGUN_API_KEY,
     domain: process.env.MAILGUN_DOMAIN,
   });
 
-export const payOrderEmailTemplate = (order) => { //60.Email order receipt
+export const payOrderEmailTemplate = (order) => { //Email order receipt
   return `<h1>Thanks for shopping with us</h1>
   <p>
   Hi ${order.user.name},</p>

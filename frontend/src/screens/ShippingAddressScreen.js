@@ -11,10 +11,10 @@ export default function ShippingAddressScreen(props) {
     /*Shipping address'de girdiğin bilgilerin kaybolmaması için kullanılan kod*/
     const cart = useSelector((state) => state.cart);
     const {shippingAddress} = cart;
-    const [lat, setLat] = useState(shippingAddress.lat); //57.Choose address on google map
-    const [lng, setLng] = useState(shippingAddress.lng); //57.Choose address on google map
-    const userAddressMap = useSelector((state) => state.userAddressMap); //57.Choose address on google map
-    const { address: addressMap } = userAddressMap; //57.Choose address on google map
+    const [lat, setLat] = useState(shippingAddress.lat); //Choose address on google map
+    const [lng, setLng] = useState(shippingAddress.lng); //Choose address on google map
+    const userAddressMap = useSelector((state) => state.userAddressMap); //Choose address on google map
+    const { address: addressMap } = userAddressMap; //Choose address on google map
     /**/
     if(!userInfo){
         props.history.push('/signin');
@@ -29,16 +29,16 @@ export default function ShippingAddressScreen(props) {
     const submitHandler = (e) =>{
         /*Shipping Screen button action*/
         e.preventDefault();
-        const newLat = addressMap ? addressMap.lat : lat; //57.Choose address on google map
-        const newLng = addressMap ? addressMap.lng : lng; //57.Choose address on google map
+        const newLat = addressMap ? addressMap.lat : lat; //Choose address on google map
+        const newLng = addressMap ? addressMap.lng : lng; //Choose address on google map
         if (addressMap) {
-          setLat(addressMap.lat); //57.Choose address on google map
-          setLng(addressMap.lng); //57.Choose address on google map
+          setLat(addressMap.lat); //Choose address on google map
+          setLng(addressMap.lng); //Choose address on google map
         }
-        let moveOn = true; //57.Choose address on google map
-        if (moveOn) { //57.Choose address on google map
-          dispatch(saveShippingAddress({ fullName, address, city, postalCode, country, lat: newLat, lng: newLng,})); //57.Choose address on google map
-          props.history.push('/payment'); //57.Choose address on google map
+        let moveOn = true; //Choose address on google map
+        if (moveOn) { //Choose address on google map
+          dispatch(saveShippingAddress({ fullName, address, city, postalCode, country, lat: newLat, lng: newLng,})); //Choose address on google map
+          props.history.push('/payment'); //Choose address on google map
         }
     };
     return (

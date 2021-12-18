@@ -16,7 +16,7 @@ export const orderCreateReducer = (state = {}, action) => {
   };
 
   //export const orderDetailsReducer = (state = {loading:true,order:{}},action) => {
-    export const orderDetailsReducer = (state = { loading: true }, action) => { // 30.PayPal Button ekleme dersi
+    export const orderDetailsReducer = (state = { loading: true }, action) => { //PayPal Button ekleme
     switch (action.type) {
       case ORDER_DETAILS_REQUEST:
         return { loading: true };
@@ -29,7 +29,7 @@ export const orderCreateReducer = (state = {}, action) => {
     }
   };
 
-export const orderPayReducer = (state = {}, action) => { // 31.Pay Order
+export const orderPayReducer = (state = {}, action) => { //Pay Order
   switch (action.type) {
     case ORDER_PAY_REQUEST:
       return { loading: true };
@@ -44,7 +44,7 @@ export const orderPayReducer = (state = {}, action) => { // 31.Pay Order
   }
 };
 
-// 32.Ders Display Orders History
+//Display Orders History
 export const orderMineListReducer = (state = { orders: [] }, action) => {
   switch (action.type) {
     case ORDER_MINE_LIST_REQUEST:
@@ -58,7 +58,7 @@ export const orderMineListReducer = (state = { orders: [] }, action) => {
   }
 };
 
-export const orderListReducer = (state = { orders: [] }, action) => { //42.list order
+export const orderListReducer = (state = { orders: [] }, action) => { //list order
   switch (action.type) {
     case ORDER_LIST_REQUEST:
       return { loading: true };
@@ -67,11 +67,11 @@ export const orderListReducer = (state = { orders: [] }, action) => { //42.list 
     case ORDER_LIST_FAIL:
       return { loading: false, error: action.payload };
     default:
-      return state; //43.delete orders
+      return state; //delete orders
   }
 };
 
-export const orderDeleteReducer = (state = {}, action) => { //43.delete order
+export const orderDeleteReducer = (state = {}, action) => { //delete order
   switch (action.type) {
     case ORDER_DELETE_REQUEST:
       return { loading: true };
@@ -86,7 +86,7 @@ export const orderDeleteReducer = (state = {}, action) => { //43.delete order
   }
 };
 
-export const orderDeliverReducer = (state = {}, action) => { // 44.deliver order
+export const orderDeliverReducer = (state = {}, action) => { //deliver order
   switch (action.type) {
     case ORDER_DELIVER_REQUEST:
       return { loading: true };
@@ -101,7 +101,7 @@ export const orderDeliverReducer = (state = {}, action) => { // 44.deliver order
   }
 };
 
-export const orderSummaryReducer = ( state = { loading: true, summary: {} }, action) => { //61.Create dashboard screen
+export const orderSummaryReducer = ( state = { loading: true, summary: {} }, action) => { //Create dashboard screen
   switch (action.type) {
     case ORDER_SUMMARY_REQUEST:
       return { loading: true };

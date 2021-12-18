@@ -7,17 +7,17 @@ import Product from '../models/productModel.js';
 
 const orderRouter = express.Router();
 
-//orderRouter.get('/',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //42.list orders
-orderRouter.get('/',isAuth,isSellerOrAdmin,expressAsyncHandler(async (req, res) => { //49.Implement Seller View
+//orderRouter.get('/',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //list orders
+orderRouter.get('/',isAuth,isSellerOrAdmin,expressAsyncHandler(async (req, res) => { //Implement Seller View
     //const orders = await Order.find({}).populate('user', 'name');
-    const seller = req.query.seller || ''; //49.Implement Seller View
-    const sellerFilter = seller ? { seller } : {}; //49.Implement Seller View
-    const orders = await Order.find({ ...sellerFilter }).populate('user','name'); //49.Implement Seller View
+    const seller = req.query.seller || ''; //Implement Seller View
+    const sellerFilter = seller ? { seller } : {}; //Implement Seller View
+    const orders = await Order.find({ ...sellerFilter }).populate('user','name'); //Implement Seller View
     res.send(orders);
   })
 );
 
-orderRouter.get('/summary',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //61.Create dashboard screen
+orderRouter.get('/summary',isAuth,isAdmin,expressAsyncHandler(async (req, res) => { //Create dashboard screen
     const orders = await Order.aggregate([
       {
         $group: {
@@ -63,7 +63,7 @@ orderRouter.post('/', isAuth, expressAsyncHandler(async(req,res) => {
     }
     else {
         const order = new Order({
-            seller: req.body.orderItems[0].seller, //49.Implement Seller View
+            seller: req.body.orderItems[0].seller, //Implement Seller View
             orderItems: req.body.orderItems,
             shippingAddress: req.body.shippingAddress,
             paymentMethod: req.body.paymentMethod,
@@ -78,7 +78,7 @@ orderRouter.post('/', isAuth, expressAsyncHandler(async(req,res) => {
     }
 }));
 
-orderRouter.get('/mine',isAuth,expressAsyncHandler(async (req, res) => { // 32.Display Orders History
+orderRouter.get('/mine',isAuth,expressAsyncHandler(async (req, res) => { //Display Orders History
   const orders = await Order.find({ user: req.user._id });
   res.send(orders);})
 );
@@ -94,9 +94,9 @@ orderRouter.get('/:id',isAuth,expressAsyncHandler(async (req, res) => {
 );
 
 orderRouter.put('/:id/pay'),isAuth,expressAsyncHandler(async (req,res) => {
-  // 31.burda order işlemi yapılınca olan kullanılacak değerlerin tanımlamaları yapıldı
+  //burda order işlemi yapılınca olan kullanılacak değerlerin tanımlamaları yapıldı
   //const order = await Order.findById(req.params.id);
-  const order = await Order.findById(req.params.id).populate( 'user', 'email name'); //60.Email order receipt
+  const order = await Order.findById(req.params.id).populate( 'user', 'email name'); //Email order receipt
   if (order) {
     order.isPaid = true;
     order.paidAt = Date.now();
@@ -107,18 +107,18 @@ orderRouter.put('/:id/pay'),isAuth,expressAsyncHandler(async (req,res) => {
       email_address: req.body.email_address,
     };
     const updatedOrder = await order.save();
-    mailgun().messages().send( //60.Email order receipt
+    mailgun().messages().send( //Email order receipt
       {
-        from: 'Amazon <amazon@mg.yourdomain.com>', //60.Email order receipt
-        to: `${order.user.name} <${order.user.email}>`, //60.Email order receipt
-        subject: `New order ${order._id}`, //60.Email order receipt
-        html: payOrderEmailTemplate(order), //60.Email order receipt
+        from: 'Beyond <beyond@mg.yourdomain.com>', //Email order receipt
+        to: `${order.user.name} <${order.user.email}>`, //Email order receipt
+        subject: `New order ${order._id}`, //Email order receipt
+        html: payOrderEmailTemplate(order), //Email order receipt
       },
-      (error, body) => { //60.Email order receipt
-        if (error) { //60.Email order receipt
-          console.log(error); //60.Email order receipt
+      (error, body) => { //Email order receipt
+        if (error) { //Email order receipt
+          console.log(error); //Email order receipt
         } else {
-          console.log(body); //60.Email order receipt
+          console.log(body); //Email order receipt
         }
       }
     );
@@ -128,7 +128,7 @@ orderRouter.put('/:id/pay'),isAuth,expressAsyncHandler(async (req,res) => {
   }
 });
 
-orderRouter.delete('/:id', isAuth , isAdmin, expressAsyncHandler(async(req,res) => { //43.delete orders
+orderRouter.delete('/:id', isAuth , isAdmin, expressAsyncHandler(async(req,res) => { //delete orders
   const order = await Order.findById(req.params.id);
   if(order){
     const deleteOrder = await order.remove();
@@ -138,7 +138,7 @@ orderRouter.delete('/:id', isAuth , isAdmin, expressAsyncHandler(async(req,res) 
   }
 }));
 
-orderRouter.put('/:id/deliver'),isAuth,expressAsyncHandler(async (req,res) => { //44.deliver order
+orderRouter.put('/:id/deliver'),isAuth,expressAsyncHandler(async (req,res) => { //deliver order
   const order = await Order.findById(req.params.id);
   if (order) {
     order.isDelivered = true;

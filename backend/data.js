@@ -7,13 +7,13 @@ const data = {
             email:'admin@example.com',
             password: bcrypt.hashSync('admin123',8),
             isAdmin:true,
-            isSeller:true, //58.Bugfix runnig locally without issue
+            isSeller:true, //Bugfix runnig locally without issue
             seller: {
-                name: 'Puma', //58.Bugfix runnig locally without issue
-                logo: '/images/logo1.png', //58.Bugfix runnig locally without issue
-                description: 'best seller', //58.Bugfix runnig locally without issue
-                rating: 4.5, //58.Bugfix runnig locally without issue
-                numReviews: 120, //58.Bugfix runnig locally without issue
+                name: 'Puma', //Bugfix runnig locally without issue
+                logo: '/images/logo1.png', //Bugfix runnig locally without issue
+                description: 'best seller', //Bugfix runnig locally without issue
+                rating: 4.5, //Bugfix runnig locally without issue
+                numReviews: 120, //Bugfix runnig locally without issue
                 },
         },
         {
