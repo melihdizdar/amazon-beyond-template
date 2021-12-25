@@ -45,11 +45,16 @@ header {
 main {
   grid-area: main;
   padding: 1rem;
+  position: relative;
+  min-height: 90vh;
 }
 
 /*Footer Styles*/
 footer {
   grid-area: footer;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
 }
 
 .footer {
@@ -91,7 +96,7 @@ footer {
 .footer-items p {
   color: grey;
   font-size: 16px;
-  text-align: justify;
+  text-align: left;
   line-height: 25px;
 }
 
@@ -180,6 +185,26 @@ footer {
 @media screen and (max-width: 600px) {
   .footer-items {
     width: 100%;
+  }
+  .footer-items h1 {
+    text-align: center;
+  }
+  .footer-items p {
+    text-align: center;
+  }
+  .footer-items .lineStage {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer-items .footerul {
+    text-align: center;
   }
 }
 

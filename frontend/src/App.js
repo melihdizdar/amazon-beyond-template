@@ -121,7 +121,7 @@ function App(props) {
               <i className="fas fa-angle-right"></i>
           </button>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            BEYOND
+            BRAND
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -208,7 +208,7 @@ function App(props) {
             <div className="footer">
               <div className="inner-footer">
                 <div className="footer-items">
-                  <h1 className="footerh1">Beyond</h1>
+                  <h1 className="footerh1">Brand</h1>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
                     tempor incididunt ut labore et dolore magna aliqua.
@@ -216,7 +216,9 @@ function App(props) {
                 </div>
                 <div className="footer-items">
                   <h2 className="footerh2">Quick Links</h2>
-                  <div className="border"></div>
+                  <div className="lineStage">
+                    <div className="border"></div>
+                  </div>
                   <ul className="footerul">
                     <Link to="/"><li className="footerli">Home</li></Link>
                     <Link to="/about"><li className="footerli">About</li></Link>
@@ -227,7 +229,9 @@ function App(props) {
                 </div>
                 <div className="footer-items">
                   <h2 className="footerh2">OTHER LINKS</h2>
-                  <div className="border"></div>
+                  <div className="lineStage">
+                    <div className="border"></div>
+                  </div>
                   <ul className="footerul">
                     <Link to="/privacy"><li className="footerli">Privacy & Policy</li></Link>
                     <Link to="/terms"><li className="footerli">Terms & Conditions</li></Link>
@@ -236,7 +240,9 @@ function App(props) {
                 </div>
                 <div className="footer-items">
                   <h2 className="footerh2">Contact Us</h2>
-                  <div className="border"></div>
+                  <div className="lineStage">
+                    <div className="border"></div>
+                  </div>
                   <ul className="footerul">
                     <li className="footerli"><i class="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
                     <li className="footerli"><i class="fa fa-phone" aria-hidden="true"></i>1234567890</li>
