@@ -13,6 +13,7 @@ export default function OrderScreen(props) {
   //Add PayPal Button ve Pay Order
   const orderId = props.match.params.id;
   const [sdkReady,setSdkReady] = useState(false); //Add PayPal Button
+  const [sdkSec,setSecReady] = useState(false); //Add PayPal Button
   const orderDetails = useSelector((state) => state.orderDetails);
   const { order, loading, error } = orderDetails;
   const userSignin = useSelector((state) => state.userSignin); //Deliver order
@@ -53,11 +54,17 @@ export default function OrderScreen(props) {
           console.log("-----")
           console.log(order.paymentMethod)
         }
+        if(order.paymentMethod === "Iyzico"){ //Add PayPal Button
+          setSecReady(true); //Add PayPal Button
+          console.log(sdkSec)
+          console.log("-----")
+          console.log(order.paymentMethod)
+        }
       }
     }
   /* }, [dispatch, order,orderId,sdkReady]); Add PayPal Button */
   //}, [dispatch, order,orderId,sdkReady,successPay]); //Pay Order
-    }, [dispatch, order,orderId,sdkReady,successPay,successDeliver]); //Deliver order
+    }, [dispatch, order,orderId,sdkReady,sdkSec,successPay,successDeliver]); //Deliver order
   /* const successPaymentHandler = () => {}; //Add PayPal Button */
   const successPaymentHandler = (paymentResult) => { //Pay Order
     dispatch(payOrder(order,paymentResult)); //Pay Order
@@ -197,6 +204,20 @@ export default function OrderScreen(props) {
                       ></PayPalButton>
                     </>   
                     )}
+                    {!sdkSec ? 
+                    (
+                      <LoadingBox/> ) : (
+                    /* <PayPalButton amount={order.totalPrice} onSuccess={successPaymentHandler} /> //Add PayPal Button */
+                    <>
+                      {errorPay && (
+                      <MessageBox variant="danger">{errorPay}</MessageBox>)}
+                      {loadingPay && <LoadingBox></LoadingBox>}
+                      
+                      <h1>iyzico will be here</h1>
+
+                    </>   
+                    )}
+                    {}
                   </li>
                 )}
               {/*-----------------------------*/}
