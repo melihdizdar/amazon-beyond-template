@@ -9,13 +9,13 @@ import "../screens/Styles/ProductsEdit/productsedit.css";
 
 export default function ProductEditScreen(props) {
     const productId = props.match.params.id; //build product edit screen
-    const [name,setName] = useState(''); //build product edit screen
-    const [price,setPrice] = useState(''); //build product edit screen
-    const [image,setImage] = useState(''); //build product edit screen
-    const [category,setCategory] = useState(''); //build product edit screen
+    const [name,setName] = useState(''); //name
+    const [price,setPrice] = useState(''); //prive
+    const [image,setImage] = useState(''); //image
+    const [category,setCategory] = useState(''); //category
     const [coutInStock,setCoutInStock] = useState(''); //build product edit screen
-    const [brand,setBrand] = useState(''); //build product edit screen
-    const [description,setDescription] = useState(''); //build product edit screen
+    const [brand,setBrand] = useState(''); //brand
+    const [description,setDescription] = useState(''); //description
 
     const productDetails = useSelector((state) => state.productDetails); //build product edit screen
     const { loading,error,product } = productDetails; //build product edit screen
@@ -23,11 +23,13 @@ export default function ProductEditScreen(props) {
     const {loading: loadingUpdate,error: errorUpdate,success: successUpdate,} = productUpdate; //update product
     const dispatch = useDispatch(); //build product edit screen
     useEffect(() => { //build product edit screen
+        console.log(loadingUpload)
         //if(!product || (product._id !== productId)) { //build product edit screen
         if (successUpdate) {
+
             props.history.push('/productlist'); //update product
         }
-        if (!product || product._id !== productId || successUpdate) { //update product
+        if (!product || product._id !== productId || successUpdate  ) { //update product
             dispatch({ type: PRODUCT_UPDATE_RESET }); //update product
             dispatch(detailsProduct(productId)); //build product edit screen    
         } else {
@@ -51,6 +53,7 @@ export default function ProductEditScreen(props) {
     const userSignin = useSelector((state) => state.userSignin); //upload product image
     const { userInfo } = userSignin; //upload product image
     const uploadFileHandler = async (e) => { //upload product image
+        console.log("hello")
       const file = e.target.files[0]; //upload product image
       const bodyFormData = new FormData(); //upload product image
       bodyFormData.append('image', file); //upload product image
