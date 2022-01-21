@@ -16,6 +16,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import ProductListScreen from "./screens/ProductListScreen";
 import ProductEditScreen from "./screens/ProductEditScreen";
+import CreateScreen from "./screens/CreateScreen";
 import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
@@ -177,6 +178,7 @@ function App(props) {
             <Route path="/cart/:id?" component={CartScreen}/>
             <Route path="/product/:id" component={ProductScreen} exact/>
             <Route path="/product/:id/edit" component={ProductEditScreen} exact/>
+            <Route path="/ProductCreate" component= {CreateScreen} exact/>
             <Route path="/signin" component={SigninScreen}/>
             <Route path="/register" component={RegisterScreen}/>
             <Route path="/shipping" component={ShippingAddressScreen}/>
