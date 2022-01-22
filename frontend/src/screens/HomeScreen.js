@@ -12,6 +12,9 @@ import HomeCard from '../components/HomeCard';
 import { listHomeCards } from '../actions/homeActions';
 import "../screens/Styles/Home/home.css";
 import SCollectionButton from '../components/SCollectionButton';
+import infoimage1 from "../assets/hicon1.png";
+import infoimage2 from "../assets/hicon2.png";
+import infoimage3 from "../assets/hicon3.png";
 
 export default function HomeScreen() {
   /*kullanılan fonksiyonların tanımları yapılır.*/
@@ -107,15 +110,15 @@ export default function HomeScreen() {
         </div>
         <div className="informationsStage">
           <div className="informationscard">
-            <img src="https://i.hizliresim.com/423a9oz.jpg" alt="infocard"/>
+            <img src={infoimage1} alt="infocard"/>
             <h1>1 product purchased = 1 tree planted</h1>
           </div>
           <div className="informationscard">
-            <img src="https://i.hizliresim.com/i2azdz4.jpg" alt="infocard"/>
+            <img src={infoimage2} alt="infocard"/>
             <h1>Sustainable & Ethical Manufacturing</h1>
           </div>
           <div className="informationscard">
-            <img src="https://i.hizliresim.com/eig1pgl.jpg" alt="infocard"/>
+            <img src={infoimage3} alt="infocard"/>
             <h1>Free Exchanges & Easy Returns</h1>
           </div>
         </div>
