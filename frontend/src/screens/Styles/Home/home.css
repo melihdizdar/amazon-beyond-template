@@ -96,10 +96,11 @@
   font-size: 2rem;
   padding: 0;
   font-weight: 800;
-  margin-bottom: -20px;
+  margin: 0;
 }
 
 .showallstage {
+  width: 90%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -108,7 +109,7 @@
           justify-content: flex-end;
   -ms-flex-item-align: end;
       align-self: flex-end;
-  margin-right: 3%;
+  margin-top: 2.5%;
 }
 
 .showall {
@@ -169,7 +170,7 @@
 }
 
 /*-End- Home Card Stage*/
-/*Home COlumn Card*/
+/*Home Column Card*/
 .HomeColumnStage {
   -webkit-box-flex: 100%;
       -ms-flex: 100%;
@@ -188,9 +189,9 @@
 }
 
 .HomeColumnStage .left {
-  -webkit-box-flex: 4;
-      -ms-flex: 4;
-          flex: 4;
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -228,13 +229,24 @@
 }
 
 .HomeColumnStage .right {
-  -webkit-box-flex: 5;
-      -ms-flex: 5;
-          flex: 5;
+  -webkit-box-flex: 4;
+      -ms-flex: 4;
+          flex: 4;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .HomeColumnStage .right img {
   border-radius: 0;
+  width: 817px;
+  height: 400px;
 }
 
 .HomeColumnStage2 {
@@ -262,6 +274,8 @@
 
 .HomeColumnStage2 .left img {
   border-radius: 0;
+  width: 817px;
+  height: 400px;
 }
 
 .HomeColumnStage2 .right {
@@ -322,7 +336,7 @@
       flex-wrap: nowrap;
   margin-right: 10%;
   margin-left: 10%;
-  margin-top: 15%;
+  margin-top: 10%;
   margin-bottom: 10%;
   font-family: 'Roboto', sans-serif;
 }
@@ -357,6 +371,7 @@
 }
 
 .ProductsListStage {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -392,7 +407,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 10px;
+  margin: 5px;
   font-family: 'Roboto', sans-serif;
 }
 
