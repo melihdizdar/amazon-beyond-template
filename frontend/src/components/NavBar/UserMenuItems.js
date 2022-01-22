@@ -1,7 +1,7 @@
 export const UserMenuItems = [
     {
       title: 'User Profile',
-      path: '/profile',
+      path: '/editprofile',
       cName: 'dropdown-link'
     },
     {

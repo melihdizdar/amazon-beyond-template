@@ -2,17 +2,21 @@
     background: #d6d6d6;
     height: 80px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     font-size: 1.2rem;
     padding: 0;
     font-family: 'PT Sans', sans-serif;
   }
-  
+  .sidebarPosition{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+  }
   .navbar-logo {
     color: black;
     justify-self: start;
-    margin-left: 20px;
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -34,7 +38,7 @@
     grid-gap: 10px;
     list-style: none;
     text-align: center;
-    width: 70vw;
+    width: 120vw;
     justify-content: end;
     margin-right: 2rem;
   }
@@ -91,8 +95,9 @@
     .nav-menu {
       display: flex;
       flex-direction: column;
+      justify-content: center;
       width: 100%;
-      height: 50vh;
+      height: 60%;
       position: absolute;
       top: 49px;
       left: -100%;
@@ -164,23 +169,5 @@
     }
     .navbar button {
       display: none;
-    }
-  }
-
-  @media screen and (max-width:768px){
-    .nav-menu {
-      height: 40vh;
-    }
-  }
-
-  @media screen and (max-width:600px){
-    .nav-menu {
-      height: 60vh;
-    }
-  }
-
-  @media screen and (max-width:320px){
-    .nav-menu {
-      height: 65vh;
     }
   }

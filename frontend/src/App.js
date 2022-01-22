@@ -11,7 +11,9 @@ import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
-import ProfileScreen from "./screens/ProfileScreen";
+import EditProfileScreen from "./screens/EditProfileScreen";
+import UserProfileScreen from "./screens/UserProfileScreen";
+import AdminProfileScreen from "./screens/AdminProfileScreen";
 import PrivateRoute from "./components/PrivateRoute";
 import AdminRoute from "./components/AdminRoute";
 import ProductListScreen from "./screens/ProductListScreen";
@@ -117,17 +119,19 @@ function App(props) {
             </ul>
         </aside>
         <nav className='navbar'>
-          <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)}>
-              <i className="fas fa-angle-right"></i>
-          </button>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            BRAND
-          </Link>
+          <div className="sidebarPosition">
+            <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)}>
+                <i className="fas fa-angle-right"></i>
+            </button>
+            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+              BRAND
+            </Link>
+          </div>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-              <li className='nav-item'>
+            <li className='nav-item'>
               <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
                 About
               </Link>
@@ -146,23 +150,22 @@ function App(props) {
             </li>
             {userInfo && userInfo.isAdmin && (
               <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                  <Link to="/dashboard" className='nav-links' onClick={closeMobileMenu}>
+                  <Link to="/admin" className='nav-links' onClick={closeMobileMenu}>
                   Admin Profile <i className='fas fa-caret-down' />
                   </Link>
                   {dropdown && <Dropdown />}
               </li>
             )}
-            <Link>
               {userInfo ? (
-                          <li className='nav-item' onMouseEnter={onUserMouseEnter} onMouseLeave={onUserMouseLeave} >
-                              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                              User Profile <i className='fas fa-caret-down' />
-                              </Link>
-                              {userdropdown && <DropdownUser/>}
-                              <Link to='/signin' className='nav-links' onClick={signoutHandler}>
-                                  Sign Out
-                              </Link>
-                          </li>
+                    <li className='nav-item' onMouseEnter={onUserMouseEnter} onMouseLeave={onUserMouseLeave} >
+                        <Link to='/user' className='nav-links' onClick={closeMobileMenu}>
+                        User Profile <i className='fas fa-caret-down' />
+                        </Link>
+                        {userdropdown && <DropdownUser/>}
+                        <Link to='/signin' className='nav-links' onClick={signoutHandler}>
+                            Sign Out
+                        </Link>
+                    </li>
               ) : ( 
                   <li className='nav-item'>
                   <Link to='/signin' className='nav-links' onClick={closeMobileMenu}>
@@ -170,7 +173,6 @@ function App(props) {
                   </Link>
                   </li>
               )}
-            </Link>
           </ul>
         </nav>
           <main>
@@ -188,7 +190,9 @@ function App(props) {
             <Route path="/search/category/:category" component={SearchScreen} exact/>
             <Route path="/search/category/:category/name/:name" component={SearchScreen} exact/>
             <Route path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber" component={SearchScreen} exact/>
-            <PrivateRoute path="/profile" component={ProfileScreen}/>
+            <PrivateRoute path="/editprofile" component={EditProfileScreen}/>
+            <PrivateRoute path="/user" component={UserProfileScreen}/>
+            <AdminRoute path="/admin" component={AdminProfileScreen} exact/>
             <AdminRoute path="/productlist" component={ProductListScreen} exact/>
             <AdminRoute path="/productlist/pageNumber/:pageNumber" component={ProductListScreen} exact/>
             <AdminRoute path="/orderlist" component={OrderListScreen} exact/>

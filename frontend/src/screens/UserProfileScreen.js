@@ -1,12 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
+/*import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { detailsUser, updateUserProfile } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
-import "../screens/Styles/Profile/profile.css";
+import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';*/
 
-export default function ProfileScreen() {
+export default function UserProfileScreen() {
+/*
   const [name, setName] = useState(''); //update user profile
   const [email, setEmail] = useState(''); //update user profile
   const [password, setPassword] = useState(''); //update user profile
@@ -30,11 +32,11 @@ export default function ProfileScreen() {
     } else { //update user profile
       setName(user.name); //update user profile
       setEmail(user.email); //update user profile
-      if (user.seller) { //updateImplement Seller View
-        setSellerName(user.seller.name); //updateImplement Seller View
-        setSellerLogo(user.seller.logo); //updateImplement Seller View
-        setSellerDescription(user.seller.description); //updateImplement Seller View
-      }
+        if (user.seller) { //updateImplement Seller View
+            setSellerName(user.seller.name); //updateImplement Seller View
+            setSellerLogo(user.seller.logo); //updateImplement Seller View
+            setSellerDescription(user.seller.description); //updateImplement Seller View
+        }
     }
   }, [dispatch, userInfo._id, user]); //update user profile
   //  dispatch(detailsUser(userInfo._id)); //display user profile
@@ -45,45 +47,20 @@ export default function ProfileScreen() {
       alert('Password and Confirm Password Are Not Matched'); //update user profile
     } else { //update user profile
       //dispatch(updateUserProfile({ userId: user._id, name, email, password })); //update user profile
-      dispatch(
+    dispatch(
         updateUserProfile({userId: user._id,name,email,password,sellerName,sellerLogo,sellerDescription,})); //updateImplement Seller View
     }
-  };
-  return (
-    <div className="profile">
-      <div className="headerStage">
-        <h1>User Profile</h1>
-      </div>
-      <form className="form" onSubmit={submitHandler}>
-        {loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : 
-        (
-          <>
-            {loadingUpdate && <LoadingBox/>}
-            {errorUpdate && (<MessageBox variant="danger">{errorUpdate}</MessageBox>)}
-            {successUpdate && (<MessageBox variant="success">Profile Updated Successfully</MessageBox>)}
+};
+*/
+return (
+        <div style={{textAlign:"center"}}>
             <div>
-              <label htmlFor="name">Name</label>
-              <input id="name" type="text" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)}></input>
+                <h4>User Profile Screen</h4>
+                <ul>
+                    <li><Link to="/editprofile">Profile Edit</Link></li>
+                    <li><Link to="/orderhistory">Order History</Link></li>
+                </ul>
             </div>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-            </div>
-            <div>
-              <label htmlFor="password">Password</label>
-              <input id="password" type="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)}></input>
-            </div>
-            <div>
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input id="confirmPassword" type="password" placeholder="Enter confirm password" onChange={(e) => setConfirmPassword(e.target.value)}></input>
-            </div>
-            <div>
-              <label />
-              <button className="primary" type="submit">Update</button>
-            </div>
-          </>
-        )}
-      </form>
-    </div>
-  );
+        </div>
+    );
 }
