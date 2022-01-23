@@ -7,7 +7,7 @@ import MessageBox from "../components/MessageBox";
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
 import "../screens/Styles/ProductsEdit/productsedit.css";
 
-export default function ProductEditScreen(props) {
+export default function CreateScreen(props) {
     const [name,setName] = useState(''); //name
     const [price,setPrice] = useState(''); //prive
     const [image,setImage] = useState(''); //image
