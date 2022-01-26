@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
-import { detailsProduct, updateProduct, createProduct, deleteProduct, listProducts } from '../actions/productActions';
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
 import "../screens/Styles/ProductsEdit/productsedit.css";
+import {createProduct, deleteProduct, listProducts ,updateProduct} from '../actions/productActions';
 
 export default function CreateScreen(props) {
     const [name,setName] = useState(''); //name
@@ -16,15 +16,15 @@ export default function CreateScreen(props) {
     const [brand,setBrand] = useState(''); //brand
     const [description,setDescription] = useState(''); //description
     const dispatch = useDispatch();  //list products
-
+    const productCreate = useSelector((state) => state.productCreate); //create product
+    const { loading:loadingCreate, error: errorCreate, success:successCreate, product:createdProduct } = productCreate; //create product
 
 
     //}, [product,dispatch,productId]); //build product edit screen
     const submitHandler = (e) => { //build product edit screen
         e.preventDefault(); //build product edit screen
         dispatch(createProduct());
-        const productId = props.match.params.id; //build product edit screen
-        dispatch(updateProduct({_id: productId,name,price,image,category,brand,coutInStock,description,}));
+        dispatch(updateProduct({_id: createdProduct._id,name,price,image,category,brand,coutInStock,description,})); //update product
     };
     const userSignin = useSelector((state) => state.userSignin); //upload product image
     const { userInfo } = userSignin; //upload product image
