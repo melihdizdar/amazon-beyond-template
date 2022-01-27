@@ -3,7 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
-import { PRODUCT_UPDATE_RESET } from '../constants/productConstants';
+import { PRODUCT_UPDATE_RESET,PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET } from '../constants/productConstants';
 import "../screens/Styles/ProductsEdit/productsedit.css";
 import {createProduct, deleteProduct, listProducts ,updateProduct} from '../actions/productActions';
 
@@ -20,11 +20,20 @@ export default function CreateScreen(props) {
     const { loading:loadingCreate, error: errorCreate, success:successCreate, product:createdProduct } = productCreate; //create product
 
 
+    useEffect(() => {
+        if(successCreate){
+            dispatch(updateProduct({_id: createdProduct._id,name,price,image,category,brand,coutInStock,description,})); //update product
+            props.history.push('/productlist'); //update product
+        }
+
+
+    })
+
     //}, [product,dispatch,productId]); //build product edit screen
     const submitHandler = (e) => { //build product edit screen
         e.preventDefault(); //build product edit screen
         dispatch(createProduct());
-        dispatch(updateProduct({_id: createdProduct._id,name,price,image,category,brand,coutInStock,description,})); //update product
+        
     };
     const userSignin = useSelector((state) => state.userSignin); //upload product image
     const { userInfo } = userSignin; //upload product image
