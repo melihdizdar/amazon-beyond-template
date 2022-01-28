@@ -6,6 +6,7 @@ import MessageBox from "../components/MessageBox";
 import { PRODUCT_UPDATE_RESET,PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET } from '../constants/productConstants';
 import "../screens/Styles/ProductsEdit/productsedit.css";
 import {createProduct, deleteProduct, listProducts ,updateProduct} from '../actions/productActions';
+//NEEDS FRONTEND
 
 export default function CreateScreen(props) {
     const [name,setName] = useState(''); //name
