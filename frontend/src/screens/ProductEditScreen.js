@@ -23,7 +23,6 @@ export default function ProductEditScreen(props) {
     const {loading: loadingUpdate,error: errorUpdate,success: successUpdate,} = productUpdate; //update product
     const dispatch = useDispatch(); //build product edit screen
     useEffect(() => { //build product edit screen
-        console.log(loadingUpload)
         //if(!product || (product._id !== productId)) { //build product edit screen
         if (successUpdate) {
             props.history.push('/productlist'); //update product
