@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
-import LoadingBox from "../components/LoadingBox";
-import MessageBox from "../components/MessageBox";
-import { PRODUCT_UPDATE_RESET,PRODUCT_CREATE_RESET, PRODUCT_DELETE_RESET } from '../constants/productConstants';
 import "../screens/Styles/ProductsEdit/productsedit.css";
-import {createProduct, deleteProduct, listProducts ,updateProduct} from '../actions/productActions';
+import {createProduct,updateProduct} from '../actions/productActions';
 //NEEDS FRONTEND
 
 export default function CreateScreen(props) {
@@ -18,7 +15,7 @@ export default function CreateScreen(props) {
     const [description,setDescription] = useState(''); //description
     const dispatch = useDispatch();  //list products
     const productCreate = useSelector((state) => state.productCreate); //create product
-    const { loading:loadingCreate, error: errorCreate, success:successCreate, product:createdProduct } = productCreate; //create product
+    const { success:successCreate, product:createdProduct } = productCreate; //create product
 
 
     useEffect(() => {
