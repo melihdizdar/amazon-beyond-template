@@ -21,10 +21,10 @@ export default function ProductListScreen(props) {
   const { userInfo } = userSignin; //Implement Seller View
   const dispatch = useDispatch();  //list products
   useEffect(() => { //list products
-    if(successCreate){ //create product
-      dispatch({type:PRODUCT_CREATE_RESET}); //create product
-      props.history.push(`/product/${createdProduct._id}/edit`); //create product
-    }
+    //if(successCreate){ //create product
+    //dispatch({type:PRODUCT_CREATE_RESET}); //create product
+    //props.history.push(`/product/${createdProduct._id}/edit`); //create product
+    //}
     if (successDelete) { //delete product
       dispatch({ type: PRODUCT_DELETE_RESET }); //delete product
     }
@@ -42,7 +42,7 @@ export default function ProductListScreen(props) {
     }
   };
   const createHandler = () => { //create product
-    dispatch(createProduct()); //create product
+    props.history.push("/ProductCreate")
   }
   return (
     <div className="productstable">
