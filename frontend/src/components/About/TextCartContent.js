@@ -5,7 +5,7 @@ export default function TextCartContent(props) {
     const {textCard} = props;
     return (
         <div className="textCart" key={textCard._id}>
-            <h1>{textCard.aboutContentHeader}</h1>
+            <h1 className="uk-text-muted uk-text-bold">{textCard.aboutContentHeader}</h1>
             <p>{textCard.aboutContentText}</p>
         </div>
     )

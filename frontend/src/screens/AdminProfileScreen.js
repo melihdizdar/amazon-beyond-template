@@ -55,7 +55,7 @@ export default function AdminProfileScreen() {
 return (
         <div style={{textAlign:"center"}}>
             <div>
-                <h4>Admin Profile Screen</h4>
+              <h4 className="uk-text-muted uk-text-bold">Admin Profile Screen</h4>
                 <ul>
                     <li><Link to="/editprofile">Profile Edit</Link></li>
                     <li><Link to="/productlist">Product List</Link></li>

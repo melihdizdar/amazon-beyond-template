@@ -55,7 +55,7 @@ export default function UserProfileScreen() {
 return (
         <div style={{textAlign:"center"}}>
             <div>
-                <h4>User Profile Screen</h4>
+                <h4 className="uk-text-muted uk-text-bold">User Profile Screen</h4>
                 <ul>
                     <li><Link to="/editprofile">Profile Edit</Link></li>
                     <li><Link to="/orderhistory">Order History</Link></li>

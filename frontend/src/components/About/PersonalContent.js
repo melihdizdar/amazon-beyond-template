@@ -12,7 +12,7 @@ export default function PersonalContent(props) {
                 </ul>
             </div>
             <div className="centerText">
-                <h1>{personalContent.aboutSlogan}</h1>
+                <h1 className="uk-text-muted uk-text-bold">{personalContent.aboutSlogan}</h1>
                 <p>{personalContent.aboutSlogan2}</p>
             </div>
             <div className="imageText">

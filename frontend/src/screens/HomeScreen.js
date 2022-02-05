@@ -58,7 +58,7 @@ export default function HomeScreen() {
               </div>
           </Carousel>
           <div className="headerStage">
-            <h1>Featured Products</h1>
+            <h1 className="uk-text-muted uk-text-bold">Featured Products</h1>
           </div>
           {loading ? ( <LoadingBox/> ) : error ? (  <MessageBox variant="danger">{error}</MessageBox> ) : (
           <>
@@ -74,7 +74,7 @@ export default function HomeScreen() {
           </>
         )}
         <div className="headerStage">
-          <h1>Our Responsibility</h1>
+          <h1 className="uk-text-muted uk-text-bold">Our Responsibility</h1>
         </div>
         {loadingHomeCard ? ( <LoadingBox></LoadingBox>) : errorHomeCard ? (<MessageBox variant="danger">{errorHomeCard}</MessageBox>) : (
         <>
@@ -89,7 +89,7 @@ export default function HomeScreen() {
         <div className="HomeColumnStage">
           <div className="left">
             <small>TOOLS & ACCESSORIES</small>
-            <h1>Handmade in small batches</h1>
+            <h1 className="uk-text-muted uk-text-bold">Handmade in small batches</h1>
             <p>Our tool and accessories are all made in the UK and beyond – produced ethically and finished to the highest standard.</p>
             <h4><Route render={({history}) => <SCollectionButton history={history}></SCollectionButton>}></Route></h4>
           </div>
@@ -103,7 +103,7 @@ export default function HomeScreen() {
           </div>
           <div className="right">
             <small>ABOUT US</small>
-            <h1>For balanced living.</h1>
+            <h1 className="uk-text-muted uk-text-bold">For balanced living.</h1>
             <p>We aim to Live Level – to pursue a balanced life. Where hard graft meets restful connection. Where urban meets wilderness.</p>
             <h4><Link to="/about">READ MORE</Link></h4>
           </div>
@@ -111,15 +111,15 @@ export default function HomeScreen() {
         <div className="informationsStage">
           <div className="informationscard">
             <img src={infoimage1} alt="infocard"/>
-            <h1>1 product purchased = 1 tree planted</h1>
+            <h1 className="uk-text-muted uk-text-bold">1 product purchased = 1 tree planted</h1>
           </div>
           <div className="informationscard">
             <img src={infoimage2} alt="infocard"/>
-            <h1>Sustainable & Ethical Manufacturing</h1>
+            <h1 className="uk-text-muted uk-text-bold">Sustainable & Ethical Manufacturing</h1>
           </div>
           <div className="informationscard">
             <img src={infoimage3} alt="infocard"/>
-            <h1>Free Exchanges & Easy Returns</h1>
+            <h1 className="uk-text-muted uk-text-bold">Free Exchanges & Easy Returns</h1>
           </div>
         </div>
     </div>

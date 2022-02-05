@@ -38,9 +38,9 @@ export default function ContactScreen() {
                     <div className="left">
                         <ul>
                             <li><small>INSTAGRAM</small></li>
-                            <li><h4>Lorem ipsum dolor sit amet.</h4></li>
+                            <li><h4 className="uk-text-muted uk-text-bold">Lorem ipsum dolor sit amet.</h4></li>
                             <li><small>Lorem ipsum dolor sit amet consectetur adipisicing.</small></li>
-                            <li><a href="https://www.instagram.com/melihdizdarr/">@BEYOND</a></li>
+                            <li><a href="https://www.instagram.com/melihdizdarr/">@BRAND</a></li>
                         </ul>
                     </div>
                     <div className="right">

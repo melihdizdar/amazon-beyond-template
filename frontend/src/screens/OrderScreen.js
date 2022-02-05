@@ -83,7 +83,7 @@ export default function OrderScreen(props) {
           <ul>
             <li>
               <div className="shippingCard">
-                <h2>Shipping</h2>
+                <h2 className="uk-text-muted uk-text-bold">Shipping</h2>
                 <p>
                   <strong>Name:</strong> {order.shippingAddress.fullName} <br />
                   <strong>Address: </strong> {order.shippingAddress.address},
@@ -102,7 +102,7 @@ export default function OrderScreen(props) {
             </li>
             <li>
               <div className="shippingCard">
-                <h2>Payment</h2>
+                <h2 className="uk-text-muted uk-text-bold">Payment</h2>
                 <p>
                   <strong>Method:</strong> {order.paymentMethod}
                 </p>
@@ -117,7 +117,7 @@ export default function OrderScreen(props) {
             </li>
             <li>
               <div className="shippingCard">
-                <h2>Order Items</h2>
+                <h2 className="uk-text-muted uk-text-bold">Order Items</h2>
                 <ul>
                   {order.orderItems.map((item) => (
                     <li key={item.product}>
@@ -156,7 +156,7 @@ export default function OrderScreen(props) {
           <div className="orderSummaryCard">
             <ul>
               <li>
-                <h2>Order Summary</h2>
+                <h2 className="uk-text-muted uk-text-bold">Order Summary</h2>
               </li>
               <li>
                 <div className="row">
@@ -213,7 +213,7 @@ export default function OrderScreen(props) {
                       <MessageBox variant="danger">{errorPay}</MessageBox>)}
                       {loadingPay && <LoadingBox></LoadingBox>}
                       
-                      <h1>iyzico will be here</h1>
+                      <h1 className="uk-text-muted">iyzico will be here</h1>
 
                     </>   
                     )}

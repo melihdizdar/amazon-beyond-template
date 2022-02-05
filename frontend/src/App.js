@@ -30,9 +30,6 @@ import MessageBox from "./components/MessageBox";
 import DashboardScreen from "./screens/DashboardScreen";
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
-import './components/NavBar/Navbar.css';
-import Dropdown from './components/NavBar/Dropdown';
-import DropdownUser from './components/NavBar/DropdownUser';
 import { signout } from "./actions/userActions";
 import FooterProducts from "./components/FooterProducts";
 import ButtonMailto from "./components/ButtonMailto";
@@ -41,13 +38,13 @@ import ContactScreen from "./screens/ContactScreen";
 import PrivacyPolicyScreen from "./screens/PrivacyPolicyScreen";
 import TermsConditionsScreen from "./screens/TermsConditionsScreen";
 import FaqScreen from "./screens/FaqScreen";
+import NavbarProducts from "./components/NavbarProducts";
 
 
 function App(props) {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
   const signoutHandler = () =>{
-    closeMobileMenu(true);
     dispatch(signout());
   }
   const userSignin = useSelector((state) => state.userSignin);
@@ -60,45 +57,6 @@ function App(props) {
   useEffect(() => { //Add Category Sidebar and Filter
     dispatch(listProductCategories()); //Add Category Sidebar and Filter
   },[dispatch]) //Add Category Sidebar and Filter
-  //Navbar Dropdown Menu
-  const [click, setClick] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
-  const [userdropdown, setUserDropdown] = useState(false);
-
-  const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
-
-  const onMouseEnter = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(true);
-    }
-  };
-
-  const onUserMouseEnter = () => {
-    if (window.innerWidth < 960) {
-        setUserDropdown(false);
-    } else {
-        setUserDropdown(true);
-    }
-  };
-
-  const onMouseLeave = () => {
-    if (window.innerWidth < 960) {
-      setDropdown(false);
-    } else {
-      setDropdown(false);
-    }
-  };
-
-  const onUserMouseLeave = () => {
-    if (window.innerWidth < 960) {
-        setUserDropdown(false);
-    } else {
-        setUserDropdown(false);
-    }
-  };
 
   return (
     <BrowserRouter>
@@ -119,63 +77,84 @@ function App(props) {
               )}
             </ul>
         </aside>
-        <nav className='navbar'>
-          <div className="sidebarPosition">
-            <button type="button" className="open-sidebar" onClick={() => setSidebarIsOpen(true)}>
-                <i className="fas fa-angle-right"></i>
-            </button>
-            <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-              BRAND
-            </Link>
-          </div>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
-          </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/about' className='nav-links' onClick={closeMobileMenu}>
-                About
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/contact-us' className='nav-links' onClick={closeMobileMenu}>
-                Contact Us
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link to='/cart' className='nav-links' onClick={closeMobileMenu}>
-                Cart {cartItems.length > 0 && (
-                      <span className="badge">{cartItems.length}</span>
-                    )}
-              </Link>
-            </li>
-            {userInfo && userInfo.isAdmin && (
-              <li className='nav-item' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-                  <Link to="/admin" className='nav-links' onClick={closeMobileMenu}>
-                  Admin Profile <i className='fas fa-caret-down' />
-                  </Link>
-                  {dropdown && <Dropdown />}
-              </li>
-            )}
-              {userInfo ? (
-                    <li className='nav-item' onMouseEnter={onUserMouseEnter} onMouseLeave={onUserMouseLeave} >
-                        <Link to='/user' className='nav-links' onClick={closeMobileMenu}>
-                        User Profile <i className='fas fa-caret-down' />
-                        </Link>
-                        {userdropdown && <DropdownUser/>}
-                        <Link to='/signin' className='nav-links' onClick={signoutHandler}>
-                            Sign Out
-                        </Link>
-                    </li>
-              ) : ( 
-                  <li className='nav-item'>
-                  <Link to='/signin' className='nav-links' onClick={closeMobileMenu}>
-                    Sign In
-                  </Link>
-                  </li>
-              )}
-          </ul>
-        </nav>
+          <header uk-sticky="true">
+              <nav className="uk-navbar-container uk-background-primary uk-navbar-sticky uk-position-relative" uk-navbar="true">
+                  <div className="uk-navbar-left">
+                    <button type="button" className="open-sidebar uk-visible@m" onClick={() => setSidebarIsOpen(true)}>
+                      <i className="fas fa-angle-right"></i>
+                    </button>
+                    <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/">BRAND</Link></div>
+                  </div>
+                  <div className="uk-navbar-right uk-visible@m">
+                      <div className="uk-navbar-item">
+                        <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/about">About</Link></div>
+                        <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/contact-us">Contact Us</Link></div>
+                        <div className="uk-navbar-item uk-link-reset uk-text-default">
+                          <Route render={({history}) => <NavbarProducts history={history}></NavbarProducts>}></Route>
+                        </div>
+                        <div className="uk-navbar-item uk-link-reset uk-text-default">
+                          <Link to="/cart">Cart
+                            {cartItems.length > 0 && (
+                            <span className="badge">{cartItems.length}</span>
+                            )}
+                          </Link>
+                        </div>
+                        {userInfo && userInfo.isAdmin && (
+                          <>
+                            <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/admin">Admin Profile</Link></div>
+                            <div div className="uk-navbar-dropdown">
+                              <ul className="uk-nav uk-navbar-dropdown-nav">
+                                  <li><Link to="/dashboard">Dashboard</Link></li>
+                                  <li><Link to="/productlist">Products</Link></li>
+                                  <li><Link to="/orderlist">Orders</Link></li>
+                                  <li><Link to="/userlist">Users</Link></li>
+                                  <li><Link to="/support">Support</Link></li>
+                              </ul>
+                            </div>
+                          </>
+                        )}
+                        {userInfo ? (
+                          <>
+                          <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/user">User Profile</Link></div>
+                            <div className="uk-navbar-dropdown">
+                                <ul className="uk-nav uk-navbar-dropdown-nav">
+                                    <li><Link to="/editprofile">User Profile</Link></li>
+                                    <li><Link to="/orderhistory">Order History</Link></li>
+                                </ul>
+                            </div>
+                          <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/signin" onClick={signoutHandler}>Sign Out</Link></div>
+                          </>
+                        ) : ( 
+                          <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/signin">Sign In</Link></div>
+                        )}
+                      </div>
+                  </div>
+                  <div className="uk-navbar-right uk-hidden@m">
+                      <div className="uk-navbar-item">
+                        <Link className="uk-link-reset uk-text-large" uk-icon="menu" uk-toggle="target: #offcanvas-nav"></Link>
+                      </div>
+                      <div id="offcanvas-nav" uk-offcanvas="overlay: true; flip:true; esc-close:false;">
+                        <button className="uk-offcanvas-close uk-text-large" type="button" uk-close="true"></button>
+                        <div className="uk-offcanvas-bar uk-flex uk-flex-column">
+                            <ul className="uk-nav uk-nav-default uk-nav-center uk-margin-auto-vertical uk-text-large">
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/about">About</Link></li>
+                                <li><Link to="/contact-us">Contact Us</Link></li>
+                                <li><Route render={({history}) => <NavbarProducts history={history}></NavbarProducts>}></Route></li>
+                                {userInfo && userInfo.isAdmin && (
+                                  <li><Link to="/admin">Admin Profile</Link></li>
+                                )}
+                                {userInfo ? (
+                                  <li><Link to="/user">User Profile</Link></li>
+                                ) : ( 
+                                  <li><Link to="/signin">Sign In</Link></li>
+                                )}
+                            </ul>
+                        </div>
+                      </div>
+                  </div>
+              </nav>
+          </header>
           <main>
             <Route path="/cart/:id?" component={CartScreen}/>
             <Route path="/product/:id" component={ProductScreen} exact/>
@@ -229,7 +208,7 @@ function App(props) {
                     <Link to="/"><li className="footerli">Home</li></Link>
                     <Link to="/about"><li className="footerli">About</li></Link>
                     {userInfo ? (
-                      <Link to="/profile"><li className="footerli">User Profile</li></Link>
+                      <Link to="/user"><li className="footerli">User Profile</li></Link>
                     ) : ( 
                       <Link to="/signin"><li className="footerli">Sign In</li></Link>
                     )}
@@ -254,11 +233,11 @@ function App(props) {
                     <div className="border"></div>
                   </div>
                   <ul className="footerul">
-                    <li className="footerli"><i class="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
-                    <li className="footerli"><i class="fa fa-phone" aria-hidden="true"></i>1234567890</li>
-                    <li className="footerli"><i class="fa fa-envelope" aria-hidden="true"></i><ButtonMailto label="support@beyond.com" mailto="mailto:support@beyond.com"/></li>
+                    <li className="footerli"><i className="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
+                    <li className="footerli"><i className="fa fa-phone" aria-hidden="true"></i>1234567890</li>
+                    <li className="footerli"><i className="fa fa-envelope" aria-hidden="true"></i><ButtonMailto label="support@beyond.com" mailto="mailto:support@beyond.com"/></li>
                   </ul>
-                  <div class="social-media">
+                  <div className="social-media">
                     <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
                     <Link to="/"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
                     <Link to="/"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
@@ -267,7 +246,7 @@ function App(props) {
                 </div>
               </div>
               <div className="footer-bottom">
-                Copyright &copy; Beyond 2021. All rights reserved.
+                Copyright &copy; Brand 2021. All rights reserved.
               </div>
             </div>
           </footer>
