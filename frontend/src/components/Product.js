@@ -10,7 +10,7 @@ export default function Product(props) {
             <div className="imageStage">
                 <Link to={`/product/${product._id}`}><img src={product.image} alt="product"/></Link>
             </div>
-            <Link to={`/product/${product._id}`}><h1>{product.name}</h1></Link>
+            <Link to={`/product/${product._id}`}><h1 className="uk-text-muted uk-text-bold">{product.name}</h1></Link>
             <span><Rating value={product.rating} text={product.numReviews + ' reviews'} /></span>
             <span><h3 className="card__price">${product.price}</h3></span>
         </div>

@@ -7,7 +7,7 @@ export default function HomeCard(props) {
             <img src={homeCard.homeImage} alt="homeCard" className="HomeCardImage"/>
             <div className="HomeCardDivider"></div>
             <div className="HomeCardContent">
-                <h1>{homeCard.homeHeader}</h1>
+                <h1 className="uk-text-muted uk-text-bold">{homeCard.homeHeader}</h1>
                 <p>{homeCard.homeText}</p>
             </div>
         </div>

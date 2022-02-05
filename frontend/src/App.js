@@ -63,7 +63,7 @@ function App(props) {
         <aside className={sidebarIsOpen? 'open': ''}>
             <ul className="categories">
               <li className="sidebarHeaderStage">
-                <strong>Categories</strong>
+                <strong className="uk-text-bold uk-text-muted">Categories</strong>
                 <button onClick={() => setSidebarIsOpen(false)} className="close-sidebar" type="button">
                   <i className="fas fa-angle-left"></i>
                 </button> 
@@ -83,7 +83,7 @@ function App(props) {
                     <button type="button" className="open-sidebar uk-visible@m" onClick={() => setSidebarIsOpen(true)}>
                       <i className="fas fa-angle-right"></i>
                     </button>
-                    <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/">BRAND</Link></div>
+                    <div className="uk-navbar-item uk-link-reset uk-text-muted uk-text-default"><Link to="/">BRAND</Link></div>
                   </div>
                   <div className="uk-navbar-right uk-visible@m">
                       <div className="uk-navbar-item">
