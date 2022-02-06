@@ -11,8 +11,8 @@
 
 @accordion-title-font-size:                    @global-medium-font-size;
 @accordion-title-line-height:                  1.4;
-@accordion-title-color:                        @global-emphasis-color;
-@accordion-title-hover-color:                  @global-color;
+@accordion-title-color:                        #fff;
+@accordion-title-hover-color:                  #fff;
 
 @accordion-content-margin-top:                 @global-margin;
 
@@ -21,7 +21,7 @@
 //
 
 @accordion-icon-margin-left:                   10px;
-@accordion-icon-color:                         @global-color;
+@accordion-icon-color:                        #000;
 @internal-accordion-open-image:                "../images/backgrounds/accordion-open.svg";
 @internal-accordion-close-image:               "../images/backgrounds/accordion-close.svg";
 
@@ -72,7 +72,14 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-accordion-misc() {}
+.hook-accordion-misc() {
+    .accordion-class{
+        padding: 5px;
+        background-color: #1F2934;
+        border: 1px solid #1F2934;
+        color: #fff;
+    }
+}
 
 // Inverse
 // ========================================================================
