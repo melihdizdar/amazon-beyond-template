@@ -36,76 +36,55 @@ export default function RegisterScreen(props) {
     }
   }, [props.history, redirect, userInfo]);
   return (
-    <div className="register">
-      <div className="headerStage">
-        <h4>Register</h4>
-        <h1>How can I join you?</h1>
-      </div>
-      <div className="mainContent">
-        <div className="formStage">
-          <form className="form" onSubmit={submitHandler}>
-            {loading && <LoadingBox></LoadingBox>}
-            {error && <MessageBox variant="danger">{error}</MessageBox>}
-            <div>
-              <label htmlFor="name">Name</label>
-              <input
-                type="text"
-                id="name"
-                className="name"
-                placeholder="Enter name"
-                required
-                onChange={(e) => setName(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="email">Email address</label>
-              <input
-                type="email"
-                id="email"
-                className="email"
-                placeholder="Enter email"
-                required
-                onChange={(e) => setEmail(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                className="password"
-                placeholder="Enter password"
-                required
-                onChange={(e) => setPassword(e.target.value)}
-              ></input>
-            </div>
-            <div>
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input
-                type="password"
-                id="confirmPassword"
-                className="confirmPassword"
-                placeholder="Enter confirm password"
-                required
-                onChange={(e) => setConfirmPassword(e.target.value)}
-              ></input>
-            </div>
-            <br/>
-            <div className="button">
-              <button type="submit">
-                Register
-              </button>
-            </div>
-            <div>
-              <label />
-              <div>
-                Already have an account?{' '}
-                <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
-              </div>
-            </div>
-          </form>
+    <>
+      <div className="uk-section uk-background-primary">
+        <div className="uk-container uk-text-center" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+            <h4 className="uk-margin-remove">Register</h4>
+            <h1 className="uk-margin-remove">How can I join you?</h1>
         </div>
       </div>
-    </div>
+      <div className="uk-section-large">
+          <div className="uk-container">
+              <form className="uk-grid-medium uk-width-1-2 uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={submitHandler} id="contact-form" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+                  {loading && <LoadingBox/>}
+                  {error && <MessageBox variant="danger">{error}</MessageBox>}
+                  <div className="uk-width-1-1@m">
+                      <div className="uk-inline uk-width-1-1@m">
+                          <div className="uk-form-icon" href="#" uk-icon="icon: user"></div>
+                          <input className="uk-input" type="email" placeholder="Enter your full name" name="name" required onChange={(e) => setName(e.target.value)}/>
+                      </div>
+                  </div>
+                  <div className="uk-width-1-1@m">
+                      <div className="uk-inline uk-width-1-1@m">
+                          <div className="uk-form-icon" href="#" uk-icon="icon: mail"></div>
+                          <input className="uk-input" type="email" placeholder="Enter your email" name="email" required onChange={(e) => setEmail(e.target.value)}/>
+                      </div>
+                  </div>
+                  <div className="uk-width-1-1@m">
+                      <div className="uk-inline uk-width-1-1@m">
+                          <div className="uk-form-icon" href="#" uk-icon="icon: hashtag"></div>
+                          <input className="uk-input" type="password" placeholder="Enter your password" name="password" required onChange={(e) => setPassword(e.target.value)}/>
+                      </div>
+                  </div>
+                  <div className="uk-width-1-1@m">
+                      <div className="uk-inline uk-width-1-1@m">
+                          <div className="uk-form-icon" href="#" uk-icon="icon: hashtag"></div>
+                          <input className="uk-input" type="password" placeholder="Enter your confirm password" name="confirmpassword"  required onChange={(e) => setConfirmPassword(e.target.value)}/>
+                      </div>
+                  </div>
+                  <div className="uk-width-1-1@m uk-flex-center uk-flex">
+                      <button className="uk-button uk-button-default" type="submit">Register</button>
+                  </div>
+                  <div>
+                      <label/>
+                      <div>
+                        Already have an account?{' '}
+                        <Link to={`/signin?redirect=${redirect}`}>Sign-In</Link>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+    </>
   );
 }
