@@ -1,41 +1,57 @@
 import React from 'react'
 import emailjs from 'emailjs-com';
-import "../screens/Styles/Contact/contact.css";
 
 export default function ContactScreen() {
     function sendEmail(e) {
         e.preventDefault();
-    
         emailjs.sendForm('service_pcn9u54', 'template_jz0a62a', e.target, 'user_Rks5kb5pOEODsYxIyO3Og')
-          .then((result) => {
-              console.log(result.text);
-          }, (error) => {
-              console.log(error.text);
-          });
-          e.target.reset()
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+        e.target.reset()
     }
     return (
-        <div className="contact">
-            <div className="headerStage">
-                <h4>Contact Us</h4>
-                <h1>How can I reach you?</h1>
-            </div>
-            <div className="mainContent">
-                <div className="text">
+        <>
+            <section className="uk-section uk-background-primary">
+                <div className="uk-container uk-text-center">
+                    <h4 className="uk-margin-remove">Contact Us</h4>
+                    <h1 className="uk-margin-remove">How can I reach you?</h1>
+                </div>
+            </section>
+            <section className="uk-section">
+                <div className="uk-container uk-text-center">
                     <p><small>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed modi earum deserunt repellat debitis, expedita esse? Totam magni nobis error.</small></p>
                 </div>
-                <div className="formStage">
-                    <form onSubmit={sendEmail} id="contact-form">
-                        <div className="nameContent">
-                            <input type="text" placeholder="Your Name" name="name"></input>
-                            <input type="email" placeholder="Email" name="email"></input>
+            </section>
+            <section className="uk-section">
+                <div className="uk-container">
+                    <form className="uk-grid-small uk-width-1-2 uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={sendEmail} id="contact-form">
+                        <div className="uk-width-1-2@m">
+                            <div className="uk-inline uk-width-1-1@m">
+                                <div className="uk-form-icon" href="#" uk-icon="icon: user"></div>
+                                <input className="uk-input" type="text" placeholder="Full Name" name="name"/>
+                            </div>
                         </div>
-                        <textarea name="message" form="contact-form" placeholder="Message" rows="5"></textarea>
-                        <button type="submit">SEND</button>
+                        <div className="uk-width-1-2@m">
+                            <div className="uk-inline uk-width-1-1@m">
+                                <div className="uk-form-icon" href="#" uk-icon="icon: mail"></div>
+                                <input className="uk-input" type="email" placeholder="E-Mail" name="email"/>
+                            </div>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <textarea className="uk-textarea resize" rows="5" placeholder="Message" name="message"></textarea>
+                        </div>
+                        <div className="uk-width-1-1@m uk-flex-center uk-flex">
+                            <button className="uk-button uk-button-default" type="submit">SEND</button>
+                        </div>
                     </form>
                 </div>
-                <div className="splitContent">
-                    <div className="left">
+            </section>
+            <section className="uk-section">
+                <div className="uk-child-width-1-2@m" uk-grid="true">
+                    <div className="uk-flex uk-flex-column uk-flex-center uk-flex-middle uk-flex-last uk-flex-first@m">
                         <ul>
                             <li><small>INSTAGRAM</small></li>
                             <li><h4 className="uk-text-muted uk-text-bold">Lorem ipsum dolor sit amet.</h4></li>
@@ -43,11 +59,11 @@ export default function ContactScreen() {
                             <li><a href="https://www.instagram.com/melihdizdarr/">@BRAND</a></li>
                         </ul>
                     </div>
-                    <div className="right">
-                        <img src="https://cdn.shopify.com/s/files/1/0573/5222/4919/files/Instagram-the-level-collective_800x_3854d945-b500-41b6-8db0-24a926e8e245_800x.jpg?v=1633538032" alt="img"/>
+                    <div className="uk-flex uk-flex-first uk-flex-last@m">
+                        <img src="https://cdn.shopify.com/s/files/1/0573/5222/4919/files/Instagram-the-level-collective_800x_3854d945-b500-41b6-8db0-24a926e8e245_800x.jpg?v=1633538032" alt="img" className="uk-width-1-1 border-radius" uk-img="true"/>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     )
 }

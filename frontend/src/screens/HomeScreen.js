@@ -28,7 +28,7 @@ export default function HomeScreen() {
     dispatch(listProducts({})); //Implement Seller View
   }, [dispatch]);
     return (
-        <div className="home">
+        <>
           {/*Navbar Section*/}
           <section>
             <div uk-slideshow="uk-position-relative min-height: 150; max-height: 600; animation: fade; autoplay:true; autoplay-interval:2500;" className="slider">
@@ -152,6 +152,6 @@ export default function HomeScreen() {
             </div>
           </div>
         </section>
-    </div>
+    </>
     )
 }
