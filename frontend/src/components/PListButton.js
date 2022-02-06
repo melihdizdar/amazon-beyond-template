@@ -9,7 +9,7 @@ export default function PListButton(props) {
     return (
         <form>
             <div>
-                <button className="showall" type="submit" onClick={submitHandler}>Show All</button>
+                <button className="uk-button uk-button-default" type="submit" onClick={submitHandler}>Show All</button>
             </div>
         </form>
     )

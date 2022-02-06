@@ -10,7 +10,7 @@
  */
 html {
   /* 1 */
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 16px;
   font-weight: normal;
   line-height: 1.5;
@@ -236,7 +236,7 @@ h6,
 .uk-heading-xlarge,
 .uk-heading-2xlarge {
   margin: 0 0 20px 0;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: normal;
   color: #fff;
   text-transform: none;
@@ -2053,20 +2053,20 @@ select.uk-form-width-xsmall {
  * Default
  */
 .uk-button-default {
-  background-color: #f8f8f8;
+  background-color: #1F2934;
   color: #fff;
   border: 1px solid #e5e5e5;
 }
 /* Hover */
 .uk-button-default:hover {
-  background-color: #ebebeb;
+  background-color: #151c24;
   color: #fff;
   border-color: #b2b2b2;
 }
 /* OnClick + Active */
 .uk-button-default:active,
 .uk-button-default.uk-active {
-  background-color: #dfdfdf;
+  background-color: #0c1014;
   color: #fff;
   border-color: #999999;
 }
@@ -2422,6 +2422,19 @@ select.uk-form-width-xsmall {
  * Reserved modifier to make a section overlap another section with an border image
  * Implemented by the theme
  */
+.border-radius {
+  border-radius: 0;
+}
+.slider {
+  margin-top: -1rem;
+}
+.slider-height {
+  height: 600px !important;
+}
+.home-icon {
+  width: 75px;
+  height: 75px;
+}
 /* ========================================================================
    Component: Container
  ========================================================================== */
@@ -5301,7 +5314,7 @@ ul.uk-nav-sub {
   padding: 0 5px;
   /* 4 */
   font-size: 16px;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   /* 5 */
   text-decoration: none;
 }
@@ -8011,7 +8024,7 @@ iframe.uk-cover {
  */
 .uk-logo {
   font-size: 1.5rem;
-  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #666;
   /* 1 */
   text-decoration: none;

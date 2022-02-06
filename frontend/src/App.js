@@ -23,10 +23,8 @@ import OrderListScreen from "./screens/OrderListScreen";
 import UserListScreen from "./screens/UserListScreen";
 import UserEditScreen from "./screens/UserEditScreen";
 import SearchScreen from "./screens/SearchScreen";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { listProductCategories } from "./actions/productActions";
-import LoadingBox from "./components/LoadingBox";
-import MessageBox from "./components/MessageBox";
 import DashboardScreen from "./screens/DashboardScreen";
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
@@ -41,7 +39,7 @@ import FaqScreen from "./screens/FaqScreen";
 import NavbarProducts from "./components/NavbarProducts";
 
 
-function App(props) {
+function App() {
   const cart = useSelector(state => state.cart);
   const { cartItems } = cart;
   const signoutHandler = () =>{
@@ -50,39 +48,16 @@ function App(props) {
   const userSignin = useSelector((state) => state.userSignin);
   const { userInfo } = userSignin;
   //Değişkenleri tanımladığımız kod satırı.
-  const [sidebarIsOpen, setSidebarIsOpen] = useState(false); //Add Category Sidebar and Filter
   const dispatch = useDispatch();
-  const productCategoryList = useSelector((state) => state.productCategoryList); //Add Category Sidebar and Filter
-  const { loading:loadingCategories, error:errorCategories, categories } = productCategoryList; //Add Category Sidebar and Filter
-  useEffect(() => { //Add Category Sidebar and Filter
-    dispatch(listProductCategories()); //Add Category Sidebar and Filter
-  },[dispatch]) //Add Category Sidebar and Filter
+  useEffect(() => { //filter
+    dispatch(listProductCategories()); //filter
+  },[dispatch]) //filter
 
   return (
     <BrowserRouter>
-        <aside className={sidebarIsOpen? 'open': ''}>
-            <ul className="categories">
-              <li className="sidebarHeaderStage">
-                <strong className="uk-text-bold uk-text-muted">Categories</strong>
-                <button onClick={() => setSidebarIsOpen(false)} className="close-sidebar" type="button">
-                  <i className="fas fa-angle-left"></i>
-                </button> 
-              </li>
-              {loadingCategories ? (
-              <LoadingBox></LoadingBox>) : errorCategories ? (  <MessageBox variant="danger">{errorCategories}</MessageBox>) : 
-                (
-                categories.map((c) => (
-                  <Link to={`/search/category/${c}`} onClick={() => setSidebarIsOpen(false)}><li key={c} className="categoriesli">{c}</li></Link>
-                ))
-              )}
-            </ul>
-        </aside>
           <header uk-sticky="true">
               <nav className="uk-navbar-container uk-background-primary uk-navbar-sticky uk-position-relative" uk-navbar="true">
                   <div className="uk-navbar-left">
-                    <button type="button" className="open-sidebar uk-visible@m" onClick={() => setSidebarIsOpen(true)}>
-                      <i className="fas fa-angle-right"></i>
-                    </button>
                     <div className="uk-navbar-item uk-link-reset uk-text-muted uk-text-default"><Link to="/">BRAND</Link></div>
                   </div>
                   <div className="uk-navbar-right uk-visible@m">
@@ -235,7 +210,7 @@ function App(props) {
                   <ul className="footerul">
                     <li className="footerli"><i className="fa fa-map-marker" aria-hidden="true"></i>1, XYZ Street, New Delhi</li>
                     <li className="footerli"><i className="fa fa-phone" aria-hidden="true"></i>1234567890</li>
-                    <li className="footerli"><i className="fa fa-envelope" aria-hidden="true"></i><ButtonMailto label="support@beyond.com" mailto="mailto:support@beyond.com"/></li>
+                    <li className="footerli"><i className="fa fa-envelope" aria-hidden="true"></i><ButtonMailto label="support@brand.com" mailto="mailto:support@brand.com"/></li>
                   </ul>
                   <div className="social-media">
                     <Link to="/"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
