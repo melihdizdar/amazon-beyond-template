@@ -147,7 +147,7 @@ function App() {
             <Route path="/search/category/:category/name/:name" component={SearchScreen} exact/>
             <Route path="/search/category/:category/name/:name/min/:min/max/:max/rating/:rating/order/:order/pageNumber/:pageNumber" component={SearchScreen} exact/>
             <PrivateRoute path="/editprofile" component={EditProfileScreen}/>
-            <PrivateRoute path="/user" component={UserProfileScreen}/>
+            <PrivateRoute path="/userprofile" component={UserProfileScreen}/>
             <AdminRoute path="/admin" component={AdminProfileScreen} exact/>
             <AdminRoute path="/productlist" component={ProductListScreen} exact/>
             <AdminRoute path="/productlist/pageNumber/:pageNumber" component={ProductListScreen} exact/>
@@ -183,7 +183,7 @@ function App() {
                     <Link to="/"><li className="footerli">Home</li></Link>
                     <Link to="/about"><li className="footerli">About</li></Link>
                     {userInfo ? (
-                      <Link to="/user"><li className="footerli">User Profile</li></Link>
+                      <Link to="/userprofile"><li className="footerli">User Profile</li></Link>
                     ) : ( 
                       <Link to="/signin"><li className="footerli">Sign In</li></Link>
                     )}

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import {useDispatch, useSelector} from 'react-redux';
 import axios from 'axios';
-import "../screens/Styles/ProductsEdit/productsedit.css";
 import {createProduct,updateProduct} from '../actions/productActions';
 //NEEDS FRONTEND
 
@@ -53,57 +52,46 @@ export default function CreateScreen(props) {
       }
     };
     return (
-        <div className="productsedit">
-            <div className="headerStage">
-                <h1>Create Product</h1>
-            </div>
-            <div className="mainContent">
-                <div className="formStage">
-                    <form className="form" onSubmit={submitHandler}>
-                        
-                            <>
-                                <div>
-                                    <label htmlFor="name">Name</label>
-                                    <input id="name" type="text" className="name" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="price">Price</label>
-                                    <input id="price" type="text" className="price" placeholder="Enter price" value={price} onChange={(e) => setPrice(e.target.value)}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="image">Image</label>
-                                    <input id="image" type="text" className="image" placeholder="Enter image" value={image} onChange={(e) => setImage(e.target.value)}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="imageFile">Image File</label>
-                                    <input type="file" id="imageFile" className="imagefile" label="Choose Image" onChange={uploadFileHandler}></input>
-
-                                </div>
-                                <div>
-                                    <label htmlFor="category">Category</label>
-                                    <input id="category" type="text" className="category" placeholder="Enter category" value={category} onChange={(e) => setCategory(e.target.value)}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="brand">Brand</label>
-                                    <input id="brand" type="text"  className="brand" placeholder="Enter brand" value={brand} onChange={(e) => setBrand(e.target.value)} ></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="coutInStock">Count In Stock</label>
-                                    <input id="coutInStock" type="text" className="countinstock" placeholder="Enter countInStock" value={coutInStock} onChange={(e) => setCoutInStock(e.target.value)}></input>
-                                </div>
-                                <div>
-                                    <label htmlFor="description">Description</label>
-                                    <textarea id="description" rows="3" type="text" className="description" placeholder="Enter description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
-                                </div>
-                                <div className="button">
-                                    <label></label>
-                                    <button type="submit">Create</button>
-                                </div>
-                            </>
-
+        <>
+            <section className="uk-section uk-background-primary">
+                <div className="uk-container uk-text-center" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+                    <h4 className="uk-margin-remove">Create Product</h4>
+                </div>
+            </section>
+            <section className="uk-section">
+                <div className="uk-container">
+                    <form className="uk-grid-small uk-width-1-2@m uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={submitHandler} id="contact-form" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+                        <div className="uk-width-1-1@m">
+                            <input className="uk-input" type="text" id="name" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)}name="name"/>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <input className="uk-input" type="number" id="price" placeholder="Enter price" value={price} onChange={(e) => setPrice(e.target.value)}name="name"/>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <input className="uk-input" type="text" id="image" placeholder="Enter image" value={image} onChange={(e) => setImage(e.target.value)} name="name"/>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <input type="file" id="imageFile" className="uk-input" label="Choose Image" onChange={uploadFileHandler}></input>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <input className="uk-input" type="text" id="category" placeholder="Enter category" value={category} onChange={(e) => setCategory(e.target.value)}name="name"/>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <input className="uk-input" type="text" id="brand" placeholder="Enter brand" value={brand} onChange={(e) => setBrand(e.target.value)}name="name"/>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                            <input className="uk-input" type="number" id="countInStock" placeholder="Enter countInStock" value={coutInStock} onChange={(e) => setCoutInStock(e.target.value)}name="name"/>
+                        </div>
+                        <div className="uk-width-1-1@m">
+                        <textarea id="description" rows="3" type="text" className="uk-textarea resize" placeholder="Enter description" value={description} onChange={(e) => setDescription(e.target.value)}></textarea>
+                        </div>
+                        <label></label>
+                        <div className="uk-width-1-1@m uk-flex-center uk-flex">
+                            <button className="uk-button uk-button-default" type="submit">Create</button>
+                        </div>
                     </form>
                 </div>
-            </div>
-        </div>
+            </section>
+        </>
     )
 }

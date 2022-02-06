@@ -36,7 +36,7 @@ export default function SigninScreen(props) {
             </div>
             <div className="uk-section-large">
                 <div className="uk-container">
-                    <form className="uk-grid-medium uk-width-1-3 uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={submitHandler} id="contact-form" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+                    <form className="uk-grid-medium uk-width-1-3@m uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={submitHandler} id="contact-form" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
                         {loading && <LoadingBox/>}
                         {error && <MessageBox variant="danger">{error}</MessageBox>}
                         <div className="uk-width-1-1@m">

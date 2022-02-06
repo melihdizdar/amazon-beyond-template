@@ -4,7 +4,6 @@ import { detailsUser, updateUserProfile } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { USER_UPDATE_PROFILE_RESET } from '../constants/userConstants';
-import "../screens/Styles/EditProfile/editprofile.css";
 
 export default function EditProfileScreen() {
   const [name, setName] = useState(''); //update user profile
@@ -50,40 +49,46 @@ export default function EditProfileScreen() {
     }
   };
   return (
-    <div className="profile">
-      <div className="headerStage">
-        <h1>User Profile</h1>
-      </div>
-      <form className="form" onSubmit={submitHandler}>
-        {loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : 
-        (
-          <>
-            {loadingUpdate && <LoadingBox/>}
-            {errorUpdate && (<MessageBox variant="danger">{errorUpdate}</MessageBox>)}
-            {successUpdate && (<MessageBox variant="success">Profile Updated Successfully</MessageBox>)}
-            <div>
-              <label htmlFor="name">Name</label>
-              <input id="name" type="text" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)}></input>
-            </div>
-            <div>
-              <label htmlFor="email">Email</label>
-              <input id="email" type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
-            </div>
-            <div>
-              <label htmlFor="password">Password</label>
-              <input id="password" type="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)}></input>
-            </div>
-            <div>
-              <label htmlFor="confirmPassword">Confirm Password</label>
-              <input id="confirmPassword" type="password" placeholder="Enter confirm password" onChange={(e) => setConfirmPassword(e.target.value)}></input>
-            </div>
-            <div>
-              <label />
-              <button className="primary" type="submit">Update</button>
-            </div>
-          </>
-        )}
-      </form>
-    </div>
+    <>
+      <section className="uk-section uk-background-primary">
+        <div className="uk-container uk-text-center" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+            <h1 className="uk-margin-remove">User Profile</h1>
+        </div>
+      </section>
+      <section className="uk-section-large">
+          <div className="uk-container">
+            <form className="uk-grid-medium uk-width-1-2@m uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={submitHandler}>
+              {loading ? (<LoadingBox/>) : error ? (<MessageBox variant="danger">{error}</MessageBox>) : 
+              (
+                <>
+                  {loadingUpdate && <LoadingBox/>}
+                  {errorUpdate && (<MessageBox variant="danger">{errorUpdate}</MessageBox>)}
+                  {successUpdate && (<MessageBox variant="success">Profile Updated Successfully</MessageBox>)}
+                  <div className="uk-width-1-1@m">
+                    <label htmlFor="name">Name</label>
+                    <input id="name" className="uk-input" type="text" placeholder="Enter name" value={name} onChange={(e) => setName(e.target.value)}></input>
+                  </div>
+                  <div className="uk-width-1-1@m">
+                    <label htmlFor="email">Email</label>
+                    <input id="email" className="uk-input" type="email" placeholder="Enter email" value={email} onChange={(e) => setEmail(e.target.value)}></input>
+                  </div>
+                  <div className="uk-width-1-1@m">
+                    <label htmlFor="password">Password</label>
+                    <input id="password" className="uk-input" type="password" placeholder="Enter password" onChange={(e) => setPassword(e.target.value)}></input>
+                  </div>
+                  <div className="uk-width-1-1@m">
+                    <label htmlFor="confirmPassword">Confirm Password</label>
+                    <input id="confirmPassword" className="uk-input" type="password" placeholder="Enter confirm password" onChange={(e) => setConfirmPassword(e.target.value)}></input>
+                  </div>
+                  <div className="uk-width-1-1@m uk-flex uk-flex-center">
+                    <label />
+                    <button className="uk-button uk-button-default" type="submit">Update</button>
+                  </div>
+                </>
+              )}
+            </form>
+          </div>
+        </section>
+    </>
   );
 }

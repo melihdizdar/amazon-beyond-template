@@ -27,7 +27,7 @@ export default function ContactScreen() {
             </section>
             <section className="uk-section">
                 <div className="uk-container">
-                    <form className="uk-grid-small uk-width-1-2 uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={sendEmail} id="contact-form" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
+                    <form className="uk-grid-small uk-width-1-2@m uk-flex-center uk-margin-auto" uk-grid="true" onSubmit={sendEmail} id="contact-form" uk-scrollspy="cls: uk-animation-fade; delay: 300; repeat:true;">
                         <div className="uk-width-1-2@m">
                             <div className="uk-inline uk-width-1-1@m">
                                 <div className="uk-form-icon" href="#" uk-icon="icon: user"></div>

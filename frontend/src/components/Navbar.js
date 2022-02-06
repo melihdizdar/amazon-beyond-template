@@ -54,7 +54,7 @@ export default function Navbar() {
                 )}
                 {userInfo ? (
                     <>
-                    <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/user">User Profile</Link></div>
+                    <div className="uk-navbar-item uk-link-reset uk-text-default"><Link to="/userprofile">User Profile</Link></div>
                     <div className="uk-navbar-dropdown">
                         <ul className="uk-nav uk-navbar-dropdown-nav">
                             <li><Link to="/editprofile">User Profile</Link></li>
@@ -84,7 +84,7 @@ export default function Navbar() {
                             <li><Link to="/admin">Admin Profile</Link></li>
                         )}
                         {userInfo ? (
-                            <li><Link to="/user">User Profile</Link></li>
+                            <li><Link to="/userprofile">User Profile</Link></li>
                         ) : ( 
                             <li><Link to="/signin">Sign In</Link></li>
                         )}
