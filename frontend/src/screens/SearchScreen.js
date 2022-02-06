@@ -43,81 +43,87 @@ export default function SearchScreen(props) {
   }
   return (
     <div>
-      <div className="infoStage">
-          {loading ? (<LoadingBox></LoadingBox>) 
-          : error ? ( <MessageBox variant="danger">{error}</MessageBox>) : 
-          (
-            <>
-              <div className="results">{products.length} Results</div>
+      {loading ? (<LoadingBox></LoadingBox>) 
+      : error ? ( <MessageBox variant="danger">{error}</MessageBox>) : 
+      (
+        <>
+        <section className="uk-section-small">
+          <div className="uk-container uk-container-large uk-flex-middle uk-flex uk-flex-between">
+            <div>{products.length} Results</div>
+            <div>
+                Sort by{' '}
+                <select class="uk-select" value={order} onChange={(e) => { props.history.push(getFilterUrl({ order: e.target.value }));}}>
+                  <option value="newest">Newest Arrivals</option>
+                  <option value="lowest">Price: Low to High</option>
+                  <option value="highest">Price: High to Low</option>
+                </select>
+                <div>
+                  <br/>
+                  <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
+                </div>
+            </div>
+          </div>
+        </section>
+        </>
+      )}
+      <section className="uk-section-small">
+        <div className="uk-container uk-container-large">
+          <div className="uk-grid-small uk-flex-center" uk-grid="true">
+            <div className="uk-width-1-1 uk-width-1-6@s uk-visible@s uk-link-reset">
+              <h3>Department</h3>
               <div>
-                  Sort by{' '}
-                  <select value={order} onChange={(e) => { props.history.push(getFilterUrl({ order: e.target.value }));}}>
-                    <option value="newest">Newest Arrivals</option>
-                    <option value="lowest">Price: Low to High</option>
-                    <option value="highest">Price: High to Low</option>
-                  </select>
-                  <div>
-                    <br/>
-                    <Route render={({history}) => <SearchBox history={history}></SearchBox>}></Route>
-                  </div>
+                {loadingCategories ? (<LoadingBox></LoadingBox>) : errorCategories ? ( <MessageBox variant="danger">{errorCategories}</MessageBox>) : 
+                  (
+                    <ul>
+                      <li>
+                        <Link className={'all' === category ? 'active' : ''} to={getFilterUrl({ category: 'all' })}>Any</Link>
+                      </li>
+                      {categories.map((c) => (
+                        <li key={c}>
+                          <Link className={c === category ? 'active' : ''} to={getFilterUrl({ category: c })}>{c}</Link>
+                        </li>
+                      ))}
+                    </ul>
+                  )
+                }
               </div>
-            </>
-          )}
-      </div>
-      <div className="contentStage">
-        <div className="departmentContent">
-          <h3>Department</h3>
-          <div>
-            {loadingCategories ? (<LoadingBox></LoadingBox>) : errorCategories ? ( <MessageBox variant="danger">{errorCategories}</MessageBox>) : 
-              (
+              <div>
+                <h3>Price</h3>
                 <ul>
-                  <li>
-                    <Link className={'all' === category ? 'active' : ''} to={getFilterUrl({ category: 'all' })}>Any</Link>
-                  </li>
-                  {categories.map((c) => (
-                    <li key={c}>
-                      <Link className={c === category ? 'active' : ''} to={getFilterUrl({ category: c })}>{c}</Link>
+                  {prices.map((p) => (
+                    <li key={p.name}>
+                      <Link to={getFilterUrl({ min: p.min, max: p.max })} className={`${p.min}-${p.max}` === `${min}-${max}` ? 'active' : '' }>{p.name}</Link>
                     </li>
                   ))}
                 </ul>
-              )
-            }
-          </div>
-          <div>
-            <h3>Price</h3>
-            <ul>
-              {prices.map((p) => (
-                <li key={p.name}>
-                  <Link to={getFilterUrl({ min: p.min, max: p.max })} className={`${p.min}-${p.max}` === `${min}-${max}` ? 'active' : '' }>{p.name}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-        <div className="productContent">
-          {loading ? (
-            <LoadingBox></LoadingBox>) : error ? (  <MessageBox variant="danger">{error}</MessageBox>) : 
-            (
-                <>
-                    {products.length === 0 && (
-                        <MessageBox>No Product Found</MessageBox>
-                    )}
-                    <div className="ProductsListStage">
-                        {products.map((product) => (
-                        <Product key={product._id} product={product}></Product>
-                        ))}
-                    </div>
-                    <div className="paginationStage"> {/*Implement Pagination*/}
-                          <div className="pagination">
-                            {[...Array(pages).keys()].map((x) => (
-                            <Link className={x + 1 === page ? 'active' : ''} key={x + 1} to={getFilterUrl({ page: x + 1 })}>{x + 1}</Link>
+              </div>
+            </div>
+            <div className="uk-width-1-1 uk-width-5-6@s">
+              {loading ? (
+                <LoadingBox></LoadingBox>) : error ? (  <MessageBox variant="danger">{error}</MessageBox>) : 
+                (
+                    <>
+                        {products.length === 0 && (
+                            <MessageBox>No Product Found</MessageBox>
+                        )}
+                        <div className="uk-grid-medium uk-child-width-1-1 uk-child-width-1-3@s uk-child-width-1-4@m uk-flex-center uk-flex-middle" uk-grid="true" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 100; repeat:true;">
+                            {products.map((product) => (
+                            <Product key={product._id} product={product}></Product>
                             ))}
-                          </div>
-                    </div>
-                </>
-            )}
+                        </div>
+                        <div className="uk-flex uk-flex-center"> {/*Implement Pagination*/}
+                              <div className="uk-button uk-button-default uk-link-reset">
+                                {[...Array(pages).keys()].map((x) => (
+                                <Link className={x + 1 === page ? 'active' : ''} key={x + 1} to={getFilterUrl({ page: x + 1 })}>{x + 1}</Link>
+                                ))}
+                              </div>
+                        </div>
+                    </>
+                )}
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

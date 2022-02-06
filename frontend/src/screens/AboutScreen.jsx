@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listPersonalContents } from '../actions/aboutPersonalActions';
 import { listTextContents } from '../actions/aboutTextActions';
 import PersonalContent from '../components/About/PersonalContent';
-import '../components/About/styles.css';
 import TextCartContent from '../components/About/TextCartContent';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
@@ -19,9 +18,9 @@ export default function AboutScreen() {
         //dispatch(listProducts());
         dispatch(listPersonalContents());
         dispatch(listTextContents());
-      }, [dispatch]);
+    }, [dispatch]);
     return (
-        <div className="about">
+        <>
             {loadingPersonalContents ? ( <LoadingBox></LoadingBox>) : errorPersonalContents ? (<MessageBox variant="danger">{errorPersonalContents}</MessageBox>) : (
             <>
                 {personalContents.length === 0 && <MessageBox>No About Personal Content Found</MessageBox>}
@@ -31,11 +30,15 @@ export default function AboutScreen() {
             {loadingTextContent ? ( <LoadingBox></LoadingBox>) : errorTextContent ? (<MessageBox variant="danger">{errorTextContent}</MessageBox>) : (
             <>
                 {textContents.length === 0 && <MessageBox>No About Text Found</MessageBox>}
-                <div className="textCartContent">
-                    {textContents.map((textCard) => ( <TextCartContent key={textCard._id} textCard={textCard}/> ))}
-                </div>  
+                <section className="uk-section">
+                    <div className="uk-container">
+                        <div className="uk-grid-medium uk-child-width-1-2@m" uk-grid="true" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 200; repeat:true;">
+                            {textContents.map((textCard) => ( <TextCartContent key={textCard._id} textCard={textCard}/> ))}
+                        </div>
+                    </div>
+                </section>
             </>
             )}
-        </div>
+        </>
     )
 }

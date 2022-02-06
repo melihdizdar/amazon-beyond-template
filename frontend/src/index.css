@@ -245,9 +245,6 @@ a.brand{
   padding: 1rem;
 }
 /*Image*/
-img{
-  border-radius: 0.5rem;
-}
 img.small{
   height: 50px;
   width: 50px;

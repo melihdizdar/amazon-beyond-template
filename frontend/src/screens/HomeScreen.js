@@ -35,13 +35,13 @@ export default function HomeScreen() {
                 <div className="uk-visible-toggle" tabindex="-1">
                     <ul className="uk-slideshow-items">
                         <li>
-                            <img src="https://i.hizliresim.com/pmfu2vf.jpg" className="uk-width-1-1 uk-height-1-1 border-radius" alt="slider1" uk-img="true"/>
+                            <img src="https://i.hizliresim.com/pmfu2vf.jpg" className="uk-width-1-1 uk-height-1-1" alt="slider1" uk-img="true"/>
                         </li>
                         <li>
-                            <img src="https://i.hizliresim.com/glsc93a.png" className="uk-width-1-1 uk-height-1-1 border-radius" alt="slider2" uk-img="true"/>
+                            <img src="https://i.hizliresim.com/glsc93a.png" className="uk-width-1-1 uk-height-1-1" alt="slider2" uk-img="true"/>
                         </li>
                         <li>
-                            <img src="https://i.hizliresim.com/6i7x9go.jpg" className="uk-width-1-1 uk-height-1-1 border-radius" alt="slider3" uk-img="true"/>
+                            <img src="https://i.hizliresim.com/6i7x9go.jpg" className="uk-width-1-1 uk-height-1-1" alt="slider3" uk-img="true"/>
                         </li>
                     </ul>
                 </div>
@@ -102,14 +102,14 @@ export default function HomeScreen() {
               </div>
             </div>
             <div className="uk-width-1-2@m uk-position-relative uk-padding-remove uk-flex-last@m uk-flex-first">
-              <img src="https://i.hizliresim.com/5yg7la0.png" alt="hcolumn_1" uk-img="true" className="uk-width-1-1 uk-height-1-1 border-radius"/>
+              <img src="https://i.hizliresim.com/5yg7la0.png" alt="hcolumn_1" uk-img="true" className="uk-width-1-1 uk-height-1-1"/>
             </div>
           </div>
         </section>
         <section>
           <div uk-grid="true" uk-scrollspy="target: > div; cls: uk-animation-fade; delay: 300; repeat:true;">
             <div className="uk-width-1-2@m uk-position-relative uk-padding-remove">
-              <img src="https://i.hizliresim.com/q98fp49.png" alt="hcolumn_2" uk-img="true" className="uk-width-1-1 uk-height-1-1 border-radius"/>
+              <img src="https://i.hizliresim.com/q98fp49.png" alt="hcolumn_2" uk-img="true" className="uk-width-1-1 uk-height-1-1"/>
             </div>
             <div className="uk-width-1-2@m uk-card uk-flex uk-flex-middle">
               <div className="uk-card-body">
